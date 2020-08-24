@@ -3,23 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>retinar.com.ar/es/blog/simple-blog-post-8/</loc>
-    <lastmod>2018-09-12T14:51:12+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="retinar.com.ar/blog/simple-blog-post-8/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="retinar.com.ar/es/blog/simple-blog-post-8/"
-                />
-  </url>
-  
-  <url>
     <loc>retinar.com.ar/es/blog/</loc>
-    <lastmod>2018-09-12T14:51:12+06:00</lastmod>
+    <lastmod>2020-08-22T12:52:36+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -33,23 +18,8 @@
   </url>
   
   <url>
-    <loc>retinar.com.ar/es/blog/installation/</loc>
-    <lastmod>2018-09-12T14:51:12+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="retinar.com.ar/blog/installation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="retinar.com.ar/es/blog/installation/"
-                />
-  </url>
-  
-  <url>
     <loc>retinar.com.ar/es/</loc>
-    <lastmod>2018-09-12T14:51:12+06:00</lastmod>
+    <lastmod>2020-08-22T12:52:36+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -64,7 +34,7 @@
   
   <url>
     <loc>retinar.com.ar/es/blog/simple-blog-post-1/</loc>
-    <lastmod>2018-09-12T12:52:36+06:00</lastmod>
+    <lastmod>2020-08-22T12:52:36+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -74,96 +44,6 @@
                 rel="alternate"
                 hreflang="es"
                 href="retinar.com.ar/es/blog/simple-blog-post-1/"
-                />
-  </url>
-  
-  <url>
-    <loc>retinar.com.ar/es/blog/simple-blog-post-2/</loc>
-    <lastmod>2018-09-12T12:52:36+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="retinar.com.ar/blog/simple-blog-post-2/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="retinar.com.ar/es/blog/simple-blog-post-2/"
-                />
-  </url>
-  
-  <url>
-    <loc>retinar.com.ar/es/blog/simple-blog-post-3/</loc>
-    <lastmod>2018-09-12T12:52:36+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="retinar.com.ar/blog/simple-blog-post-3/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="retinar.com.ar/es/blog/simple-blog-post-3/"
-                />
-  </url>
-  
-  <url>
-    <loc>retinar.com.ar/es/blog/simple-blog-post-4/</loc>
-    <lastmod>2018-09-12T12:52:36+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="retinar.com.ar/blog/simple-blog-post-4/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="retinar.com.ar/es/blog/simple-blog-post-4/"
-                />
-  </url>
-  
-  <url>
-    <loc>retinar.com.ar/es/blog/simple-blog-post-5/</loc>
-    <lastmod>2018-09-12T12:52:36+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="retinar.com.ar/blog/simple-blog-post-5/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="retinar.com.ar/es/blog/simple-blog-post-5/"
-                />
-  </url>
-  
-  <url>
-    <loc>retinar.com.ar/es/blog/simple-blog-post-6/</loc>
-    <lastmod>2018-09-12T12:52:36+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="retinar.com.ar/blog/simple-blog-post-6/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="retinar.com.ar/es/blog/simple-blog-post-6/"
-                />
-  </url>
-  
-  <url>
-    <loc>retinar.com.ar/es/blog/simple-blog-post-7/</loc>
-    <lastmod>2018-09-12T12:52:36+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="retinar.com.ar/blog/simple-blog-post-7/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="retinar.com.ar/es/blog/simple-blog-post-7/"
                 />
   </url>
   
@@ -196,30 +76,16 @@
   </url>
   
   <url>
-    <loc>retinar.com.ar/es/author/john-doe/</loc>
+    <loc>retinar.com.ar/es/author/jose-ignacio-orlando/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="retinar.com.ar/author/john-doe/"
+                href="retinar.com.ar/author/jose-ignacio-orlando/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="retinar.com.ar/es/author/john-doe/"
-                />
-  </url>
-  
-  <url>
-    <loc>retinar.com.ar/es/author/mark-dinn/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="retinar.com.ar/author/mark-dinn/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="retinar.com.ar/es/author/mark-dinn/"
+                href="retinar.com.ar/es/author/jose-ignacio-orlando/"
                 />
   </url>
   
