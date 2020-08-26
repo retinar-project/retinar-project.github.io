@@ -3,72 +3,72 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://retinar.com.ar/author/</loc>
+    <loc>https://retinar.com.ar/en/author/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://retinar.com.ar/es/author/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
                 href="https://retinar.com.ar/author/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://retinar.com.ar/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://retinar.com.ar/es/categories/"
-                />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
+                href="https://retinar.com.ar/en/author/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://retinar.com.ar/en/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
                 href="https://retinar.com.ar/categories/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://retinar.com.ar/author/jose-ignacio-orlando/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://retinar.com.ar/es/author/jose-ignacio-orlando/"
-                />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
+                href="https://retinar.com.ar/en/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://retinar.com.ar/en/author/jose-ignacio-orlando/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
                 href="https://retinar.com.ar/author/jose-ignacio-orlando/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://retinar.com.ar/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://retinar.com.ar/es/"
-                />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
+                href="https://retinar.com.ar/en/author/jose-ignacio-orlando/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://retinar.com.ar/en/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
                 href="https://retinar.com.ar/"
                 />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://retinar.com.ar/en/"
+                />
   </url>
   
   <url>
-    <loc>https://retinar.com.ar/tags/</loc>
+    <loc>https://retinar.com.ar/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://retinar.com.ar/es/tags/"
+                href="https://retinar.com.ar/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://retinar.com.ar/tags/"
+                href="https://retinar.com.ar/en/tags/"
                 />
   </url>
   
