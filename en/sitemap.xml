@@ -3,72 +3,72 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.retinar.com.ar/en/author/</loc>
+    <loc>https://retinar.com.ar/en/author/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://www.retinar.com.ar/author/"
+                href="https://retinar.com.ar/author/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.retinar.com.ar/en/author/"
+                href="https://retinar.com.ar/en/author/"
                 />
   </url>
   
   <url>
-    <loc>https://www.retinar.com.ar/en/categories/</loc>
+    <loc>https://retinar.com.ar/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://www.retinar.com.ar/categories/"
+                href="https://retinar.com.ar/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.retinar.com.ar/en/categories/"
+                href="https://retinar.com.ar/en/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://www.retinar.com.ar/en/author/jose-ignacio-orlando/</loc>
+    <loc>https://retinar.com.ar/en/author/jose-ignacio-orlando/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://www.retinar.com.ar/author/jose-ignacio-orlando/"
+                href="https://retinar.com.ar/author/jose-ignacio-orlando/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.retinar.com.ar/en/author/jose-ignacio-orlando/"
+                href="https://retinar.com.ar/en/author/jose-ignacio-orlando/"
                 />
   </url>
   
   <url>
-    <loc>https://www.retinar.com.ar/en/</loc>
+    <loc>https://retinar.com.ar/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://www.retinar.com.ar/"
+                href="https://retinar.com.ar/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.retinar.com.ar/en/"
+                href="https://retinar.com.ar/en/"
                 />
   </url>
   
   <url>
-    <loc>https://www.retinar.com.ar/en/tags/</loc>
+    <loc>https://retinar.com.ar/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://www.retinar.com.ar/tags/"
+                href="https://retinar.com.ar/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.retinar.com.ar/en/tags/"
+                href="https://retinar.com.ar/en/tags/"
                 />
   </url>
   
