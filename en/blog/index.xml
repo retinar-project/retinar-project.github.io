@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on retinar</title>
+    <link>https://retinar.com.ar/en/blog/</link>
+    <description>Recent content in Blogs on retinar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>copyright &amp;copy; 2020 [gethugothemes](https://gethugothemes.com) all right reserved</copyright>
+    <lastBuildDate>Sat, 22 Aug 2020 12:52:36 +0600</lastBuildDate>
+    
+	<atom:link href="https://retinar.com.ar/en/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Our website is online!</title>
+      <link>https://retinar.com.ar/en/blog/2020-sitio-online/</link>
+      <pubDate>Sat, 22 Aug 2020 12:52:36 +0600</pubDate>
+      
+      <guid>https://retinar.com.ar/en/blog/2020-sitio-online/</guid>
+      <description>We&amp;rsquo;re very excited to announce the launch of our website! This is yet another tool to keep you updated about our latest news.</description>
+    </item>
+    
+    <item>
+      <title>We&#39;re participating in Prendete</title>
+      <link>https://retinar.com.ar/en/blog/2020-inscripcion-prendete/</link>
+      <pubDate>Sat, 22 Aug 2020 12:52:36 +0600</pubDate>
+      
+      <guid>https://retinar.com.ar/en/blog/2020-inscripcion-prendete/</guid>
+      <description>To further boost retinar and benefit the implementation of our solution, we&amp;rsquo;re thrilled to announce that we&amp;rsquo;re participating from the 2020 edition of Prendete, the contest of innovative business ideas.</description>
+    </item>
+    
+  </channel>
+</rss>

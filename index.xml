@@ -7,9 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ar</language>
     <copyright>copyright &amp;copy; 2020 [gethugothemes](https://gethugothemes.com) todos los derechos reservados</copyright>
+    <lastBuildDate>Sat, 22 Aug 2020 12:52:36 +0600</lastBuildDate>
     
 	<atom:link href="https://retinar.com.ar/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Participamos en Prendete 2020</title>
+      <link>https://retinar.com.ar/blog/2020-inscripcion-prendete/</link>
+      <pubDate>Sat, 22 Aug 2020 12:52:36 +0600</pubDate>
+      
+      <guid>https://retinar.com.ar/blog/2020-inscripcion-prendete/</guid>
+      <description>Para darle impulso a retinar y materializar pronto nuestra solución, estamos felices de anunciar que participaremos de la edición 2020 del Concurso de Ideas de Negocio Innovadoras Prendete.</description>
+    </item>
+    
+    <item>
+      <title>Sitio online!</title>
+      <link>https://retinar.com.ar/blog/2020-sitio-online/</link>
+      <pubDate>Sat, 22 Aug 2020 12:52:36 +0600</pubDate>
+      
+      <guid>https://retinar.com.ar/blog/2020-sitio-online/</guid>
+      <description>En el marco de los preparativos para participar del Concurso de Ideas de Negocio Innovadoras Prendete, lanzamos nuestro sitio web.</description>
+    </item>
     
     <item>
       <title>Jose Ignacio Orlando</title>
@@ -17,7 +36,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://retinar.com.ar/author/jose-ignacio-orlando/</guid>
-      <description>José Ignacio Orlando (Nacho) received his Software Engineering degree in 2013 at Universidad Nacional del Centro de la Provincia de Buenos Aires (UNICEN) in Tandil, Argentina.</description>
+      <description>José Ignacio Orlando (Nacho) recibió su título de Ingeniero de Sistemas en el año 2013 por la Facultad de Ciencias Exactas de la UNICEN en Tandil, Argentina.</description>
     </item>
     
   </channel>

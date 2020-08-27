@@ -5,20 +5,29 @@
     <link>https://retinar.com.ar/blog/</link>
     <description>Recent content in Blogs on retinar</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>copyright &amp;copy; 2020 [gethugothemes](https://gethugothemes.com) all right reserved</copyright>
+    <language>es-ar</language>
+    <copyright>copyright &amp;copy; 2020 [gethugothemes](https://gethugothemes.com) todos los derechos reservados</copyright>
     <lastBuildDate>Sat, 22 Aug 2020 12:52:36 +0600</lastBuildDate>
     
 	<atom:link href="https://retinar.com.ar/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Website online</title>
-      <link>https://retinar.com.ar/blog/simple-blog-post-1/</link>
+      <title>Participamos en Prendete 2020</title>
+      <link>https://retinar.com.ar/blog/2020-inscripcion-prendete/</link>
       <pubDate>Sat, 22 Aug 2020 12:52:36 +0600</pubDate>
       
-      <guid>https://retinar.com.ar/blog/simple-blog-post-1/</guid>
-      <description>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</description>
+      <guid>https://retinar.com.ar/blog/2020-inscripcion-prendete/</guid>
+      <description>Para darle impulso a retinar y materializar pronto nuestra solución, estamos felices de anunciar que participaremos de la edición 2020 del Concurso de Ideas de Negocio Innovadoras Prendete.</description>
+    </item>
+    
+    <item>
+      <title>Sitio online!</title>
+      <link>https://retinar.com.ar/blog/2020-sitio-online/</link>
+      <pubDate>Sat, 22 Aug 2020 12:52:36 +0600</pubDate>
+      
+      <guid>https://retinar.com.ar/blog/2020-sitio-online/</guid>
+      <description>En el marco de los preparativos para participar del Concurso de Ideas de Negocio Innovadoras Prendete, lanzamos nuestro sitio web.</description>
     </item>
     
   </channel>
