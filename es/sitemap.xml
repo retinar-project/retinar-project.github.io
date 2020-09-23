@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://retinar.com.ar/blog/</loc>
-    <lastmod>2020-08-27T12:52:36+06:00</lastmod>
+    <lastmod>2020-09-21T12:52:36+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -19,7 +19,7 @@
   
   <url>
     <loc>https://retinar.com.ar/blog/2020-preseleccion-prendete/</loc>
-    <lastmod>2020-08-27T12:52:36+06:00</lastmod>
+    <lastmod>2020-09-21T12:52:36+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -29,6 +29,21 @@
                 rel="alternate"
                 hreflang="es"
                 href="https://retinar.com.ar/blog/2020-preseleccion-prendete/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://retinar.com.ar/</loc>
+    <lastmod>2020-09-21T12:52:36+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://retinar.com.ar/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://retinar.com.ar/"
                 />
   </url>
   
@@ -44,21 +59,6 @@
                 rel="alternate"
                 hreflang="es"
                 href="https://retinar.com.ar/blog/2020-inscripcion-prendete/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://retinar.com.ar/</loc>
-    <lastmod>2020-08-27T12:52:36+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://retinar.com.ar/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://retinar.com.ar/"
                 />
   </url>
   
