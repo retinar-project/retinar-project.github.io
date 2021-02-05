@@ -48,11 +48,6 @@
   </url>
   
   <url>
-    <loc>https://retinar.com.ar/blog/2020-entrevista-fm-alpha/</loc>
-    <lastmod>2020-08-27T12:52:36+06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://retinar.com.ar/blog/2020-inscripcion-prendete/</loc>
     <lastmod>2020-08-27T12:52:36+06:00</lastmod>
     <xhtml:link
@@ -80,6 +75,11 @@
                 hreflang="es"
                 href="https://retinar.com.ar/blog/2020-sitio-online/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://retinar.com.ar/blog/2020-entrevista-fm-alpha/</loc>
+    <lastmod>2020-02-05T12:52:36+06:00</lastmod>
   </url>
   
   <url>
