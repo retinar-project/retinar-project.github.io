@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright &amp;copy; 2020 [gethugothemes](https://gethugothemes.com) all right reserved</copyright>
-    <lastBuildDate>Mon, 21 Sep 2020 12:52:36 +0600</lastBuildDate><atom:link href="https://retinar.com.ar/en/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Jun 2021 18:51:36 +0600</lastBuildDate><atom:link href="https://retinar.com.ar/en/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>retinar was awarded by NVIDIA Corporation</title>
+      <link>https://retinar.com.ar/en/blog/2021-nvidia-grant/</link>
+      <pubDate>Tue, 22 Jun 2021 18:51:36 +0600</pubDate>
+      
+      <guid>https://retinar.com.ar/en/blog/2021-nvidia-grant/</guid>
+      <description>retinar was selected as member of the NVIDIA Applied Research Accelerator Program. Our project, entitled &amp;ldquo;retinar: assisting remote diabetic retinopathy screening with AI tools&amp;rdquo;, our joint initiative between UNICEN and Hospital El Cruce was awarded with 500 hours on V100 GPU instances via SaturnCloud.</description>
+    </item>
+    
     <item>
       <title>We are one of the 15 projects in the next round of Prendete!</title>
       <link>https://retinar.com.ar/en/blog/2020-preseleccion-prendete/</link>
