@@ -1,166 +1,347 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>https://retinar.com.ar/en/blog/</loc>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2023-07-20T18:51:36+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1313/es/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/blog/</loc>
+    <lastmod>2023-07-20T18:51:36+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1313/es/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/blog/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/blog/2023-07-transformar-salud/</loc>
+    <lastmod>2023-07-20T18:51:36+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1313/es/blog/2023-07-transformar-salud/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/blog/2023-07-transformar-salud/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/blog/2023-04-vizzotti/</loc>
+    <lastmod>2023-04-18T18:51:36+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1313/es/blog/2023-04-vizzotti/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/blog/2023-04-vizzotti/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/blog/2022-12-academia-medicina/</loc>
+    <lastmod>2022-12-02T18:51:36+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1313/es/blog/2022-12-academia-medicina/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/blog/2022-12-academia-medicina/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/blog/2022-06-premio-cno/</loc>
+    <lastmod>2022-06-10T18:51:36+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1313/es/blog/2022-06-premio-cno/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/blog/2022-06-premio-cno/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/blog/2021-11-jis/</loc>
+    <lastmod>2021-11-16T10:07:21+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1313/es/blog/2021-11-jis/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/blog/2021-11-jis/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/blog/2021-10-pac/</loc>
     <lastmod>2021-06-22T18:51:36+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://retinar.com.ar/blog/"
+                href="http://localhost:1313/es/blog/2021-10-pac/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://retinar.com.ar/en/blog/"
+                href="http://localhost:1313/blog/2021-10-pac/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://retinar.com.ar/en/blog/2021-pict-grant/</loc>
+  </url><url>
+    <loc>http://localhost:1313/blog/2021-06-pict/</loc>
     <lastmod>2021-06-22T18:51:36+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://retinar.com.ar/blog/2021-pict-grant/"
+                href="http://localhost:1313/es/blog/2021-06-pict/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://retinar.com.ar/en/blog/2021-pict-grant/"
+                href="http://localhost:1313/blog/2021-06-pict/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://retinar.com.ar/en/</loc>
-    <lastmod>2021-06-22T18:51:36+06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/2021-06-nvidia-hardware-copy/</loc>
+    <lastmod>2021-06-18T10:07:21+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://retinar.com.ar/"
+                href="http://localhost:1313/es/blog/2021-06-nvidia-hardware-copy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://retinar.com.ar/en/"
+                href="http://localhost:1313/blog/2021-06-nvidia-hardware-copy/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://retinar.com.ar/en/blog/2021-nvidia-grant/</loc>
-    <lastmod>2021-06-22T18:51:36+06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/2021-02-pict/</loc>
+    <lastmod>2021-02-22T18:51:36+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://retinar.com.ar/blog/2021-nvidia-grant/"
+                href="http://localhost:1313/es/blog/2021-02-pict/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://retinar.com.ar/en/blog/2021-nvidia-grant/"
+                href="http://localhost:1313/blog/2021-02-pict/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://retinar.com.ar/en/blog/2020-preseleccion-prendete/</loc>
-    <lastmod>2020-09-21T12:52:36+06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/2021-05-cxc/</loc>
+    <lastmod>2021-02-15T10:07:21+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://retinar.com.ar/blog/2020-preseleccion-prendete/"
+                href="http://localhost:1313/es/blog/2021-05-cxc/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://retinar.com.ar/en/blog/2020-preseleccion-prendete/"
+                href="http://localhost:1313/blog/2021-05-cxc/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://retinar.com.ar/en/blog/2020-inscripcion-prendete/</loc>
+  </url><url>
+    <loc>http://localhost:1313/blog/2021-02-wow/</loc>
+    <lastmod>2021-02-15T10:07:21+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1313/es/blog/2021-02-wow/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/blog/2021-02-wow/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/blog/2020-12-prendete/</loc>
+    <lastmod>2020-12-11T12:52:36+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1313/es/blog/2020-12-prendete/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/blog/2020-12-prendete/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/blog/2020-09-prendete/</loc>
+    <lastmod>2020-11-18T10:07:21+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1313/es/blog/2020-09-prendete/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/blog/2020-09-prendete/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/blog/2020-11-jovin/</loc>
+    <lastmod>2020-11-18T10:07:21+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1313/es/blog/2020-11-jovin/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/blog/2020-11-jovin/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/blog/2020-08-prendete/</loc>
     <lastmod>2020-08-27T12:52:36+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://retinar.com.ar/blog/2020-inscripcion-prendete/"
+                href="http://localhost:1313/es/blog/2020-08-prendete/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://retinar.com.ar/en/blog/2020-inscripcion-prendete/"
+                href="http://localhost:1313/blog/2020-08-prendete/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://retinar.com.ar/en/blog/2020-sitio-online/</loc>
+  </url><url>
+    <loc>http://localhost:1313/blog/2020-08-website/</loc>
     <lastmod>2020-08-22T12:52:36+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://retinar.com.ar/blog/2020-sitio-online/"
+                href="http://localhost:1313/es/blog/2020-08-website/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://retinar.com.ar/en/blog/2020-sitio-online/"
+                href="http://localhost:1313/blog/2020-08-website/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://retinar.com.ar/en/author/</loc>
+  </url><url>
+    <loc>http://localhost:1313/_deprectated-about-us/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://retinar.com.ar/author/"
+                href="http://localhost:1313/es/_deprectated-about-us/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://retinar.com.ar/en/author/"
+                href="http://localhost:1313/_deprectated-about-us/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://retinar.com.ar/en/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://retinar.com.ar/categories/"
+                href="http://localhost:1313/es/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://retinar.com.ar/en/categories/"
+                href="http://localhost:1313/categories/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://retinar.com.ar/en/author/jose-ignacio-orlando/</loc>
+  </url><url>
+    <loc>http://localhost:1313/contact/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://retinar.com.ar/author/jose-ignacio-orlando/"
+                href="http://localhost:1313/es/contact/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://retinar.com.ar/en/author/jose-ignacio-orlando/"
+                href="http://localhost:1313/contact/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://retinar.com.ar/en/tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/faq/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://retinar.com.ar/tags/"
+                href="http://localhost:1313/es/faq/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://retinar.com.ar/en/tags/"
+                href="http://localhost:1313/faq/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/team/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1313/es/team/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/team/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/pricing/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1313/es/pricing/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/pricing/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/privacy-policy/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1313/es/privacy-policy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/privacy-policy/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1313/es/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/tags/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/terms-conditions/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1313/es/terms-conditions/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/terms-conditions/"
                 />
   </url>
-  
 </urlset>
