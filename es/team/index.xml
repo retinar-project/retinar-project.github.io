@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Conoce nuestro equipo on retinar</title>
-    <link>http://localhost:1313/es/team/</link>
+    <link>https://retinar.com.ar/es/team/</link>
     <description>Recent content in Conoce nuestro equipo on retinar</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <atom:link href="http://localhost:1313/es/team/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://retinar.com.ar/es/team/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

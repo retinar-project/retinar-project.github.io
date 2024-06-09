@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Preise on retinar</title>
-    <link>http://localhost:1313/es/pricing/</link>
+    <link>https://retinar.com.ar/es/pricing/</link>
     <description>Recent content in Preise on retinar</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <atom:link href="http://localhost:1313/es/pricing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://retinar.com.ar/es/pricing/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

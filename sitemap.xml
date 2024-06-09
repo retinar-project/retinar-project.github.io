@@ -2,14 +2,14 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <sitemap>
-    <loc>http://localhost:1313/en/sitemap.xml</loc>
+    <loc>https://retinar.com.ar/en/sitemap.xml</loc>
     
       <lastmod>2023-07-20T18:51:36+06:00</lastmod>
     
   </sitemap>
   
   <sitemap>
-    <loc>http://localhost:1313/es/sitemap.xml</loc>
+    <loc>https://retinar.com.ar/es/sitemap.xml</loc>
     
       <lastmod>2023-07-20T18:51:36+06:00</lastmod>
     

@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Terms of Service on retinar</title>
-    <link>http://localhost:1313/terms-conditions/</link>
+    <link>https://retinar.com.ar/terms-conditions/</link>
     <description>Recent content in Terms of Service on retinar</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/terms-conditions/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://retinar.com.ar/terms-conditions/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

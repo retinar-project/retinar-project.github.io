@@ -2,122 +2,122 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>retinar</title>
-    <link>http://localhost:1313/</link>
+    <link>https://retinar.com.ar/</link>
     <description>Recent content on retinar</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 20 Jul 2023 18:51:36 +0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://retinar.com.ar/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Retinar Wins Transformar Salud 2023</title>
-      <link>http://localhost:1313/blog/2023-07-transformar-salud/</link>
+      <link>https://retinar.com.ar/blog/2023-07-transformar-salud/</link>
       <pubDate>Thu, 20 Jul 2023 18:51:36 +0600</pubDate>
-      <guid>http://localhost:1313/blog/2023-07-transformar-salud/</guid>
+      <guid>https://retinar.com.ar/blog/2023-07-transformar-salud/</guid>
       <description>We are thrilled to announce that Retinar has been named the winner of the 2023 Transformar Salud edition, organized by Fundación Garrahan and Laboratorios Roche Argentina.</description>
     </item>
     <item>
       <title>Visit from the Minister of Health of the Nation</title>
-      <link>http://localhost:1313/blog/2023-04-vizzotti/</link>
+      <link>https://retinar.com.ar/blog/2023-04-vizzotti/</link>
       <pubDate>Tue, 18 Apr 2023 18:51:36 +0600</pubDate>
-      <guid>http://localhost:1313/blog/2023-04-vizzotti/</guid>
+      <guid>https://retinar.com.ar/blog/2023-04-vizzotti/</guid>
       <description>We conducted a demonstration of our platform and discussed potential avenues to scale our project and utilize it at a national level with Carla Vizzotti, Minister of Health of the Nation.</description>
     </item>
     <item>
       <title>Retinar Receives the 2021 Annual Award from the National Academy of Medicine</title>
-      <link>http://localhost:1313/blog/2022-12-academia-medicina/</link>
+      <link>https://retinar.com.ar/blog/2022-12-academia-medicina/</link>
       <pubDate>Fri, 02 Dec 2022 18:51:36 +0600</pubDate>
-      <guid>http://localhost:1313/blog/2022-12-academia-medicina/</guid>
+      <guid>https://retinar.com.ar/blog/2022-12-academia-medicina/</guid>
       <description>Yesterday afternoon, we had the honor of receiving the 2021 Award from the National Academy of Medicine of Buenos Aires for our work on @retinarARG alongside @Tomass_Castilla, Alejandro Koch, Marcela Martínez, and Mercedes Leguía from @ElCruceHospital and Ignacio Larrabide.</description>
     </item>
     <item>
       <title>Award for Best Oral Presentation at CNO 2022</title>
-      <link>http://localhost:1313/blog/2022-06-premio-cno/</link>
+      <link>https://retinar.com.ar/blog/2022-06-premio-cno/</link>
       <pubDate>Fri, 10 Jun 2022 18:51:36 +0600</pubDate>
-      <guid>http://localhost:1313/blog/2022-06-premio-cno/</guid>
+      <guid>https://retinar.com.ar/blog/2022-06-premio-cno/</guid>
       <description>We are thrilled to announce that Retinar has been honored with the award for the best scientific work presented at the 2022 National Congress of Ophthalmology (CNO).</description>
     </item>
     <item>
       <title>Retinar Presented at the JIS of the Italian Hospital</title>
-      <link>http://localhost:1313/blog/2021-11-jis/</link>
+      <link>https://retinar.com.ar/blog/2021-11-jis/</link>
       <pubDate>Tue, 16 Nov 2021 10:07:21 +0600</pubDate>
-      <guid>http://localhost:1313/blog/2021-11-jis/</guid>
+      <guid>https://retinar.com.ar/blog/2021-11-jis/</guid>
       <description>We had the privilege of presenting Retinar at the Informatics and Health Conference of the Italian Hospital.</description>
     </item>
     <item>
       <title>Retinar Receives Funding from PAC Emprendedores para la Innovación</title>
-      <link>http://localhost:1313/blog/2021-10-pac/</link>
+      <link>https://retinar.com.ar/blog/2021-10-pac/</link>
       <pubDate>Tue, 22 Jun 2021 18:51:36 +0600</pubDate>
-      <guid>http://localhost:1313/blog/2021-10-pac/</guid>
+      <guid>https://retinar.com.ar/blog/2021-10-pac/</guid>
       <description>We are thrilled to announce that Retinar has secured funding from the Ministry of Productive Development of Argentina as part of the PAC Emprendedores para la Innovación initiative.</description>
     </item>
     <item>
       <title>Retinar Secures Funding from Agencia I&#43;D&#43;i (Argentina)</title>
-      <link>http://localhost:1313/blog/2021-06-pict/</link>
+      <link>https://retinar.com.ar/blog/2021-06-pict/</link>
       <pubDate>Tue, 22 Jun 2021 18:51:36 +0600</pubDate>
-      <guid>http://localhost:1313/blog/2021-06-pict/</guid>
+      <guid>https://retinar.com.ar/blog/2021-06-pict/</guid>
       <description>We are delighted to announce that Retinar has been awarded funding through the 2021 call for PICT startups from the Agencia Nacional para la Promoción de la Investigación, el Desarrollo Científico y la Innovación (Agencia I+D+i).</description>
     </item>
     <item>
       <title>Retinar Recognized by NVIDIA Corporation</title>
-      <link>http://localhost:1313/blog/2021-06-nvidia-hardware-copy/</link>
+      <link>https://retinar.com.ar/blog/2021-06-nvidia-hardware-copy/</link>
       <pubDate>Fri, 18 Jun 2021 10:07:21 +0600</pubDate>
-      <guid>http://localhost:1313/blog/2021-06-nvidia-hardware-copy/</guid>
+      <guid>https://retinar.com.ar/blog/2021-06-nvidia-hardware-copy/</guid>
       <description>Retinar is thrilled to announce that we have been selected as a member of the prestigious NVIDIA Applied Research Accelerator Program.</description>
     </item>
     <item>
       <title>Retinar Secures PICT 2019 Funding from Agencia I&#43;D&#43;i</title>
-      <link>http://localhost:1313/blog/2021-02-pict/</link>
+      <link>https://retinar.com.ar/blog/2021-02-pict/</link>
       <pubDate>Mon, 22 Feb 2021 18:51:36 +0600</pubDate>
-      <guid>http://localhost:1313/blog/2021-02-pict/</guid>
+      <guid>https://retinar.com.ar/blog/2021-02-pict/</guid>
       <description>Retinar is thrilled to announce that our project, titled &amp;ldquo;Characterization of Optic Nerve Head Morphology from Color Fundus Pictures Using Deep Learning&amp;rdquo; (CANOA: Caracterización Morfológica de la Cabeza del Nervio Óptico en Fotografías de Fondo de Ojo Mediante Aprendizaje Profundo), has been awarded a PICT 2019 grant by Agencia I+D+i, the national agency for funding research.</description>
     </item>
     <item>
       <title>Retinar Featured on Ciencia por Cientificxs</title>
-      <link>http://localhost:1313/blog/2021-05-cxc/</link>
+      <link>https://retinar.com.ar/blog/2021-05-cxc/</link>
       <pubDate>Mon, 15 Feb 2021 10:07:21 +0600</pubDate>
-      <guid>http://localhost:1313/blog/2021-05-cxc/</guid>
+      <guid>https://retinar.com.ar/blog/2021-05-cxc/</guid>
       <description>On October 5th of this year, I had the privilege of participating in the first episode of the new season of Ciencia por Cientificxs, the science outreach program on AbraTV, the UNICEN TV channel.</description>
     </item>
     <item>
       <title>Retinar Showcased on WOW Innovation</title>
-      <link>http://localhost:1313/blog/2021-02-wow/</link>
+      <link>https://retinar.com.ar/blog/2021-02-wow/</link>
       <pubDate>Mon, 15 Feb 2021 10:07:21 +0600</pubDate>
-      <guid>http://localhost:1313/blog/2021-02-wow/</guid>
+      <guid>https://retinar.com.ar/blog/2021-02-wow/</guid>
       <description>On February 5th of this year, Retinar had the honor of being featured on the WOW Innovation segment aired on Channel 8 of Mar del Plata.</description>
     </item>
     <item>
       <title>Retinar is the most voted initiative at Prendete 2020</title>
-      <link>http://localhost:1313/blog/2020-12-prendete/</link>
+      <link>https://retinar.com.ar/blog/2020-12-prendete/</link>
       <pubDate>Fri, 11 Dec 2020 12:52:36 +0600</pubDate>
-      <guid>http://localhost:1313/blog/2020-12-prendete/</guid>
+      <guid>https://retinar.com.ar/blog/2020-12-prendete/</guid>
       <description>We are thrilled to announce that Retinar has won the popular vote at Prendete 2020, the startup contest organized in Tandil to increase the visibility of innovative initiatives.</description>
     </item>
     <item>
       <title>Retinar receives a UNICEN&#39;s JOVIN Grant for R&amp;D</title>
-      <link>http://localhost:1313/blog/2020-09-prendete/</link>
+      <link>https://retinar.com.ar/blog/2020-09-prendete/</link>
       <pubDate>Wed, 18 Nov 2020 10:07:21 +0600</pubDate>
-      <guid>http://localhost:1313/blog/2020-09-prendete/</guid>
+      <guid>https://retinar.com.ar/blog/2020-09-prendete/</guid>
       <description>Retinar is proud to announce that our project, titled &amp;ldquo;Towards an Intelligent Platform for Remote Diabetic Retinopathy Screening: Quality Control in Fundus Photography Using Autoencoders,&amp;rdquo; has been awarded a JOVIN grant of AR$ 100,000 (approximately U$D 1000) by UNICEN.</description>
     </item>
     <item>
       <title>Retinar receives a UNICEN&#39;s JOVIN Grant for R&amp;D</title>
-      <link>http://localhost:1313/blog/2020-11-jovin/</link>
+      <link>https://retinar.com.ar/blog/2020-11-jovin/</link>
       <pubDate>Wed, 18 Nov 2020 10:07:21 +0600</pubDate>
-      <guid>http://localhost:1313/blog/2020-11-jovin/</guid>
+      <guid>https://retinar.com.ar/blog/2020-11-jovin/</guid>
       <description>Retinar is proud to announce that our project, titled &amp;ldquo;Towards an Intelligent Platform for Remote Diabetic Retinopathy Screening: Quality Control in Fundus Photography Using Autoencoders,&amp;rdquo; has been awarded a JOVIN grant of AR$ 100,000 (approximately U$D 1000) by UNICEN.</description>
     </item>
     <item>
       <title>Retinar joins Prendete 2020</title>
-      <link>http://localhost:1313/blog/2020-08-prendete/</link>
+      <link>https://retinar.com.ar/blog/2020-08-prendete/</link>
       <pubDate>Thu, 27 Aug 2020 12:52:36 +0600</pubDate>
-      <guid>http://localhost:1313/blog/2020-08-prendete/</guid>
+      <guid>https://retinar.com.ar/blog/2020-08-prendete/</guid>
       <description>We are thrilled to announce our participation in the 2020 edition of Prendete, an innovative business ideas contest.</description>
     </item>
     <item>
       <title>Our new website is live!</title>
-      <link>http://localhost:1313/blog/2020-08-website/</link>
+      <link>https://retinar.com.ar/blog/2020-08-website/</link>
       <pubDate>Sat, 22 Aug 2020 12:52:36 +0600</pubDate>
-      <guid>http://localhost:1313/blog/2020-08-website/</guid>
+      <guid>https://retinar.com.ar/blog/2020-08-website/</guid>
       <description>We are delighted to announce the launch of our new website. This platform is designed to keep you informed about all our latest developments and news in real time.</description>
     </item>
   </channel>
