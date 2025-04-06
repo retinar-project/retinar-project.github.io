@@ -351,6 +351,16 @@
                 />
   </url><url>
     <loc>https://retinar.com.ar/es/history/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://retinar.com.ar/history/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://retinar.com.ar/es/history/"
+                />
   </url><url>
     <loc>https://retinar.com.ar/es/privacy-policy/</loc>
     <xhtml:link
@@ -400,18 +410,6 @@
                 rel="alternate"
                 hreflang="es"
                 href="https://retinar.com.ar/es/tags/"
-                />
-  </url><url>
-    <loc>https://retinar.com.ar/es/_deprectated-about-us/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://retinar.com.ar/_deprectated-about-us/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://retinar.com.ar/es/_deprectated-about-us/"
                 />
   </url><url>
     <loc>https://retinar.com.ar/es/terms-conditions/</loc>

@@ -1,0 +1,21 @@
+/* Custom CSS for Retinar Website */
+
+/* Two-column list for collaborators */
+.two-column-list {
+  padding-left: 0; /* Reset default padding if needed */
+}
+
+/* Apply columns only on medium screens and up (Bootstrap md breakpoint: 768px) */
+@media (min-width: 768px) {
+  .two-column-list {
+    column-count: 2;
+    column-gap: 2rem; /* Adjust gap between columns as needed */
+  }
+
+  /* Optional: Prevent list items from breaking inside columns */
+  .two-column-list li {
+    break-inside: avoid-column;
+    page-break-inside: avoid; /* For older browsers */
+    padding-bottom: 0.5rem; /* Add some spacing below items */
+  }
+} 

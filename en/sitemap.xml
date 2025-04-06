@@ -314,18 +314,6 @@
                 href="https://retinar.com.ar/blog/2020-08-website/"
                 />
   </url><url>
-    <loc>https://retinar.com.ar/_deprectated-about-us/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://retinar.com.ar/es/_deprectated-about-us/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://retinar.com.ar/_deprectated-about-us/"
-                />
-  </url><url>
     <loc>https://retinar.com.ar/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -372,6 +360,18 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://retinar.com.ar/team/"
+                />
+  </url><url>
+    <loc>https://retinar.com.ar/history/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://retinar.com.ar/es/history/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://retinar.com.ar/history/"
                 />
   </url><url>
     <loc>https://retinar.com.ar/pricing/</loc>
