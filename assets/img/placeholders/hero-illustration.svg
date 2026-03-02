@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">RETINA VISUAL</title>
+  <desc id="desc">Placeholder for RETINA VISUAL</desc>
+  <rect width="100%" height="100%" fill="#050505"/>
+  <rect x="0" y="0" width="900" height="180" fill="#000000"/>
+  <rect x="45" y="37" width="225" height="112" fill="#CEF71F"/>
+  <text x="71" y="93" font-family="'IBM Plex Sans', Arial, sans-serif" font-size="40" font-weight="700" fill="#000000">retinar</text>
+
+  <rect x="50" y="225" width="800" height="450" rx="26" fill="#101010" stroke="#2a2a2a" stroke-width="3"/>
+  <rect x="75" y="300" width="750" height="300" rx="18" fill="#151515" stroke="#00A3FF" stroke-opacity="0.55" stroke-width="2"/>
+
+  <rect x="75" y="720" width="720" height="112" fill="#CEF71F"/>
+  <text x="97" y="789" font-family="'IBM Plex Sans', Arial, sans-serif" font-size="45" font-weight="800" fill="#000000">RETINA VISUAL</text>
+
+  <text x="97" y="848" font-family="'IBM Plex Sans', Arial, sans-serif" font-size="26" font-weight="500" fill="#111111">Replace with retina / AI concept illustration</text>
+
+  <circle cx="836" cy="810" r="34" fill="#CEF71F"/>
+  <path d="M824 810h25" stroke="#000000" stroke-width="4" stroke-linecap="round"/>
+  <path d="M843 802l10 8l-10 8" fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round"/>
+</svg>

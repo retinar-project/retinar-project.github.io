@@ -1,18 +1,67 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <sitemap>
-    <loc>https://retinar.com.ar/en/sitemap.xml</loc>
-    
-      <lastmod>2025-04-01T10:00:00-03:00</lastmod>
-    
-  </sitemap>
-  
-  <sitemap>
-    <loc>https://retinar.com.ar/es/sitemap.xml</loc>
-    
-      <lastmod>2025-04-01T10:00:00-03:00</lastmod>
-    
-  </sitemap>
-  
-</sitemapindex>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://retinar.com.ar/blog/ia-human-in-the-loop-salud/</loc>
+<lastmod>2026-03-02T00:00:00-03:00</lastmod>
+</url>
+<url>
+<loc>https://retinar.com.ar/blog/teleoftalmologia-modelos-implementacion-hospitales-clinicas-campanas/</loc>
+<lastmod>2026-03-02T00:00:00-03:00</lastmod>
+</url>
+<url>
+<loc>https://retinar.com.ar/en/blog/human-in-the-loop-ai-in-healthcare/</loc>
+<lastmod>2026-03-02T00:00:00-03:00</lastmod>
+</url>
+<url>
+<loc>https://retinar.com.ar/en/blog/teleophthalmology-implementation-models-hospitals-clinics-campaigns/</loc>
+<lastmod>2026-03-02T00:00:00-03:00</lastmod>
+</url>
+<url>
+<loc>https://retinar.com.ar/faq/</loc>
+</url>
+<url>
+<loc>https://retinar.com.ar/contacto/</loc>
+</url>
+<url>
+<loc>https://retinar.com.ar/terminos/</loc>
+</url>
+<url>
+<loc>https://retinar.com.ar/blog/</loc>
+</url>
+<url>
+<loc>https://retinar.com.ar/privacidad/</loc>
+</url>
+<url>
+<loc>https://retinar.com.ar/en/contact/</loc>
+</url>
+<url>
+<loc>https://retinar.com.ar/en/privacy/</loc>
+</url>
+<url>
+<loc>https://retinar.com.ar/en/faq/</loc>
+</url>
+<url>
+<loc>https://retinar.com.ar/en/blog/</loc>
+</url>
+<url>
+<loc>https://retinar.com.ar/en/terms/</loc>
+</url>
+<url>
+<loc>https://retinar.com.ar/en/about/</loc>
+</url>
+<url>
+<loc>https://retinar.com.ar/en/</loc>
+</url>
+<url>
+<loc>https://retinar.com.ar/</loc>
+</url>
+<url>
+<loc>https://retinar.com.ar/sobre/</loc>
+</url>
+<url>
+<loc>https://retinar.com.ar/recursos/</loc>
+</url>
+<url>
+<loc>https://retinar.com.ar/en/resources/</loc>
+</url>
+</urlset>

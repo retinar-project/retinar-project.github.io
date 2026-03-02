@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">TELEOPHTHALMOLOGY IMPLEMENTATION</title>
+  <desc id="desc">Placeholder image for teleophthalmology implementation article</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#041012"/>
+      <stop offset="100%" stop-color="#0f2024"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="150" fill="#06161a"/>
+  <rect x="64" y="30" width="280" height="90" fill="#CEF71F"/>
+  <text x="88" y="85" font-family="'IBM Plex Sans', Arial, sans-serif" font-size="36" font-weight="700" fill="#031010">retinar</text>
+
+  <rect x="80" y="210" width="1040" height="360" rx="24" fill="#0b1a1f" stroke="#2c3e45" stroke-width="3"/>
+  <rect x="120" y="255" width="260" height="270" rx="16" fill="#122830" stroke="#2e9dd2" stroke-opacity="0.7" stroke-width="2"/>
+  <rect x="420" y="255" width="320" height="270" rx="16" fill="#122830" stroke="#2e9dd2" stroke-opacity="0.7" stroke-width="2"/>
+  <rect x="780" y="255" width="300" height="270" rx="16" fill="#122830" stroke="#2e9dd2" stroke-opacity="0.7" stroke-width="2"/>
+
+  <text x="146" y="314" font-family="'IBM Plex Sans', Arial, sans-serif" font-size="24" font-weight="700" fill="#d8f4ff">Hospital</text>
+  <text x="146" y="352" font-family="'IBM Plex Sans', Arial, sans-serif" font-size="19" font-weight="500" fill="#a8d9ee">Capture + triage</text>
+  <text x="146" y="382" font-family="'IBM Plex Sans', Arial, sans-serif" font-size="19" font-weight="500" fill="#a8d9ee">Referral network</text>
+
+  <text x="446" y="314" font-family="'IBM Plex Sans', Arial, sans-serif" font-size="24" font-weight="700" fill="#d8f4ff">Private Clinic</text>
+  <text x="446" y="352" font-family="'IBM Plex Sans', Arial, sans-serif" font-size="19" font-weight="500" fill="#a8d9ee">SLA reporting</text>
+  <text x="446" y="382" font-family="'IBM Plex Sans', Arial, sans-serif" font-size="19" font-weight="500" fill="#a8d9ee">Integrated workflow</text>
+
+  <text x="806" y="314" font-family="'IBM Plex Sans', Arial, sans-serif" font-size="24" font-weight="700" fill="#d8f4ff">Campaigns</text>
+  <text x="806" y="352" font-family="'IBM Plex Sans', Arial, sans-serif" font-size="19" font-weight="500" fill="#a8d9ee">PHC + mobile units</text>
+  <text x="806" y="382" font-family="'IBM Plex Sans', Arial, sans-serif" font-size="19" font-weight="500" fill="#a8d9ee">Closed-loop follow-up</text>
+
+  <path d="M380 390h40" stroke="#CEF71F" stroke-width="4" stroke-linecap="round"/>
+  <path d="M740 390h40" stroke="#CEF71F" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="420" cy="390" r="5" fill="#CEF71F"/>
+  <circle cx="780" cy="390" r="5" fill="#CEF71F"/>
+
+  <rect x="80" y="620" width="920" height="110" fill="#CEF71F"/>
+  <text x="106" y="685" font-family="'IBM Plex Sans', Arial, sans-serif" font-size="40" font-weight="800" fill="#041012">TELEOPHTHALMOLOGY IMPLEMENTATION</text>
+
+  <circle cx="1090" cy="675" r="36" fill="#CEF71F"/>
+  <path d="M1076 675h28" stroke="#041012" stroke-width="4" stroke-linecap="round"/>
+  <path d="M1098 665l12 10l-12 10" fill="none" stroke="#041012" stroke-width="4" stroke-linecap="round"/>
+</svg>

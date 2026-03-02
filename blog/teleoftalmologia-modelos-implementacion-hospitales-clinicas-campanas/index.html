@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="es">
+<head>
+  
+  
+  
+  
+  
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Teleoftalmología: modelos de implementación en hospitales, clínicas y campañas</title>
+  <meta name="description" content="Tres modelos operativos (hospital, red privada y campañas) con roles, flujo, requisitos técnicos e indicadores para implementar teleoftalmología sin fricción.">
+
+  <link rel="canonical" href="https://retinar.com.ar/blog/teleoftalmologia-modelos-implementacion-hospitales-clinicas-campanas/">
+  
+    <link rel="alternate" hreflang="es" href="https://retinar.com.ar/blog/teleoftalmologia-modelos-implementacion-hospitales-clinicas-campanas/">
+    
+      <link rel="alternate" hreflang="en" href="https://retinar.com.ar/en/blog/teleophthalmology-implementation-models-hospitals-clinics-campaigns/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://retinar.com.ar/">
+  
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Retinar">
+  <meta property="og:title" content="Teleoftalmología: modelos de implementación en hospitales, clínicas y campañas">
+  <meta property="og:description" content="Tres modelos operativos (hospital, red privada y campañas) con roles, flujo, requisitos técnicos e indicadores para implementar teleoftalmología sin fricción.">
+  <meta property="og:url" content="https://retinar.com.ar/blog/teleoftalmologia-modelos-implementacion-hospitales-clinicas-campanas/">
+  <meta property="og:image" content="https://retinar.com.ar/assets/img/placeholders/resource-retinografia.png">
+  <meta property="og:locale" content="es_AR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Teleoftalmología: modelos de implementación en hospitales, clínicas y campañas">
+  <meta name="twitter:description" content="Tres modelos operativos (hospital, red privada y campañas) con roles, flujo, requisitos técnicos e indicadores para implementar teleoftalmología sin fricción.">
+  <meta name="twitter:image" content="https://retinar.com.ar/assets/img/placeholders/resource-retinografia.png">
+
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@600;700&family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/assets/img/placeholders/brand-logo.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body class="page-resource">
+  
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+  
+
+  
+
+
+
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="/">
+      <img
+        class="brand-logo"
+        src="/assets/img/logos/retinar-wordmark.svg"
+        alt=""
+        width="1768"
+        height="806"
+        loading="eager"
+        decoding="async"
+        aria-hidden="true"
+      >
+      <span class="sr-only">Retinar</span>
+    </a>
+
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+      <span class="sr-only">Menú</span>
+    </button>
+
+    <nav id="primary-nav" class="primary-nav" data-primary-nav>
+      <a class="language-switch" href="/en/blog/teleophthalmology-implementation-models-hospitals-clinics-campaigns/" aria-label="Ver sitio en inglés">EN</a>
+      <div class="social-links header-social-links" aria-label="Redes sociales">
+        <a
+          href="https://www.linkedin.com/company/retinar"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn de Retinar"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6.36 8.09a2.09 2.09 0 1 1 0-4.18 2.09 2.09 0 0 1 0 4.18Zm1.77 12.09H4.58V9.9h3.55v10.28Zm12.05 0h-3.54v-5.23c0-1.25-.03-2.85-1.74-2.85-1.74 0-2 1.36-2 2.76v5.32H9.35V9.9h3.4v1.4h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.43v5.3Z"></path>
+          </svg>
+          <span class="sr-only">LinkedIn</span>
+        </a>
+        <a
+          href="https://www.instagram.com/retinararg/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram de Retinar"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.9a3.85 3.85 0 0 0-3.85 3.85v8.5a3.85 3.85 0 0 0 3.85 3.85h8.5a3.85 3.85 0 0 0 3.85-3.85v-8.5a3.85 3.85 0 0 0-3.85-3.85h-8.5Zm8.9 1.5a1.35 1.35 0 1 1 0 2.7 1.35 1.35 0 0 1 0-2.7ZM12 7.15a4.85 4.85 0 1 1 0 9.7 4.85 4.85 0 0 1 0-9.7Zm0 1.9a2.95 2.95 0 1 0 0 5.9 2.95 2.95 0 0 0 0-5.9Z"></path>
+          </svg>
+          <span class="sr-only">Instagram</span>
+        </a>
+      </div>
+      <ul>
+        
+          <li>
+            <a href="/#como-funciona" class="">Producto</a>
+          </li>
+        
+          <li>
+            <a href="/#producto" class="">Impacto</a>
+          </li>
+        
+          <li>
+            <a href="/#para-quien" class="">Para quiénes</a>
+          </li>
+        
+          <li>
+            <a href="/sobre/" class="">Sobre Retinar</a>
+          </li>
+        
+          <li>
+            <a href="/blog/" class="">Blog</a>
+          </li>
+        
+          <li>
+            <a href="/contacto/" class="nav-cta">Contacto</a>
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <main id="main">
+
+<article class="resource-article">
+  <header class="page-hero section-dark">
+    <div class="container">
+      <p class="resource-meta">Implementación y operaciones</p>
+      <h1>Teleoftalmología: modelos de implementación en hospitales, clínicas y campañas</h1>
+      <p class="lead">Tres modelos operativos (hospital, red privada y campañas) con roles, flujo, requisitos técnicos e indicadores para implementar teleoftalmología sin fricción.</p>
+      
+        <figure class="resource-hero-image">
+          <img src="/assets/img/placeholders/resource-retinografia.png" alt="Teleoftalmología: modelos de implementación en hospitales, clínicas y campañas">
+        </figure>
+      
+    </div>
+  </header>
+
+  <section class="page-content section">
+    <div class="container prose"><p>La teleoftalmología ya no es una novedad: es una respuesta pragmática a un problema estructural. Para enfermedades frecuentes y silenciosas, como la <strong>retinopatía diabética (RD)</strong>, el desafío no es “si se puede detectar”, sino <strong>cómo sostener cobertura anual</strong> con tiempos razonables y sin saturar oftalmología.</p>
+
+<p>Las guías clínicas remarcan la necesidad de controles periódicos de retina en personas con diabetes y el valor de detectar temprano para tratar a tiempo (por ejemplo, <strong>controles anuales en muchos escenarios</strong> según recomendaciones de práctica clínica). Fuentes útiles para orientar criterios y conversación clínica:
+- ADA Standards of Care (sección retinopatía): https://diabetesjournals.org/care
+- AAO Preferred Practice Pattern – Diabetic Retinopathy: https://www.aao.org/education/preferred-practice-pattern/diabetic-retinopathy-ppp</p>
+
+<p>Y, desde el punto de vista de salud pública, la OMS encuadra la telemedicina como una intervención digital que puede <strong>mejorar acceso</strong> si se implementa con gobernanza, calidad y sin reemplazar el fortalecimiento del sistema:<br />
+https://www.who.int/publications/i/item/9789241550505</p>
+
+<p>En este artículo vas a encontrar <strong>tres modelos de implementación</strong> (hospitales, clínicas/redes privadas y campañas) con un enfoque operativo (no “powerpoints”), incluyendo requisitos mínimos, roles, indicadores y errores comunes. Al final, te contamos cómo lo resolvemos en <strong>Retinar</strong> en contextos reales de Argentina y Latinoamérica.</p>
+
+<hr />
+
+<h2 id="antes-de-elegir-modelo-el-circuito-mnimo-que-toda-teleoftalmologa-necesita">Antes de elegir modelo: el “circuito mínimo” que toda teleoftalmología necesita</h2>
+
+<p>Más allá del contexto (público/privado/campaña), un programa sostenible suele tener estos componentes:</p>
+
+<p>1) <strong>Punto de captura</strong><br />
+CAPS/APS, guardia, consultorio, clínica, unidad móvil u hospital.</p>
+
+<p>2) <strong>Control de calidad</strong><br />
+Reglas y/o IA para reducir “imágenes no evaluables” y evitar revisitas innecesarias.</p>
+
+<p>3) <strong>Priorización (triage)</strong><br />
+Para que el especialista mire primero lo urgente (y no se ahogue en normales).</p>
+
+<p>4) <strong>Lectura e informe remoto</strong><br />
+Oftalmología informa donde agrega valor: confirmación, severidad, plan y derivación.</p>
+
+<p>5) <strong>Derivación y cierre del loop</strong><br />
+Turno, referencia, tratamiento y seguimiento (si no cerrás el loop, la cobertura “no cuenta”).</p>
+
+<p>6) <strong>Registro y trazabilidad</strong><br />
+Quién capturó, qué se decidió, cuándo y con qué datos. Si hay software médico involucrado, esto además se alinea con marcos de evaluación clínica como IMDRF SaMD:<br />
+https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-170921-samd-n41-clinical-evaluation_1.pdf</p>
+
+<p>Con ese circuito en mente, pasemos a los modelos.</p>
+
+<hr />
+
+<h2 id="modelo-1-teleoftalmologa-en-hospitales-centralizada-y-con-red-de-derivacin">Modelo 1: Teleoftalmología en hospitales (centralizada y con red de derivación)</h2>
+
+<p><strong>Cuándo conviene</strong>
+- Hospital con alta demanda y lista de espera para fondo de ojo/retina.
+- Hospital cabecera de una región que recibe derivaciones.
+- Necesidad de ordenar flujos (internación, guardia, diabetes, clínica médica).</p>
+
+<p><strong>Cómo se ve el flujo</strong>
+1) Captura en hospital (o en hospitales periféricos asociados).<br />
+2) Control de calidad + re-captura inmediata si hace falta.<br />
+3) Priorización (por reglas clínicas y/o IA).<br />
+4) Lectura remota por oftalmología (intra-hospital o pool regional).<br />
+5) Derivación a retina / tratamiento / control (según severidad).</p>
+
+<p><strong>Roles típicos</strong>
+- Técnico/a capturador (enfermería, técnico en imágenes, personal entrenado).
+- Coordinación operativa (turnos, campaña interna, tableros).
+- Oftalmólogo/a lector (y segundo lector para auditoría cuando aplica).
+- Referente de TI / interoperabilidad (HCE, PACS, mensajería).</p>
+
+<p><strong>Requisitos “de verdad” (lo que suele romper pilotos)</strong>
+- Acuerdos de derivación (cupos/turnos) y tiempos de respuesta.
+- Conectividad estable y un plan offline (para capturas en momentos críticos).
+- Indicadores simples (ver sección de métricas).
+- Política de excepciones: ¿qué pasa si la imagen no es evaluable? ¿y si hay hallazgos incidentales?</p>
+
+<p><strong>Ventaja</strong>
+Gobernanza y continuidad: el hospital puede actuar como “centro de lectura” regional.</p>
+
+<p><strong>Riesgo</strong>
+Si no se diseña triage, el hospital termina siendo un embudo (más capturas, más backlog).</p>
+
+<hr />
+
+<h2 id="modelo-2-teleoftalmologa-en-clnicas-y-redes-privadas-eficiencia--recupero">Modelo 2: Teleoftalmología en clínicas y redes privadas (eficiencia + recupero)</h2>
+
+<p><strong>Cuándo conviene</strong>
+- Clínica con consultorios + diagnóstico por imágenes.
+- Red de prestadores que quiere sumar un servicio de retina sin sumar carga médica.
+- Obras sociales/prepagas que buscan aumentar cobertura y bajar costos por complicaciones tardías.</p>
+
+<p><strong>Cómo se ve el flujo</strong>
+1) Captura en clínica o consultorios satélite.<br />
+2) Control de calidad estandarizado (reduce reclamos y repeticiones).<br />
+3) Priorización de riesgo para lectura.<br />
+4) Informe remoto y recomendación (control / derivación / urgencia).<br />
+5) Turno interno para tratamiento (retina, láser, anti-VEGF, glaucoma, etc.) o derivación coordinada.</p>
+
+<p><strong>Claves del modelo privado</strong>
+- <strong>SLA</strong> como producto: “informe en 24 a 72 h” según severidad.
+- Integración liviana: export PDF, API o integración con HCE según madurez.
+- Comunicación al paciente: recordatorios, instrucciones y seguimiento del caso (sin fricción).</p>
+
+<p><strong>Ventaja</strong>
+Mejora productividad: el especialista se concentra en patología y tratamientos.</p>
+
+<p><strong>Riesgo</strong>
+Si se diseña como “una práctica más” y no como circuito, queda como servicio boutique, sin escala.</p>
+
+<hr />
+
+<h2 id="modelo-3-campaas-y-atencin-primaria-aps-cobertura-masiva-y-territorial">Modelo 3: Campañas y atención primaria (APS) (cobertura masiva y territorial)</h2>
+
+<p><strong>Cuándo conviene</strong>
+- Municipios, regiones sanitarias, hospitales con área programática.
+- Programas de diabetes y enfermedades crónicas que ya captan pacientes.
+- Zonas con barreras de acceso (distancia, turnos, costo, falta de especialistas).</p>
+
+<p><strong>Cómo se ve el flujo</strong>
+1) Captura en CAPS/APS o unidad móvil (agenda local + captación oportunista).<br />
+2) Control de calidad en el momento (ideal) para evitar que el paciente “se vaya sin estudio útil”.<br />
+3) Priorización inmediata para derivación rápida de casos de riesgo.<br />
+4) Lectura remota desde un centro lector.<br />
+5) Derivación a hospital/servicio de retina con cupos protegidos.<br />
+6) Seguimiento: si el paciente no asiste, re-contacto y reprogramación.</p>
+
+<p><strong>Lecciones aprendidas</strong>
+- La logística define el éxito: horarios, energía, conectividad, capacitación, reposición.
+- El mayor enemigo es el “cierre del loop”: sin derivación efectiva, la campaña no impacta.</p>
+
+<p><strong>Ventaja</strong>
+Maximiza acceso y equidad territorial.</p>
+
+<p><strong>Riesgo</strong>
+Sin acuerdos de referencia y seguimiento, se transforma en “captura por captura”.</p>
+
+<hr />
+
+<h2 id="indicadores-mnimos-para-saber-si-funciona-en-30-das">Indicadores mínimos (para saber si funciona en 30 días)</h2>
+
+<p>No necesitás 40 métricas. Con estas 8, podés operar:</p>
+
+<p>1) <strong>Cobertura</strong>: pacientes elegibles vs tamizados (por mes y por efector).<br />
+2) <strong>Utilidad de imagen</strong>: porcentaje evaluables / no evaluables (y causas).<br />
+3) <strong>Tiempo a pre-triage</strong>: desde captura a priorización (minutos/horas).<br />
+4) <strong>Tiempo a informe</strong>: desde captura a informe final (SLA).<br />
+5) <strong>Tasa de derivación</strong>: porcentaje que requiere control especializado / urgencia.<br />
+6) <strong>Tiempo a turno efectivo</strong>: derivado a atendido (días).<br />
+7) <strong>Cierre del loop</strong>: porcentaje de derivados que completan atención.<br />
+8) <strong>Auditoría</strong>: tasa de segunda lectura / discordancias (para calidad).</p>
+
+<hr />
+
+<h2 id="errores-comunes-y-cmo-evitarlos">Errores comunes (y cómo evitarlos)</h2>
+
+<p><strong>Error 1: “Teleoftalmología = videollamada”</strong><br />
+En retina, lo escalable suele ser <strong>telelectura de imágenes + circuito de derivación</strong>, no consulta por video.</p>
+
+<p><strong>Error 2: Capturar sin control de calidad</strong><br />
+Aumenta recapturas, reclamos y pérdidas de seguimiento.</p>
+
+<p><strong>Error 3: No definir a quién se deriva y con qué prioridad</strong><br />
+El triage (por reglas y/o IA) es lo que evita saturación.</p>
+
+<p><strong>Error 4: No integrar (aunque sea de forma simple)</strong><br />
+Aunque no haya API al inicio, al menos: export, registro, identificadores, trazabilidad, tableros.</p>
+
+<p><strong>Error 5: No diseñar gobernanza y evaluación</strong><br />
+Si hay IA involucrada, necesitás evidencia, monitoreo y un plan de mejora continua alineado con buenas prácticas (por ejemplo, IMDRF SaMD como marco general de evaluación clínica).</p>
+
+<hr />
+
+<h2 id="cmo-lo-implementamos-en-retinar-y-por-qu-se-adapta-a-argentina-y-latam">Cómo lo implementamos en Retinar (y por qué se adapta a Argentina y LATAM)</h2>
+
+<p>En Retinar diseñamos teleoftalmología para <strong>operar en campo</strong>: red pública, clínicas y campañas, con heterogeneidad de equipamiento y necesidad de escalar sin sumar carga médica innecesaria.</p>
+
+<p>En la práctica, esto se traduce en:
+- <strong>Captura descentralizada</strong> en APS, clínicas u hospitales, con un flujo pensado para minimizar recapturas.
+- <strong>Asistencia y control de calidad</strong> para asegurar estudios utilizables (y reducir “no gradables”).
+- <strong>Prediagnóstico/triage por IA</strong> para priorizar casos de riesgo y acelerar derivación.
+- <strong>Lectura e informe remoto</strong>: el especialista interviene donde agrega valor.
+- <strong>Compatibilidad multi-cámara</strong> (aprovecha parque instalado) e interoperabilidad por API cuando el sistema del efector lo permite.</p>
+
+<p>El objetivo no es “poner IA”, sino <strong>hacer que el programa funcione</strong>: más cobertura, mejores tiempos y derivación efectiva.</p>
+
+<hr />
+
+<h2 id="cta-armemos-tu-modelo-en-2-semanas-sin-piloto-eterno">CTA: armemos tu modelo en 2 semanas (sin piloto eterno)</h2>
+
+<p>Si estás en Argentina o Latinoamérica y querés implementar teleoftalmología para retina en <strong>hospital</strong>, <strong>clínica/red</strong> o <strong>campañas/APS</strong>, te ayudamos a elegir el modelo correcto y a bajarlo a operación con métricas desde el día 1.</p>
+
+<p><strong>Contactanos para coordinar una demo de Retinar y un plan de implementación por etapas</strong> (con tu equipamiento, tus recursos y tu circuito de derivación).</p>
+</div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container resource-cta-grid">
+      <div>
+        <h2>Implementá Retinar y reducí los casos de ceguera por diabetes</h2>
+        <p>Compartinos tu contexto institucional y te proponemos un plan de implementación.</p>
+      </div>
+      <div>
+        <a href="/#demo" class="button button-primary">Contactanos</a>
+      </div>
+    </div>
+  </section>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Teleoftalmología: modelos de implementación en hospitales, clínicas y campañas",
+  "description": "Tres modelos operativos (hospital, red privada y campañas) con roles, flujo, requisitos técnicos e indicadores para implementar teleoftalmología sin fricción.",
+  "datePublished": "2026-03-02T00:00:00-03:00",
+  "dateModified": "2026-03-02T00:00:00-03:00",
+  "inLanguage": "es",
+  "author": {
+    "@type": "Organization",
+    "name": "Retinar"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Retinar",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://retinar.com.ar/assets/img/placeholders/brand-logo.png"
+    }
+  },
+  "mainEntityOfPage": "https://retinar.com.ar/blog/teleoftalmologia-modelos-implementacion-hospitales-clinicas-campanas/"
+}
+</script>
+</main>
+  
+
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col footer-col-brand">
+      <a class="brand footer-brand-link" href="/">
+        <img
+          class="footer-brand-logo"
+          src="/assets/img/logos/retinar-wordmark.svg"
+          alt=""
+          width="1768"
+          height="806"
+          loading="lazy"
+          decoding="async"
+          aria-hidden="true"
+        >
+        <span class="sr-only">Retinar</span>
+      </a>
+      <p class="footer-tagline">IA para teleoftalmología y detección temprana de ceguera prevenible.</p>
+      <div class="footer-company-details" aria-label="Información societaria">
+        <p class="footer-company-line footer-company-line-identity">
+          <strong>Retinar SAS</strong> (CUIT 30-71892218-2)
+        </p>
+        <p class="footer-company-line">
+          <span class="footer-company-label">Domicilio legal:</span>
+          <span class="footer-company-value">San Francisco 1678 (7000), Tandil, BA, Argentina</span>
+        </p>
+        <p class="footer-company-line">
+          <span class="footer-company-label">Domicilio comercial:</span>
+          <span class="footer-company-value">Instituto PLADEMA, Campus Universitario Tandil, Paraje Arroyo Seco S/N (7000), Tandil, BA, Argentina</span>
+        </p>
+        <p class="footer-company-line">
+          <span class="footer-company-label">Habilitación:</span>
+          <span class="footer-company-value">Nº 54151 (Dirección de Farmacias, Ministerio de Salud de PBA). En trámite ante ANMAT.</span>
+        </p>
+      </div>
+      <div class="social-links footer-social-links" aria-label="Redes sociales">
+        <a
+          href="https://www.linkedin.com/company/retinar"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn de Retinar"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6.36 8.09a2.09 2.09 0 1 1 0-4.18 2.09 2.09 0 0 1 0 4.18Zm1.77 12.09H4.58V9.9h3.55v10.28Zm12.05 0h-3.54v-5.23c0-1.25-.03-2.85-1.74-2.85-1.74 0-2 1.36-2 2.76v5.32H9.35V9.9h3.4v1.4h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.43v5.3Z"></path>
+          </svg>
+          <span class="sr-only">LinkedIn</span>
+        </a>
+        <a
+          href="https://www.instagram.com/retinararg/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram de Retinar"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.9a3.85 3.85 0 0 0-3.85 3.85v8.5a3.85 3.85 0 0 0 3.85 3.85h8.5a3.85 3.85 0 0 0 3.85-3.85v-8.5a3.85 3.85 0 0 0-3.85-3.85h-8.5Zm8.9 1.5a1.35 1.35 0 1 1 0 2.7 1.35 1.35 0 0 1 0-2.7ZM12 7.15a4.85 4.85 0 1 1 0 9.7 4.85 4.85 0 0 1 0-9.7Zm0 1.9a2.95 2.95 0 1 0 0 5.9 2.95 2.95 0 0 0 0-5.9Z"></path>
+          </svg>
+          <span class="sr-only">Instagram</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col footer-col-nav">
+      <h2 class="footer-nav-title">Navegación</h2>
+      <div class="footer-nav-columns">
+        <ul class="footer-nav-list">
+          
+            <li><a href="/#como-funciona">Producto</a></li>
+          
+            <li><a href="/#producto">Impacto</a></li>
+          
+            <li><a href="/#para-quien">Para quiénes</a></li>
+          
+            <li><a href="/blog/">Blog</a></li>
+          
+        </ul>
+        <ul class="footer-nav-list">
+          
+            <li><a href="/sobre/">Sobre Retinar</a></li>
+          
+            <li><a href="/faq/">Preguntas frecuentes</a></li>
+          
+            <li><a href="/privacidad/">Privacidad</a></li>
+          
+            <li><a href="/terminos/">Términos</a></li>
+          
+            <li><a href="/contacto/">Contacto</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>Copyright 2026 Retinar.</small>
+  </div>
+</footer>
+
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

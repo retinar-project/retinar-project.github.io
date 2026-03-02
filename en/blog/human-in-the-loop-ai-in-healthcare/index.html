@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+  
+  
+  
+  
+  
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI in healthcare: what human-in-the-loop means in practice</title>
+  <meta name="description" content="How to design real human oversight in clinical AI systems: roles, thresholds, traceability, and metrics for safe operation.">
+
+  <link rel="canonical" href="https://retinar.com.ar/en/blog/human-in-the-loop-ai-in-healthcare/">
+  
+    <link rel="alternate" hreflang="en" href="https://retinar.com.ar/en/blog/human-in-the-loop-ai-in-healthcare/">
+    
+      <link rel="alternate" hreflang="es" href="https://retinar.com.ar/blog/ia-human-in-the-loop-salud/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://retinar.com.ar/">
+  
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Retinar">
+  <meta property="og:title" content="AI in healthcare: what human-in-the-loop means in practice">
+  <meta property="og:description" content="How to design real human oversight in clinical AI systems: roles, thresholds, traceability, and metrics for safe operation.">
+  <meta property="og:url" content="https://retinar.com.ar/en/blog/human-in-the-loop-ai-in-healthcare/">
+  <meta property="og:image" content="https://retinar.com.ar/assets/img/placeholders/resource-hitl.png">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI in healthcare: what human-in-the-loop means in practice">
+  <meta name="twitter:description" content="How to design real human oversight in clinical AI systems: roles, thresholds, traceability, and metrics for safe operation.">
+  <meta name="twitter:image" content="https://retinar.com.ar/assets/img/placeholders/resource-hitl.png">
+
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@600;700&family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/assets/img/placeholders/brand-logo.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body class="page-resource">
+  
+    <a class="skip-link" href="#main">Skip to content</a>
+  
+
+  
+
+
+
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="/en/">
+      <img
+        class="brand-logo"
+        src="/assets/img/logos/retinar-wordmark.svg"
+        alt=""
+        width="1768"
+        height="806"
+        loading="eager"
+        decoding="async"
+        aria-hidden="true"
+      >
+      <span class="sr-only">Retinar</span>
+    </a>
+
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+      <span class="sr-only">Menu</span>
+    </button>
+
+    <nav id="primary-nav" class="primary-nav" data-primary-nav>
+      <a class="language-switch" href="/blog/ia-human-in-the-loop-salud/" aria-label="View site in Spanish">ES</a>
+      <div class="social-links header-social-links" aria-label="Social media">
+        <a
+          href="https://www.linkedin.com/company/retinar"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Retinar on LinkedIn"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6.36 8.09a2.09 2.09 0 1 1 0-4.18 2.09 2.09 0 0 1 0 4.18Zm1.77 12.09H4.58V9.9h3.55v10.28Zm12.05 0h-3.54v-5.23c0-1.25-.03-2.85-1.74-2.85-1.74 0-2 1.36-2 2.76v5.32H9.35V9.9h3.4v1.4h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.43v5.3Z"></path>
+          </svg>
+          <span class="sr-only">LinkedIn</span>
+        </a>
+        <a
+          href="https://www.instagram.com/retinararg/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Retinar on Instagram"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.9a3.85 3.85 0 0 0-3.85 3.85v8.5a3.85 3.85 0 0 0 3.85 3.85h8.5a3.85 3.85 0 0 0 3.85-3.85v-8.5a3.85 3.85 0 0 0-3.85-3.85h-8.5Zm8.9 1.5a1.35 1.35 0 1 1 0 2.7 1.35 1.35 0 0 1 0-2.7ZM12 7.15a4.85 4.85 0 1 1 0 9.7 4.85 4.85 0 0 1 0-9.7Zm0 1.9a2.95 2.95 0 1 0 0 5.9 2.95 2.95 0 0 0 0-5.9Z"></path>
+          </svg>
+          <span class="sr-only">Instagram</span>
+        </a>
+      </div>
+      <ul>
+        
+          <li>
+            <a href="/en/#como-funciona" class="">Product</a>
+          </li>
+        
+          <li>
+            <a href="/en/#producto" class="">Impact</a>
+          </li>
+        
+          <li>
+            <a href="/en/#para-quien" class="">Who it's for</a>
+          </li>
+        
+          <li>
+            <a href="/en/about/" class="">About Retinar</a>
+          </li>
+        
+          <li>
+            <a href="/en/blog/" class="">Blog</a>
+          </li>
+        
+          <li>
+            <a href="/en/contact/" class="nav-cta">Contact</a>
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <main id="main">
+
+<article class="resource-article">
+  <header class="page-hero section-dark">
+    <div class="container">
+      <p class="resource-meta">AI in ophthalmology</p>
+      <h1>AI in healthcare: what human-in-the-loop means in practice</h1>
+      <p class="lead">How to design real human oversight in clinical AI systems: roles, thresholds, traceability, and metrics for safe operation.</p>
+      
+        <figure class="resource-hero-image">
+          <img src="/assets/img/placeholders/resource-hitl.png" alt="AI in healthcare: what human-in-the-loop means in practice">
+        </figure>
+      
+    </div>
+  </header>
+
+  <section class="page-content section">
+    <div class="container prose"><p>In healthcare, <em>human-in-the-loop (HITL)</em> is widely used as a term… and poorly understood. Sometimes it gets reduced to “a physician validates it” and that is it. In practice, HITL is something else: <strong>it is the operational design that defines when and how a person intervenes</strong>, with clear responsibilities, traceable evidence, and mechanisms to prevent common risks such as overconfidence in automation.</p>
+
+<p>If you are evaluating AI for a hospital, a primary care network (PHC), or a screening program (for example, diabetic retinopathy), this article gives you a simple framework to separate marketing from real implementation.</p>
+
+<hr />
+
+<h2 id="what-human-in-the-loop-is-and-what-it-is-not">What human-in-the-loop is (and what it is NOT)</h2>
+
+<p><strong>HITL means the system is designed so critical decisions are not “closed” by AI alone</strong>, but go through a defined human circuit: capture, verification, prioritization, review, reporting, and follow-up.</p>
+
+<p>It is not HITL when:
+- A human only “signs off” without reviewing evidence.
+- There are no escalation criteria (everything goes through or nothing goes through).
+- There is no record of who made the decision, with what information, and under which model version.
+- AI is integrated in a way that pushes default acceptance (risk of <em>automation bias</em>).</p>
+
+<p>The literature describes <em>automation bias</em> as the tendency to <strong>over-trust automated recommendations</strong>, even when they are wrong, especially under workload or time pressure (systematic review available on <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3240751/">PubMed Central</a>).</p>
+
+<hr />
+
+<h2 id="the-3-loops-that-matter-in-clinical-ai">The 3 loops that matter in clinical AI</h2>
+
+<p>In real implementation, HITL is not a single step: it is <strong>three complementary loops</strong>.</p>
+
+<h3 id="operations-loop-day-to-day">1) Operations loop (day-to-day)</h3>
+<p>Defines what happens with each case:
+- <strong>Who captures</strong> the study (technician, nursing staff, etc.).
+- <strong>What AI validates</strong> (for example, image quality or triage).
+- <strong>Who decides</strong> the next step (refer, report, repeat capture, etc.).
+- <strong>What turnaround times</strong> are expected (internal SLAs).</p>
+
+<p>In retina programs, this loop is critical because the bottleneck is usually ophthalmology: properly designed HITL <strong>protects specialist time</strong> without degrading clinical safety.</p>
+
+<h3 id="safety-and-risk-loop-before-and-after-go-live">2) Safety and risk loop (before and after go-live)</h3>
+<p>Includes:
+- risk analysis (what can fail and how it is controlled),
+- planned testing,
+- clinical validation,
+- contingency plans.</p>
+
+<p>Regulatory bodies and frameworks insist on thinking about AI across the <strong>full lifecycle</strong> (not only the pilot). As practical references, you can review:
+- <em>Good Machine Learning Practice</em> (GMLP) guiding principles for AI/ML-based medical devices (FDA): https://www.fda.gov/medical-devices/software-medical-device-samd/good-machine-learning-practice-medical-device-development-guiding-principles
+- GMLP principles document (PDF): https://www.fda.gov/media/153486/download
+- Ethics and governance guidance for AI in health (WHO): https://www.who.int/publications/i/item/9789240029200
+- Clinical evaluation of SaMD (IMDRF): https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-170921-samd-n41-clinical-evaluation_1.pdf</p>
+
+<h3 id="continuous-improvement-loop-production-monitoring">3) Continuous improvement loop (production monitoring)</h3>
+<p>AI performance shifts for many reasons: population changes, new cameras, different protocols, and more. Mature HITL requires:
+- performance and process metrics,
+- error review (including false negatives),
+- drift monitoring,
+- and change governance (what is updated, when, and how it is communicated).</p>
+
+<p>For AI risk management beyond healthcare, the <strong>NIST AI Risk Management Framework</strong> is a useful cross-domain framework: https://www.nist.gov/itl/ai-risk-management-framework</p>
+
+<hr />
+
+<h2 id="hitl-design-patterns-that-work-with-concrete-examples">HITL design patterns that work (with concrete examples)</h2>
+
+<h3 id="pattern-a-ai-filters-human-confirms">Pattern A: “AI filters, human confirms”</h3>
+<p>Useful when the cost of error is high.
+- AI prioritizes or suggests.
+- A professional confirms relevant cases.
+- Minimum reasoning is documented (not just “approved” without evidence).</p>
+
+<p><strong>Retina example:</strong> AI identifies <em>high-risk cases</em> for ophthalmology review, while cases without clear findings are handled with defined clinical rules (always with an escalation policy when uncertainty exists).</p>
+
+<h3 id="pattern-b-ai-assisted-capture--quality-control">Pattern B: “AI-assisted capture + quality control”</h3>
+<p>Many failures are not diagnostic; they are <strong>data quality</strong> issues.
+- AI guides operators toward better capture.
+- If image quality is insufficient, capture is repeated immediately.
+- The rate of “ungradable studies” decreases.</p>
+
+<p>This pattern relies on usability and safe-use processes: the FDA has a classic guidance on <em>human factors</em> for medical devices (highly applicable to clinical software): https://www.fda.gov/regulatory-information/search-fda-guidance-documents/applying-human-factors-and-usability-engineering-medical-devices</p>
+
+<h3 id="pattern-c-dual-escalation-uncertainty--context">Pattern C: “Dual escalation: uncertainty + context”</h3>
+<p>Not everything should be decided by a score.
+- If AI is uncertain -&gt; escalate.
+- If contextual factors exist (symptoms, comorbidities, history) -&gt; escalate, even with a low score.
+- If there is human vs AI disagreement -&gt; second read or audit.</p>
+
+<hr />
+
+<h2 id="operational-checklist-what-to-ask-in-a-demo-to-know-if-hitl-is-real">Operational checklist: what to ask in a demo to know if HITL is real</h2>
+
+<p>Use these questions during procurement/evaluation:</p>
+
+<p>1) <strong>Roles and permissions:</strong> who can capture, review, report, and audit?<br />
+2) <strong>Thresholds and escalation:</strong> what triggers human review (uncertainty, quality, finding)? Is it configurable?<br />
+3) <strong>Evidence and traceability:</strong> is there a record of <em>who</em> decided, <em>when</em>, with <em>which model version</em>, and on <em>which data</em>?<br />
+4) <strong>Error handling:</strong> how is a mis-prioritized case reported? Is there an improvement loop?<br />
+5) <strong>Workflow integration:</strong> does it reduce work or increase it? (watch for excessive alerts and fatigue)<br />
+6) <strong>Clinical validation:</strong> what public evidence is available? Is it based on populations comparable to LATAM?<br />
+7) <strong>Production monitoring:</strong> is there a metrics dashboard? How is drift detected?</p>
+
+<hr />
+
+<h2 id="how-hitl-is-applied-in-retinar-teleophthalmology-for-retina">How HITL is applied in Retinar (teleophthalmology for retina)</h2>
+
+<p>Retinar was designed from the start with a field-operable HITL approach, intended for <strong>Argentina and Latin America</strong>, where demand is high, specialist resources are limited, and equipment is heterogeneous.</p>
+
+<p>In practical terms:</p>
+
+<ul>
+  <li><strong>Decentralized capture + assistance</strong>: studies can be captured in primary care or outreach campaigns, with a flow that minimizes recaptures and ensures quality.</li>
+  <li><strong>AI prediagnosis for prioritization</strong>: AI helps identify <em>high-risk cases</em> and accelerates referral, while the workflow is designed so specialists focus their time where they add value.</li>
+  <li><strong>Professional review and traceability</strong>: cases that require confirmation move to remote reporting, with full flow logging (who reviewed and what was decided).</li>
+  <li><strong>Multi-camera compatibility</strong>: in real programs, HITL also means adapting to the installed equipment base without breaking the process.</li>
+</ul>
+
+<p>If your goal is to implement diabetic retinopathy and/or glaucoma-risk screening without saturating ophthalmology, this approach enables <strong>clinical safety and operational predictability</strong>, avoiding the “eternal pilot.”</p>
+
+<hr />
+
+<h2 id="closing-hitl-is-not-a-feature-it-is-a-work-system">Closing: HITL is not a feature, it is a work system</h2>
+
+<p>When HITL is well implemented:
+- operational friction goes down,
+- clinical trust goes up,
+- data quality improves,
+- and a program becomes scalable (especially for screening).</p>
+
+<p>When HITL is poorly implemented:
+- overconfidence risk increases,
+- new bottlenecks are created,
+- or “automatic approvals” happen without evidence.</p>
+
+<hr />
+
+<h2 id="cta-lets-bring-this-into-a-real-pilot">CTA: let’s bring this into a real pilot</h2>
+
+<p>Do you want to see a concrete example of HITL applied to teleophthalmology in the field (primary care, campaigns, or private networks), with clear operational metrics?</p>
+
+<p><strong>Contact us and we can schedule a Retinar demo</strong> to evaluate your workflow, your equipment, and a phased implementation plan:
+- Contact form on the website
+- Or message us to set up a pilot in your institution</p>
+</div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container resource-cta-grid">
+      <div>
+        <h2>Implement Retinar and reduce blindness cases due to diabetes</h2>
+        <p>Share your institutional context and we will propose an implementation plan.</p>
+      </div>
+      <div>
+        <a href="/en/#demo" class="button button-primary">Contact us</a>
+      </div>
+    </div>
+  </section>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI in healthcare: what human-in-the-loop means in practice",
+  "description": "How to design real human oversight in clinical AI systems: roles, thresholds, traceability, and metrics for safe operation.",
+  "datePublished": "2026-03-02T00:00:00-03:00",
+  "dateModified": "2026-03-02T00:00:00-03:00",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Organization",
+    "name": "Retinar"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Retinar",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://retinar.com.ar/assets/img/placeholders/brand-logo.png"
+    }
+  },
+  "mainEntityOfPage": "https://retinar.com.ar/en/blog/human-in-the-loop-ai-in-healthcare/"
+}
+</script>
+</main>
+  
+
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col footer-col-brand">
+      <a class="brand footer-brand-link" href="/en/">
+        <img
+          class="footer-brand-logo"
+          src="/assets/img/logos/retinar-wordmark.svg"
+          alt=""
+          width="1768"
+          height="806"
+          loading="lazy"
+          decoding="async"
+          aria-hidden="true"
+        >
+        <span class="sr-only">Retinar</span>
+      </a>
+      <p class="footer-tagline">AI for teleophthalmology and early detection of preventable blindness.</p>
+      <div class="footer-company-details" aria-label="Company legal information">
+        <p class="footer-company-line footer-company-line-identity">
+          <strong>Retinar SAS</strong> (CUIT 30-71892218-2)
+        </p>
+        <p class="footer-company-line">
+          <span class="footer-company-label">Registered address:</span>
+          <span class="footer-company-value">San Francisco 1678 (7000), Tandil, BA, Argentina</span>
+        </p>
+        <p class="footer-company-line">
+          <span class="footer-company-label">Commercial address:</span>
+          <span class="footer-company-value">Instituto PLADEMA, Campus Universitario Tandil, Paraje Arroyo Seco S/N (7000), Tandil, BA, Argentina</span>
+        </p>
+        <p class="footer-company-line">
+          <span class="footer-company-label">Authorization:</span>
+          <span class="footer-company-value">Nº 54151 (Dirección de Farmacias, Ministerio de Salud de PBA). In process before ANMAT.</span>
+        </p>
+      </div>
+      <div class="social-links footer-social-links" aria-label="Social media">
+        <a
+          href="https://www.linkedin.com/company/retinar"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Retinar on LinkedIn"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6.36 8.09a2.09 2.09 0 1 1 0-4.18 2.09 2.09 0 0 1 0 4.18Zm1.77 12.09H4.58V9.9h3.55v10.28Zm12.05 0h-3.54v-5.23c0-1.25-.03-2.85-1.74-2.85-1.74 0-2 1.36-2 2.76v5.32H9.35V9.9h3.4v1.4h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.43v5.3Z"></path>
+          </svg>
+          <span class="sr-only">LinkedIn</span>
+        </a>
+        <a
+          href="https://www.instagram.com/retinararg/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Retinar on Instagram"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.9a3.85 3.85 0 0 0-3.85 3.85v8.5a3.85 3.85 0 0 0 3.85 3.85h8.5a3.85 3.85 0 0 0 3.85-3.85v-8.5a3.85 3.85 0 0 0-3.85-3.85h-8.5Zm8.9 1.5a1.35 1.35 0 1 1 0 2.7 1.35 1.35 0 0 1 0-2.7ZM12 7.15a4.85 4.85 0 1 1 0 9.7 4.85 4.85 0 0 1 0-9.7Zm0 1.9a2.95 2.95 0 1 0 0 5.9 2.95 2.95 0 0 0 0-5.9Z"></path>
+          </svg>
+          <span class="sr-only">Instagram</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col footer-col-nav">
+      <h2 class="footer-nav-title">Navigation</h2>
+      <div class="footer-nav-columns">
+        <ul class="footer-nav-list">
+          
+            <li><a href="/en/#como-funciona">Product</a></li>
+          
+            <li><a href="/en/#producto">Impact</a></li>
+          
+            <li><a href="/en/#para-quien">Who it's for</a></li>
+          
+            <li><a href="/en/blog/">Blog</a></li>
+          
+        </ul>
+        <ul class="footer-nav-list">
+          
+            <li><a href="/en/about/">About Retinar</a></li>
+          
+            <li><a href="/en/faq/">Frequently asked questions</a></li>
+          
+            <li><a href="/en/privacy/">Privacy</a></li>
+          
+            <li><a href="/en/terms/">Terms</a></li>
+          
+            <li><a href="/en/contact/">Contact</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>Copyright 2026 Retinar.</small>
+  </div>
+</footer>
+
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="140" viewBox="0 0 520 140" role="img" aria-labelledby="title desc">
+  <title id="title">Retinar</title>
+  <desc id="desc">Inline Retinar wordmark for section heading.</desc>
+  <text
+    x="0"
+    y="102"
+    fill="#e8e8e8"
+    font-family="'Encode Sans', 'IBM Plex Sans', Arial, sans-serif"
+    font-size="116"
+    font-weight="700"
+    letter-spacing="-2"
+  >
+    retin
+  </text>
+  <text
+    x="321"
+    y="102"
+    fill="#cef71f"
+    font-family="'Encode Sans', 'IBM Plex Sans', Arial, sans-serif"
+    font-size="116"
+    font-weight="700"
+    letter-spacing="-2"
+  >
+    ar
+  </text>
+  <line x1="318" y1="120" x2="507" y2="120" stroke="#cef71f" stroke-width="10" stroke-linecap="round"/>
+</svg>
