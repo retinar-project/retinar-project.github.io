@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="es">
+<head>
+  
+  
+  
+  
+  
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Interoperabilidad en teleoftalmología: cómo integrar retinografía a la historia clínica con HL7 FHIR y DICOM</title>
+  <meta name="description" content="Guía práctica para integrar imágenes de fondo de ojo y resultados (IA + informe) a la HCE sin fricción: estándares, patrones de arquitectura y checklist para compras.">
+
+  <link rel="canonical" href="https://retinar.com.ar/blog/interoperabilidad-retinografia-fhir-dicom/">
+  
+    <link rel="alternate" hreflang="es" href="https://retinar.com.ar/blog/interoperabilidad-retinografia-fhir-dicom/">
+    
+      <link rel="alternate" hreflang="en" href="https://retinar.com.ar/en/blog/interoperability-fundus-imaging-fhir-dicom/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://retinar.com.ar/">
+  
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Retinar">
+  <meta property="og:title" content="Interoperabilidad en teleoftalmología: cómo integrar retinografía a la historia clínica con HL7 FHIR y DICOM">
+  <meta property="og:description" content="Guía práctica para integrar imágenes de fondo de ojo y resultados (IA + informe) a la HCE sin fricción: estándares, patrones de arquitectura y checklist para compras.">
+  <meta property="og:url" content="https://retinar.com.ar/blog/interoperabilidad-retinografia-fhir-dicom/">
+  <meta property="og:image" content="https://retinar.com.ar/assets/img/placeholders/resource-interoperability.png">
+  <meta property="og:locale" content="es_AR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Interoperabilidad en teleoftalmología: cómo integrar retinografía a la historia clínica con HL7 FHIR y DICOM">
+  <meta name="twitter:description" content="Guía práctica para integrar imágenes de fondo de ojo y resultados (IA + informe) a la HCE sin fricción: estándares, patrones de arquitectura y checklist para compras.">
+  <meta name="twitter:image" content="https://retinar.com.ar/assets/img/placeholders/resource-interoperability.png">
+
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@600;700&family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/assets/img/placeholders/brand-logo.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body class="page-resource">
+  
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+  
+
+  
+
+
+
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="/">
+      <img
+        class="brand-logo"
+        src="/assets/img/logos/retinar-wordmark.svg"
+        alt=""
+        width="1768"
+        height="806"
+        loading="eager"
+        decoding="async"
+        aria-hidden="true"
+      >
+      <span class="sr-only">Retinar</span>
+    </a>
+
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+      <span class="sr-only">Menú</span>
+    </button>
+
+    <nav id="primary-nav" class="primary-nav" data-primary-nav>
+      <a class="language-switch" href="/en/blog/interoperability-fundus-imaging-fhir-dicom/" aria-label="Ver sitio en inglés">EN</a>
+      <div class="social-links header-social-links" aria-label="Redes sociales">
+        <a
+          href="https://www.linkedin.com/company/retinar"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn de Retinar"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6.36 8.09a2.09 2.09 0 1 1 0-4.18 2.09 2.09 0 0 1 0 4.18Zm1.77 12.09H4.58V9.9h3.55v10.28Zm12.05 0h-3.54v-5.23c0-1.25-.03-2.85-1.74-2.85-1.74 0-2 1.36-2 2.76v5.32H9.35V9.9h3.4v1.4h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.43v5.3Z"></path>
+          </svg>
+          <span class="sr-only">LinkedIn</span>
+        </a>
+        <a
+          href="https://www.instagram.com/retinararg/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram de Retinar"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.9a3.85 3.85 0 0 0-3.85 3.85v8.5a3.85 3.85 0 0 0 3.85 3.85h8.5a3.85 3.85 0 0 0 3.85-3.85v-8.5a3.85 3.85 0 0 0-3.85-3.85h-8.5Zm8.9 1.5a1.35 1.35 0 1 1 0 2.7 1.35 1.35 0 0 1 0-2.7ZM12 7.15a4.85 4.85 0 1 1 0 9.7 4.85 4.85 0 0 1 0-9.7Zm0 1.9a2.95 2.95 0 1 0 0 5.9 2.95 2.95 0 0 0 0-5.9Z"></path>
+          </svg>
+          <span class="sr-only">Instagram</span>
+        </a>
+      </div>
+      <ul>
+        
+          <li>
+            <a href="/#como-funciona" class="">Producto</a>
+          </li>
+        
+          <li>
+            <a href="/#producto" class="">Impacto</a>
+          </li>
+        
+          <li>
+            <a href="/#para-quien" class="">Para quiénes</a>
+          </li>
+        
+          <li>
+            <a href="/sobre/" class="">Sobre Retinar</a>
+          </li>
+        
+          <li>
+            <a href="/blog/" class="">Blog</a>
+          </li>
+        
+          <li>
+            <a href="/contacto/" class="nav-cta">Contacto</a>
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <main id="main">
+
+<article class="resource-article">
+  <header class="page-hero section-dark">
+    <div class="container">
+      <p class="resource-meta">Interoperabilidad y datos</p>
+      <h1>Interoperabilidad en teleoftalmología: cómo integrar retinografía a la historia clínica con HL7 FHIR y DICOM</h1>
+      <p class="lead">Guía práctica para integrar imágenes de fondo de ojo y resultados (IA + informe) a la HCE sin fricción: estándares, patrones de arquitectura y checklist para compras.</p>
+      
+        <figure class="resource-hero-image">
+          <img src="/assets/img/placeholders/resource-interoperability.png" alt="Interoperabilidad en teleoftalmología: cómo integrar retinografía a la historia clínica con HL7 FHIR y DICOM">
+        </figure>
+      
+    </div>
+  </header>
+
+  <section class="page-content section">
+    <div class="container prose"><p>Si tu institución está evaluando <strong>teleoftalmología</strong> (hospital, clínica, red de APS o campaña), la pregunta no es solo “¿funciona la IA?”: también es <strong>“¿cómo entra esto a nuestra operación diaria sin duplicar trabajo?”</strong>.</p>
+
+<p>La integración suele fallar por motivos simples:
+- el resultado termina en un PDF suelto,
+- la imagen queda “en otro sistema”,
+- y el equipo clínico vuelve a tipear datos en la HCE.</p>
+
+<p>La buena noticia: <strong>no hace falta un megaproyecto</strong> para hacerlo bien. Con un diseño por etapas y dos estándares muy concretos —<strong>DICOM/DICOMweb</strong> para imágenes y <strong>HL7 FHIR</strong> para datos clínicos— podés lograr interoperabilidad real y medible.</p>
+
+<blockquote>
+  <p>Si querés un marco complementario sobre operación segura de IA (roles, umbrales, trazabilidad), mirá también: <strong>/blog/ia-human-in-the-loop-salud/</strong>.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="mapa-mental-3-capas-que-tens-que-resolver-s-o-s">Mapa mental: 3 capas que tenés que resolver (sí o sí)</h2>
+
+<p>Pensá la integración como <strong>tres capas independientes</strong>, que podés implementar de menor a mayor madurez:</p>
+
+<p>1) <strong>Capa imagen (retinografías)</strong><br />
+   - Objetivo: guardar/consultar imágenes de forma estándar y trazable.<br />
+   - Estándar típico: <strong>DICOM</strong> (y en web, <strong>DICOMweb</strong>).</p>
+
+<p>2) <strong>Capa resultado (hallazgos e informe)</strong><br />
+   - Objetivo: registrar el <em>resultado clínico</em> (IA, clasificación, severidad, recomendación, firma profesional) como dato estructurado dentro de la HCE.<br />
+   - Estándar típico: <strong>HL7 FHIR</strong> (Observation / DiagnosticReport, según el caso).</p>
+
+<p>3) <strong>Capa flujo (orden, turnos, derivación, SLA)</strong><br />
+   - Objetivo: que el estudio “viva” en el circuito (pedido, estado, tiempos, notificaciones).<br />
+   - Estándar típico: FHIR (por ejemplo ServiceRequest/Task en muchos ecosistemas), o integraciones equivalentes del HIS local.</p>
+
+<p>En retina, casi siempre conviene empezar por <strong>resultado + enlace a imagen</strong> y recién después sofisticar el workflow.</p>
+
+<hr />
+
+<h2 id="dicom-y-dicomweb-en-2-minutos-por-qu-importan-en-retina">DICOM y DICOMweb en 2 minutos (por qué importan en retina)</h2>
+
+<p><strong>DICOM</strong> es el estándar clásico para imagen médica. Cuando hablamos de “integrar retinografías”, el objetivo práctico es:
+- que la imagen tenga <strong>identificadores</strong> (paciente, estudio, fecha, dispositivo),
+- que sea <strong>consultable</strong> por sistemas clínicos,
+- y que se pueda auditar quién accedió y cuándo.</p>
+
+<p><strong>DICOMweb</strong> agrega el “modo moderno” (REST) para consultar/recuperar/guardar imágenes vía web. En la práctica, ayuda a que integrar con portales, visores web o sistemas distribuidos sea mucho más directo.</p>
+
+<hr />
+
+<h2 id="hl7-fhir-dnde-viven-los-resultados-y-cmo-evitar-el-pdf-suelto">HL7 FHIR: dónde viven los resultados (y cómo evitar el “PDF suelto”)</h2>
+
+<p>FHIR no reemplaza tus imágenes: <strong>organiza los datos clínicos y el reporte</strong>.</p>
+
+<p>Un enfoque común y escalable es:</p>
+
+<ul>
+  <li><strong>FHIR Observation</strong> para resultados estructurados (ej.: “riesgo de RD”, “imagen gradable/no gradable”, “recomendación: derivar”).</li>
+  <li><strong>FHIR DiagnosticReport</strong> para agrupar resultados, interpretación, firma, adjuntos, y referencias a imágenes/estudios.</li>
+</ul>
+
+<p>Esto permite búsquedas clínicas reales dentro de la HCE:
+- “mostrar pacientes con resultado positivo en los últimos 6 meses”
+- “listar pendientes de revisión”
+- “auditar tiempos de respuesta” (ver también: <strong>/blog/medir-cobertura-derivacion-tiempos/</strong>)</p>
+
+<hr />
+
+<h2 id="patrones-de-integracin-que-funcionan-ordenados-de-simple-a-maduro">4 patrones de integración que funcionan (ordenados de simple a maduro)</h2>
+
+<h3 id="patrn-1-resultado-en-hce--link-seguro-a-visor">Patrón 1: “Resultado en HCE + link seguro a visor”</h3>
+<p><strong>Ideal para empezar</strong> (rápido, bajo riesgo).
+- En HCE guardás resultado estructurado + link a estudio/imagen en visor (con permisos).
+- Beneficio: evitás duplicar almacenamiento y ganás trazabilidad clínica.</p>
+
+<p><strong>Cuándo usarlo:</strong> hospitales/clínicas que ya tienen visor o repositorio (PACS/VNA) o que quieren minimizar cambios al inicio.</p>
+
+<hr />
+
+<h3 id="patrn-2-pdf-firmado--datos-mnimos-estructurados">Patrón 2: “PDF firmado + datos mínimos estructurados”</h3>
+<p>Cuando el ecosistema todavía vive de PDFs, podés <strong>mejorarlo sin romper nada</strong>:
+- seguís generando un PDF (para auditoría/legal),
+- pero además registrás 3–6 campos estructurados (clasificación, ojo, gradabilidad, recomendación, prioridad, fecha).</p>
+
+<p><strong>Clave:</strong> el PDF no debe ser la única fuente de verdad.</p>
+
+<hr />
+
+<h3 id="patrn-3-dicom-completo--fhir-report">Patrón 3: “DICOM completo + FHIR report”</h3>
+<p>Más maduro:
+- imagen en DICOM (o DICOMweb),
+- reporte y resultados en FHIR,
+- y vínculo estable entre ambos.</p>
+
+<p><strong>Beneficio:</strong> interoperabilidad “de manual”, ideal para redes y escalamiento multi-sede.</p>
+
+<hr />
+
+<h3 id="patrn-4-workflow-integrado-end-to-end">Patrón 4: “Workflow integrado end-to-end”</h3>
+<p>Lo más potente, pero no es el primer paso:
+- orden → captura → IA → revisión → informe → derivación → seguimiento,
+- todo con estados y tiempos controlados (SLA), integrado al HIS.</p>
+
+<p><strong>Beneficio:</strong> automatizás operación, reducís cuellos de botella y evitás el “piloto eterno”.</p>
+
+<blockquote>
+  <p>Si querés ver cómo diseñar el flujo clínico para que oftalmología no se sature, tenés esta guía: <strong>/blog/integrar-retinografia-flujo-clinico/</strong>.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="checklist-para-compras--it-12-preguntas-que-te-ahorran-meses">Checklist para compras / IT: 12 preguntas que te ahorran meses</h2>
+
+<p>Usalo tal cual en demos o RFPs:</p>
+
+<p>1) <strong>Identificadores:</strong> ¿cómo manejan MPI / ID de paciente? ¿Qué pasa con duplicados?<br />
+2) <strong>Exportabilidad:</strong> ¿puedo exportar resultados estructurados (no solo PDF)?<br />
+3) <strong>Estándares:</strong> ¿soportan DICOM/DICOMweb, HL7 FHIR o APIs equivalentes documentadas?<br />
+4) <strong>Versionado:</strong> ¿queda registro de versión de modelo/algoritmo en cada resultado?<br />
+5) <strong>Trazabilidad:</strong> ¿quién vio, quién validó, quién firmó? (auditoría)<br />
+6) <strong>Permisos:</strong> roles por perfil (captura, revisión, auditoría, admin)<br />
+7) <strong>Calidad de imagen:</strong> ¿registran gradabilidad y motivos de rechazo?<br />
+8) <strong>Integración HCE:</strong> ¿tienen ejemplos reales con HCE/HIS? ¿qué esfuerzo típico de IT?<br />
+9) <strong>Notificaciones:</strong> ¿se pueden disparar alertas por “caso de riesgo” o “pendiente de informe”?<br />
+10) <strong>SLA y métricas:</strong> ¿hay tablero de tiempos (captura→resultado→informe)?<br />
+11) <strong>Seguridad:</strong> cifrado, backups, control de acceso, logs, retención<br />
+12) <strong>Portabilidad:</strong> si mañana cambio de proveedor, ¿me llevo mis datos e imágenes?</p>
+
+<hr />
+
+<h2 id="cmo-se-aplica-esto-en-retinar-ejemplo-concreto">Cómo se aplica esto en Retinar (ejemplo concreto)</h2>
+
+<p>Retinar se diseñó pensando en <strong>Argentina y LATAM</strong>, donde la realidad suele ser:
+- parque de retinógrafos heterogéneo,
+- equipos especializados limitados,
+- y HCE/HIS con distintos niveles de madurez.</p>
+
+<p>En la práctica, Retinar permite implementar integraciones por etapas:</p>
+
+<ul>
+  <li><strong>Etapa inicial (rápida):</strong> resultados estructurados + enlace seguro al estudio, evitando re-carga manual.</li>
+  <li><strong>Etapa de escalamiento:</strong> integración por <strong>API</strong> y conectores para interoperar con sistemas institucionales (HCE/HIS), sosteniendo trazabilidad y auditoría.</li>
+  <li><strong>Operación en red:</strong> captura descentralizada (APS/campañas), priorización por IA y revisión profesional donde agrega valor.</li>
+</ul>
+
+<p>El objetivo no es “poner imágenes en un sistema”: es <strong>hacer que el dato sea accionable</strong> dentro del flujo, con métricas y seguimiento.</p>
+
+<hr />
+
+<h2 id="cierre-la-interoperabilidad-no-es-un-lujo-es-lo-que-vuelve-sostenible-el-programa">Cierre: la interoperabilidad no es un lujo, es lo que vuelve sostenible el programa</h2>
+
+<p>En teleoftalmología, el beneficio más grande aparece cuando:
+- los resultados <strong>se pueden buscar</strong>,
+- la derivación <strong>se puede medir</strong>,
+- y el equipo deja de copiar/pegar entre sistemas.</p>
+
+<p>Si tu integración se reduce a “subir una imagen” o “adjuntar un PDF”, probablemente vas a sentir fricción en semanas. Si resolvés estas 3 capas (imagen, resultado, flujo) por etapas, el programa escala.</p>
+
+<hr />
+
+<h2 id="cta-revisemos-tu-escenario-y-te-proponemos-una-integracin-por-etapas">CTA: revisemos tu escenario y te proponemos una integración por etapas</h2>
+
+<p>¿Querés que Retinar se integre a tu HCE/HIS sin un proyecto eterno?</p>
+
+<p><strong>Contactanos y coordinamos una demo técnica + clínica</strong> (30–45 min) para:
+- mapear tu flujo actual,
+- revisar tu equipamiento,
+- y definir una hoja de ruta (mínimo viable → escalamiento en red).<br />
+Formulario en la web: https://retinar.com.ar</p>
+</div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container resource-cta-grid">
+      <div>
+        <h2>Implementá Retinar y reducí los casos de ceguera por diabetes</h2>
+        <p>Compartinos tu contexto institucional y te proponemos un plan de implementación.</p>
+      </div>
+      <div>
+        <a href="/#demo" class="button button-primary">Contactanos</a>
+      </div>
+    </div>
+  </section>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Interoperabilidad en teleoftalmología: cómo integrar retinografía a la historia clínica con HL7 FHIR y DICOM",
+  "description": "Guía práctica para integrar imágenes de fondo de ojo y resultados (IA + informe) a la HCE sin fricción: estándares, patrones de arquitectura y checklist para compras.",
+  "datePublished": "2026-03-02T00:00:00-03:00",
+  "dateModified": "2026-03-02T00:00:00-03:00",
+  "inLanguage": "es",
+  "author": {
+    "@type": "Organization",
+    "name": "Retinar"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Retinar",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://retinar.com.ar/assets/img/placeholders/brand-logo.png"
+    }
+  },
+  "mainEntityOfPage": "https://retinar.com.ar/blog/interoperabilidad-retinografia-fhir-dicom/"
+}
+</script>
+</main>
+  
+
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col footer-col-brand">
+      <a class="brand footer-brand-link" href="/">
+        <img
+          class="footer-brand-logo"
+          src="/assets/img/logos/retinar-wordmark.svg"
+          alt=""
+          width="1768"
+          height="806"
+          loading="lazy"
+          decoding="async"
+          aria-hidden="true"
+        >
+        <span class="sr-only">Retinar</span>
+      </a>
+      <p class="footer-tagline">IA para teleoftalmología y detección temprana de ceguera prevenible.</p>
+      <div class="footer-company-details" aria-label="Información societaria">
+        <p class="footer-company-line footer-company-line-identity">
+          <strong>Retinar SAS</strong> (CUIT 30-71892218-2)
+        </p>
+        <p class="footer-company-line">
+          <span class="footer-company-label">Domicilio legal:</span>
+          <span class="footer-company-value">San Francisco 1678 (7000), Tandil, BA, Argentina</span>
+        </p>
+        <p class="footer-company-line">
+          <span class="footer-company-label">Domicilio comercial:</span>
+          <span class="footer-company-value">Instituto PLADEMA, Campus Universitario Tandil, Paraje Arroyo Seco S/N (7000), Tandil, BA, Argentina</span>
+        </p>
+        <p class="footer-company-line">
+          <span class="footer-company-label">Habilitación:</span>
+          <span class="footer-company-value">Nº 54151 (Dirección de Farmacias, Ministerio de Salud de PBA). En trámite ante ANMAT.</span>
+        </p>
+      </div>
+      <div class="social-links footer-social-links" aria-label="Redes sociales">
+        <a
+          href="https://www.linkedin.com/company/retinar"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn de Retinar"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6.36 8.09a2.09 2.09 0 1 1 0-4.18 2.09 2.09 0 0 1 0 4.18Zm1.77 12.09H4.58V9.9h3.55v10.28Zm12.05 0h-3.54v-5.23c0-1.25-.03-2.85-1.74-2.85-1.74 0-2 1.36-2 2.76v5.32H9.35V9.9h3.4v1.4h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.43v5.3Z"></path>
+          </svg>
+          <span class="sr-only">LinkedIn</span>
+        </a>
+        <a
+          href="https://www.instagram.com/retinararg/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram de Retinar"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.9a3.85 3.85 0 0 0-3.85 3.85v8.5a3.85 3.85 0 0 0 3.85 3.85h8.5a3.85 3.85 0 0 0 3.85-3.85v-8.5a3.85 3.85 0 0 0-3.85-3.85h-8.5Zm8.9 1.5a1.35 1.35 0 1 1 0 2.7 1.35 1.35 0 0 1 0-2.7ZM12 7.15a4.85 4.85 0 1 1 0 9.7 4.85 4.85 0 0 1 0-9.7Zm0 1.9a2.95 2.95 0 1 0 0 5.9 2.95 2.95 0 0 0 0-5.9Z"></path>
+          </svg>
+          <span class="sr-only">Instagram</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col footer-col-nav">
+      <h2 class="footer-nav-title">Navegación</h2>
+      <div class="footer-nav-columns">
+        <ul class="footer-nav-list">
+          
+            <li><a href="/#como-funciona">Producto</a></li>
+          
+            <li><a href="/#producto">Impacto</a></li>
+          
+            <li><a href="/#para-quien">Para quiénes</a></li>
+          
+            <li><a href="/blog/">Blog</a></li>
+          
+        </ul>
+        <ul class="footer-nav-list">
+          
+            <li><a href="/sobre/">Sobre Retinar</a></li>
+          
+            <li><a href="/faq/">Preguntas frecuentes</a></li>
+          
+            <li><a href="/privacidad/">Privacidad</a></li>
+          
+            <li><a href="/terminos/">Términos</a></li>
+          
+            <li><a href="/contacto/">Contacto</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>Copyright 2026 Retinar.</small>
+  </div>
+</footer>
+
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
