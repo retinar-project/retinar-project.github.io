@@ -1,27 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="140" viewBox="0 0 520 140" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1768" height="806" viewBox="0 0 1768 806" role="img" aria-labelledby="title desc">
   <title id="title">Retinar</title>
-  <desc id="desc">Inline Retinar wordmark for section heading.</desc>
+  <desc id="desc">Retinar wordmark with highlighted ar segment.</desc>
   <text
-    x="0"
-    y="102"
+    x="96"
+    y="598"
     fill="#e8e8e8"
     font-family="'Encode Sans', 'IBM Plex Sans', Arial, sans-serif"
-    font-size="116"
+    font-size="488"
     font-weight="700"
-    letter-spacing="-2"
+    letter-spacing="-8"
   >
     retin
   </text>
   <text
-    x="321"
-    y="102"
+    x="1180"
+    y="598"
     fill="#cef71f"
     font-family="'Encode Sans', 'IBM Plex Sans', Arial, sans-serif"
-    font-size="116"
+    font-size="488"
     font-weight="700"
-    letter-spacing="-2"
+    letter-spacing="-8"
   >
     ar
   </text>
-  <line x1="318" y1="120" x2="507" y2="120" stroke="#cef71f" stroke-width="10" stroke-linecap="round"/>
+  <line x1="1164" y1="664" x2="1684" y2="664" stroke="#cef71f" stroke-width="44" stroke-linecap="round"/>
 </svg>
