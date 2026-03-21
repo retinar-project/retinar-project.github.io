@@ -209,7 +209,7 @@ Endpoints en `_config.yml`:
 
 El formulario incluye:
 
-- campos base (`name`, `email`, `organization`, `message`),
+- campos base (`name`, `email`, `phone`, `organization`, `message`),
 - campo honeypot (`company`) anti-spam,
 - metadata oculta (`lang`, `_subject`, `form_variant`, `consent=accepted`).
 
