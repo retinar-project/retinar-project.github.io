@@ -1065,6 +1065,31 @@ ol {
   color: var(--ink-muted);
 }
 
+.form-contact-email {
+  margin: 0 0 0.6rem 0;
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+}
+
+.form-contact-email-link {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.conversion-section .form-contact-email {
+  color: rgba(250, 250, 250, 0.9);
+}
+
+.conversion-section .form-contact-email-link {
+  color: var(--acid-soft);
+  font-weight: 600;
+}
+
+.conversion-section .form-contact-email-link:hover,
+.conversion-section .form-contact-email-link:focus-visible {
+  color: #fff;
+}
+
 .conversion-section .form-shell {
   border-color: rgba(255, 255, 255, 0.24);
   background: rgba(255, 255, 255, 0.04);
@@ -1968,6 +1993,24 @@ summary:focus-visible {
 .footer-col .footer-tagline {
   margin-top: 0.72rem;
   max-width: 33ch;
+}
+
+.footer-contact-email {
+  margin: 0.35rem 0 1rem 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: rgba(245, 247, 251, 0.9);
+}
+
+.footer-contact-email a {
+  color: #e8fff0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-contact-email a:hover,
+.footer-contact-email a:focus-visible {
+  color: #fff;
 }
 
 .footer-social-links {

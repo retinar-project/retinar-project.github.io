@@ -17,7 +17,7 @@ Este documento está pensado para desarrolladores que necesiten mantener, extend
 - Formularios: `Formspree`.
 - Hosting objetivo: compatible con GitHub Pages.
 
-No hay pipeline de build con Node ni tests automáticos en este repo.
+Existe un script de comprobación mínima de configuración de contacto (ver sección 8 y “Pruebas” abajo). No hay pipeline con Node.
 
 ## 2) Requisitos de entorno
 
@@ -215,6 +215,8 @@ El formulario incluye:
 
 No hay lógica JS de validación custom; aplica validación HTML nativa + backend de Formspree.
 
+**Destino de los envíos (Formspree):** el correo al que Formspree notifica no se elige en este repositorio: lo define el formulario asociado a `formspree_endpoint` (y opcionalmente `formspree_contact_endpoint`) en el [panel de Formspree](https://formspree.io/). Asegurá que el formulario vinculado a esa URL notifique a `info@retinar.com.ar` (o creado con esa dirección). Si generás un formulario nuevo, actualizá la URL en `_config.yml`. El correo visible en el sitio y en JSON-LD proviene de `_data/site.yml` → `contact_email` y de `email` en `_config.yml` (hoy ambos: `info@retinar.com.ar`).
+
 ## 9) SEO, metadata y datos estructurados
 
 `_layouts/default.html` define:
@@ -332,10 +334,28 @@ Opciones útiles:
 
 ## 14) Checklist antes de merge/deploy
 
-1. `bundle exec jekyll build` sin errores.
-2. Revisar rutas ES/EN y switch de idioma.
-3. Verificar metadatos (`title`, `description`, `canonical`, `alternate`).
-4. Verificar formularios (acción correcta en Formspree).
-5. Verificar filtros del blog y carruseles.
-6. Verificar responsive en mobile.
-7. Confirmar que no se editaron archivos generados (`_site/`) ni dependencias locales.
+1. `./scripts/verify_contact_config.sh` (tras `chmod +x` si aplica).
+2. `bundle exec jekyll build` sin errores.
+3. Revisar rutas ES/EN y switch de idioma.
+4. Verificar metadatos (`title`, `description`, `canonical`, `alternate`).
+5. Verificar formularios (acción correcta en Formspree y destinatario en el panel).
+6. Verificar filtros del blog y carruseles.
+7. Verificar responsive en mobile.
+8. Confirmar que no se editaron archivos generados (`_site/`) ni dependencias locales.
+
+## 15) Pruebas y verificación de configuración
+
+```bash
+chmod +x scripts/verify_contact_config.sh   # una sola vez
+./scripts/verify_contact_config.sh
+```
+
+Comprueba que `email` / `contact_email` y un `formspree.io/f/...` sigan presentes en la configuración. Recomendado correrlo antes de deploy.
+
+## 16) Consideraciones de seguridad
+
+- **Contenido estático y formularios:** el sitio no procesa credenciales de usuarios finales; los formularios delegan a Formspree. No almacenar claves de Formspree en el repo: la acción del form es una URL pública.
+- **Secreto y cadena de suministro:** mantener `Gemfile.lock` bajo control de versiones; actualizar dependencias tras advisories.
+- **Entradas del usuario:** validación en cliente es limitada; el proveedor del formulario aplica su propia capa. Evitar almacenar PII en el repositorio.
+- **Alineación OWASP:** controlar enlaces externos (`rel="noopener noreferrer"`), no incluir tokens en URLs, y revisar periódicamente el destinatario y la política de reenvío en el panel de Formspree.
+- **Contacto de seguridad:** para reportes de vulnerabilidad en el sitio, escribir a [info@retinar.com.ar](mailto:info@retinar.com.ar) indicando el alcance y pasos de reproducción.
