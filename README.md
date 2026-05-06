@@ -332,6 +332,17 @@ Opciones útiles:
 - `SOURCE_BRANCH=main ./scripts/deploy.sh`
 - `./scripts/deploy.sh "deploy marzo"`
 
+### Automatización editorial en Codex
+
+Este repo también incluye una base para automatizar la generación y publicación semanal del blog dentro de Codex:
+
+- Skill local de generación editorial: `codex-skills/retinar-generar-articulo-blog/SKILL.md`
+- Skill local de publicación y deploy: `codex-skills/retinar-publicar-articulo-blog/SKILL.md`
+- Inventario editorial y comparación temática: `scripts/blog_topic_inventory.py`
+- Commit + push + deploy del artículo: `scripts/commit_and_deploy_blog.sh`
+
+La guía operativa está en `docs/blog-automation.md`.
+
 ## 14) Checklist antes de merge/deploy
 
 1. `./scripts/verify_contact_config.sh` (tras `chmod +x` si aplica).

@@ -41,10 +41,10 @@
 <lastmod>2026-03-13T00:00:00-03:00</lastmod>
 </url>
 <url>
-<loc>https://retinar.com.ar/faq/</loc>
+<loc>https://retinar.com.ar/codex-skills/retinar-generar-articulo-blog/SKILL/</loc>
 </url>
 <url>
-<loc>https://retinar.com.ar/contacto/</loc>
+<loc>https://retinar.com.ar/codex-skills/retinar-publicar-articulo-blog/SKILL/</loc>
 </url>
 <url>
 <loc>https://retinar.com.ar/terminos/</loc>
@@ -80,6 +80,12 @@
 <loc>https://retinar.com.ar/</loc>
 </url>
 <url>
+<loc>https://retinar.com.ar/faq/</loc>
+</url>
+<url>
+<loc>https://retinar.com.ar/contacto/</loc>
+</url>
+<url>
 <loc>https://retinar.com.ar/sobre/</loc>
 </url>
 <url>
@@ -91,5 +97,9 @@
 <url>
 <loc>https://retinar.com.ar/firma.html</loc>
 <lastmod>2026-04-23T10:15:52-03:00</lastmod>
+</url>
+<url>
+<loc>https://retinar.com.ar/manual-0.8.0.pdf</loc>
+<lastmod>2026-05-05T23:28:48-03:00</lastmod>
 </url>
 </urlset>
