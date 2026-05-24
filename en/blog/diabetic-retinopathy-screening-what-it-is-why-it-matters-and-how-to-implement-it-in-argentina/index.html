@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+  
+  
+  
+  
+  
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Diabetic retinopathy screening: what it is, why it matters, and how to implement it in Argentina</title>
+  <meta name="description" content="A practical guide for public and private decision-makers on how to design a diabetic retinopathy screening workflow with image capture, prioritization, referral, and follow-up.">
+
+  <link rel="canonical" href="https://retinar.com.ar/en/blog/diabetic-retinopathy-screening-what-it-is-why-it-matters-and-how-to-implement-it-in-argentina/">
+  
+    <link rel="alternate" hreflang="en" href="https://retinar.com.ar/en/blog/diabetic-retinopathy-screening-what-it-is-why-it-matters-and-how-to-implement-it-in-argentina/">
+    
+      <link rel="alternate" hreflang="es" href="https://retinar.com.ar/blog/tamizaje-de-retinopatia-diabetica-que-es-por-que-importa-y-como-implementarlo-en/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://retinar.com.ar/">
+  
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Retinar">
+  <meta property="og:title" content="Diabetic retinopathy screening: what it is, why it matters, and how to implement it in Argentina">
+  <meta property="og:description" content="A practical guide for public and private decision-makers on how to design a diabetic retinopathy screening workflow with image capture, prioritization, referral, and follow-up.">
+  <meta property="og:url" content="https://retinar.com.ar/en/blog/diabetic-retinopathy-screening-what-it-is-why-it-matters-and-how-to-implement-it-in-argentina/">
+  <meta property="og:image" content="https://retinar.com.ar/assets/img/blog/RET-20260527-BLG-001-tamizaje-de-retinopatia-diabetica-que-es-por-que-importa-y-como-implementarlo-en.png">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Diabetic retinopathy screening: what it is, why it matters, and how to implement it in Argentina">
+  <meta name="twitter:description" content="A practical guide for public and private decision-makers on how to design a diabetic retinopathy screening workflow with image capture, prioritization, referral, and follow-up.">
+  <meta name="twitter:image" content="https://retinar.com.ar/assets/img/blog/RET-20260527-BLG-001-tamizaje-de-retinopatia-diabetica-que-es-por-que-importa-y-como-implementarlo-en.png">
+
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@600;700&family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/assets/img/placeholders/brand-logo.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body class="page-resource">
+  
+    <a class="skip-link" href="#main">Skip to content</a>
+  
+
+  
+
+
+
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="/en/">
+      <img
+        class="brand-logo"
+        src="/assets/img/logos/retinar_logo%20blanco-verde.png"
+        alt=""
+        width="2000"
+        height="2000"
+        loading="eager"
+        decoding="async"
+        aria-hidden="true"
+      >
+      <span class="sr-only">Retinar</span>
+    </a>
+
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+      <span class="sr-only">Menu</span>
+    </button>
+
+    <nav id="primary-nav" class="primary-nav" data-primary-nav>
+      <a class="language-switch" href="/blog/tamizaje-de-retinopatia-diabetica-que-es-por-que-importa-y-como-implementarlo-en/" aria-label="View site in Spanish">ES</a>
+      <div class="social-links header-social-links" aria-label="Social media">
+        <a
+          href="https://www.linkedin.com/company/retinar"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Retinar on LinkedIn"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6.36 8.09a2.09 2.09 0 1 1 0-4.18 2.09 2.09 0 0 1 0 4.18Zm1.77 12.09H4.58V9.9h3.55v10.28Zm12.05 0h-3.54v-5.23c0-1.25-.03-2.85-1.74-2.85-1.74 0-2 1.36-2 2.76v5.32H9.35V9.9h3.4v1.4h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.43v5.3Z"></path>
+          </svg>
+          <span class="sr-only">LinkedIn</span>
+        </a>
+        <a
+          href="https://www.instagram.com/retinararg/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Retinar on Instagram"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.9a3.85 3.85 0 0 0-3.85 3.85v8.5a3.85 3.85 0 0 0 3.85 3.85h8.5a3.85 3.85 0 0 0 3.85-3.85v-8.5a3.85 3.85 0 0 0-3.85-3.85h-8.5Zm8.9 1.5a1.35 1.35 0 1 1 0 2.7 1.35 1.35 0 0 1 0-2.7ZM12 7.15a4.85 4.85 0 1 1 0 9.7 4.85 4.85 0 0 1 0-9.7Zm0 1.9a2.95 2.95 0 1 0 0 5.9 2.95 2.95 0 0 0 0-5.9Z"></path>
+          </svg>
+          <span class="sr-only">Instagram</span>
+        </a>
+      </div>
+      <ul>
+        
+          <li>
+            <a href="/en/#como-funciona" class="">Product</a>
+          </li>
+        
+          <li>
+            <a href="/en/#producto" class="">Impact</a>
+          </li>
+        
+          <li>
+            <a href="/en/#para-quien" class="">Who it's for</a>
+          </li>
+        
+          <li>
+            <a href="/en/about/" class="">About Retinar</a>
+          </li>
+        
+          <li>
+            <a href="/en/blog/" class="">Blog</a>
+          </li>
+        
+          <li>
+            <a href="/en/contact/" class="nav-cta">Contact</a>
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <main id="main">
+
+<article class="resource-article">
+  <header class="page-hero section-dark">
+    <div class="container">
+      <p class="resource-meta">Implementation and operations</p>
+      <h1>Diabetic retinopathy screening: what it is, why it matters, and how to implement it in Argentina</h1>
+      <p class="lead">A practical guide for public and private decision-makers on how to design a diabetic retinopathy screening workflow with image capture, prioritization, referral, and follow-up.</p>
+      
+        <figure class="resource-hero-image">
+          <img src="/assets/img/blog/RET-20260527-BLG-001-tamizaje-de-retinopatia-diabetica-que-es-por-que-importa-y-como-implementarlo-en.png" alt="Diabetic retinopathy screening: what it is, why it matters, and how to implement it in Argentina">
+        </figure>
+      
+    </div>
+  </header>
+
+  <section class="page-content section">
+    <div class="container prose"><p><strong>Diabetic retinopathy screening</strong> is not just about performing more fundus exams. The real challenge is building a workflow that can <strong>identify people with diabetes early, capture usable studies, prioritize high-risk cases, and refer them without losing follow-up</strong>.</p>
+
+<p>That matters because diabetic retinopathy can progress for a long time without clear symptoms. By the time a patient seeks care because of blurred vision or visual loss, the window for early intervention may already be narrower. That is why clinical guidelines recommend periodic retinal assessment in people with diabetes and why screening should be treated as a sustained program, not as isolated actions.</p>
+
+<p>In Argentina, this requires operational thinking: how to reach people who are not receiving annual eye checks, how to work with limited ophthalmology capacity, and how to prevent the program from ending as a folder of images without real follow-through.</p>
+
+<h2 id="what-diabetic-retinopathy-screening-means">What diabetic retinopathy screening means</h2>
+
+<p>In this context, <strong>screening</strong> means looking for signs of risk in people with diabetes before symptoms appear or before visual damage progresses.</p>
+
+<p>It is not meant to close a clinical decision on its own or replace ophthalmology evaluation. Its purpose is different: <strong>to organize demand and detect earlier which patients need specialist review, diagnostic confirmation, or timely treatment</strong>.</p>
+
+<p>In practice, screening programs usually rely on:</p>
+
+<ul>
+  <li>retinal image capture through fundus photography</li>
+  <li>image quality control to reduce ungradable studies</li>
+  <li>professional reading or software-supported review</li>
+  <li>prioritization of higher-risk cases</li>
+  <li>referral and follow-up until the care loop is closed</li>
+</ul>
+
+<p>That last step is the most important one. A program does not improve access just by capturing images; it improves access when patients with relevant findings <strong>actually reach the care they need</strong>.</p>
+
+<h2 id="why-a-sustained-program-matters-more-than-isolated-exams">Why a sustained program matters more than isolated exams</h2>
+
+<p>International guidelines and public-health documents converge on a simple point: diabetes-related eye disease requires <strong>periodic follow-up</strong>, because risk changes over time and because not every patient has the same level of access to specialist care.</p>
+
+<p>This is especially relevant in public networks, territorial programs, and fragmented systems, where several barriers often happen at once:</p>
+
+<ul>
+  <li>people with diabetes who do not reach annual retinal checks</li>
+  <li>limited specialist appointment capacity</li>
+  <li>geographical distance between capture sites and reading or treatment centers</li>
+  <li>campaigns or capture efforts that do not translate into effective follow-up</li>
+  <li>heterogeneous equipment and image quality</li>
+</ul>
+
+<p>That is why screening should be designed as a <strong>continuous program</strong>, with prioritization rules, response times, and closed-loop indicators, rather than as a collection of individual exams.</p>
+
+<h2 id="the-minimum-components-of-a-screening-workflow">The minimum components of a screening workflow</h2>
+
+<p>A realistic workflow for Argentina does not need to start perfect, but it does need a few minimum pieces from day one.</p>
+
+<h3 id="a-clear-target-population">1. A clear target population</h3>
+
+<p>The program should define <strong>who it is trying to reach</strong>, for example:</p>
+
+<ul>
+  <li>people with type 2 diabetes followed in primary care</li>
+  <li>people with type 1 diabetes who are already in the retinal follow-up window</li>
+  <li>patients overdue for retinal checks</li>
+  <li>people with additional risk factors or a history of poor adherence</li>
+</ul>
+
+<p>Without that definition, screening becomes opportunistic and true coverage is harder to measure.</p>
+
+<h3 id="a-capture-point-integrated-into-routine-care">2. A capture point integrated into routine care</h3>
+
+<p>Capture can happen in hospitals, primary care centers, clinics, campaigns, or mobile units. What matters is not only where the image is taken, but <strong>how naturally that step fits into the patient pathway</strong>.</p>
+
+<p>The more integrated it is with diabetes follow-up, general medicine, or chronic care, the more likely the program is to sustain volume and adherence.</p>
+
+<h3 id="image-quality">3. Image quality</h3>
+
+<p>If a high percentage of studies is ungradable, the program loses efficiency, creates recaptures, and increases dropout risk. That is why it is worth including an explicit quality-control step at the time of capture.</p>
+
+<p>We explored this issue in more detail in <a href="/en/blog/retinal-image-quality-ungradable-studies/">Retinal image quality in fundus photography: how to reduce ungradable studies in screening programs</a>.</p>
+
+<h3 id="risk-prioritization">4. Risk prioritization</h3>
+
+<p>Not every study requires the same urgency or the same specialist effort. A sustainable program needs a way to separate:</p>
+
+<ul>
+  <li>studies without relevant findings</li>
+  <li>studies that need scheduled ophthalmology follow-up</li>
+  <li>studies that should be referred faster</li>
+  <li>ungradable studies that need recapture or targeted review</li>
+</ul>
+
+<p>That prioritization can rely on clinical criteria, service protocols, and, when appropriate, triage-support tools with human review.</p>
+
+<h3 id="reading-and-reporting">5. Reading and reporting</h3>
+
+<p>The value of the program does not come from accumulating images, but from turning them into an actionable decision. That means defining:</p>
+
+<ul>
+  <li>who reads the studies</li>
+  <li>within what timeframes</li>
+  <li>with what reporting format</li>
+  <li>which findings trigger referral</li>
+  <li>how traceability is documented</li>
+</ul>
+
+<h3 id="referral-and-closed-loop-follow-up">6. Referral and closed-loop follow-up</h3>
+
+<p>This is where many pilots break down. If patients with relevant findings cannot obtain appointments, do not receive follow-up, or disappear from the system, screening loses much of its impact.</p>
+
+<p>That is why programs should measure not only how many patients were captured, but also:</p>
+
+<ul>
+  <li>how many were referred</li>
+  <li>how many actually reached specialist care</li>
+  <li>how much time passed between capture, report, and care</li>
+</ul>
+
+<h2 id="how-to-start-implementing-it-in-argentina">How to start implementing it in Argentina</h2>
+
+<p>There is no need to wait for a perfect provincial-scale program before starting. In many cases, the best option is to build a first constrained version with simple rules and room to learn.</p>
+
+<p>A reasonable path may look like this:</p>
+
+<h3 id="step-1-choose-an-initial-cohort">Step 1. Choose an initial cohort</h3>
+
+<p>For example, people with diabetes followed in a primary care network, a hospital diabetes service, or a clinic with chronic-care patients.</p>
+
+<h3 id="step-2-define-a-stable-capture-point">Step 2. Define a stable capture point</h3>
+
+<p>The goal is to avoid disconnected campaigns. A stable capture point makes it easier to train the team, improve image quality, and generate comparable data.</p>
+
+<h3 id="step-3-agree-on-a-reading-and-referral-workflow">Step 3. Agree on a reading and referral workflow</h3>
+
+<p>Before scaling volume, the program should know:</p>
+
+<ul>
+  <li>who reads the studies</li>
+  <li>under what SLA</li>
+  <li>where higher-risk cases are referred</li>
+  <li>how ungradable or absent patients are recorded</li>
+</ul>
+
+<h3 id="step-4-measure-a-few-useful-metrics">Step 4. Measure a few useful metrics</h3>
+
+<p>For an initial stage, metrics such as these are usually enough:</p>
+
+<ul>
+  <li>eligible patients vs screened patients</li>
+  <li>percentage of gradable studies</li>
+  <li>time from capture to report</li>
+  <li>percentage of referred patients</li>
+  <li>percentage of referred patients who complete care</li>
+</ul>
+
+<h3 id="step-5-improve-iteratively">Step 5. Improve iteratively</h3>
+
+<p>With those data, the program can adjust scheduling, training, capture quality, reading capacity, and referral agreements without redesigning everything every month.</p>
+
+<h2 id="the-role-of-teleophthalmology">The role of teleophthalmology</h2>
+
+<p>Teleophthalmology helps decouple the place of capture from the place of review. That allows a patient to be imaged closer to home while the case is reviewed by an ophthalmology team where reading capacity actually exists.</p>
+
+<p>It does not remove the need for specialists and it does not erase clinical complexity. What it can do is <strong>organize flow better, expand coverage, and concentrate professional time where it creates the most value</strong>.</p>
+
+<p>If you want to go deeper into implementation models, this related article may help: <a href="/en/blog/teleophthalmology-implementation-models-hospitals-clinics-campaigns/">Teleophthalmology: implementation models for hospitals, clinics, and outreach campaigns</a>.</p>
+
+<h2 id="where-retinar-fits-in-that-workflow">Where Retinar fits in that workflow</h2>
+
+<p>At Retinar, we approach this problem as a care workflow rather than as an isolated software feature. That means helping programs:</p>
+
+<ul>
+  <li>capture studies in different care settings</li>
+  <li>reduce friction caused by poor image quality</li>
+  <li>prioritize higher-risk cases for review</li>
+  <li>maintain traceability and follow-up</li>
+  <li>integrate into the operational flow of the care team</li>
+</ul>
+
+<p>The goal is not to promise total automation, but to <strong>make screening more operational, more scalable, and easier to sustain with human review where appropriate</strong>.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Implementing diabetic retinopathy screening in Argentina requires much more than technology. It requires a clear workflow with a target population, capture, quality control, prioritization, referral, and follow-up.</p>
+
+<p>When those pieces are in place, the program stops depending on isolated efforts and starts looking like a real coverage strategy.</p>
+
+<p>If your institution is evaluating how to move from scattered exams to a continuous screening workflow, <a href="/en/contact/">contact us</a> to discuss how to design it step by step around the operational realities of your network.</p>
+</div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container resource-cta-grid">
+      <div>
+        <h2>Implement Retinar and reduce blindness cases due to diabetes</h2>
+        <p>Share your institutional context and we will propose an implementation plan.</p>
+      </div>
+      <div>
+        <a href="/en/#demo" class="button button-primary">Contact us</a>
+      </div>
+    </div>
+  </section>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Diabetic retinopathy screening: what it is, why it matters, and how to implement it in Argentina",
+  "description": "A practical guide for public and private decision-makers on how to design a diabetic retinopathy screening workflow with image capture, prioritization, referral, and follow-up.",
+  "datePublished": "2026-05-27T00:00:00-03:00",
+  "dateModified": "2026-05-27T00:00:00-03:00",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Organization",
+    "name": "Retinar"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Retinar",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://retinar.com.ar/assets/img/placeholders/brand-logo.png"
+    }
+  },
+  "mainEntityOfPage": "https://retinar.com.ar/en/blog/diabetic-retinopathy-screening-what-it-is-why-it-matters-and-how-to-implement-it-in-argentina/"
+}
+</script>
+</main>
+  
+
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col footer-col-brand">
+      <a class="brand footer-brand-link" href="/en/">
+        <img
+          class="footer-brand-logo"
+          src="/assets/img/logos/retinar_logo%20blanco-verde.png"
+          alt=""
+          width="2000"
+          height="2000"
+          loading="lazy"
+          decoding="async"
+          aria-hidden="true"
+        >
+        <span class="sr-only">Retinar</span>
+      </a>
+      <p class="footer-tagline">AI for teleophthalmology and early detection of preventable blindness.</p>
+      <p class="footer-contact-email">
+        <span class="footer-contact-email-label">Email:</span>
+        <a href="mailto:info@retinar.com.ar">info@retinar.com.ar</a>
+      </p>
+      <div class="footer-company-details" aria-label="Company legal information">
+        <p class="footer-company-line footer-company-line-identity">
+          <strong>Retinar SAS</strong> (CUIT 30-71892218-2)
+        </p>
+        <p class="footer-company-line">
+          <span class="footer-company-label">Registered address:</span>
+          <span class="footer-company-value">San Francisco 1678 (7000), Tandil, BA, Argentina</span>
+        </p>
+        <p class="footer-company-line">
+          <span class="footer-company-label">Commercial address:</span>
+          <span class="footer-company-value">Instituto PLADEMA, Campus Universitario Tandil, Paraje Arroyo Seco S/N (7000), Tandil, BA, Argentina</span>
+        </p>
+        <p class="footer-company-line">
+          <span class="footer-company-label">Authorization:</span>
+          <span class="footer-company-value">Nº 54151 (Dirección de Farmacias, Ministerio de Salud de PBA). In process before ANMAT.</span>
+        </p>
+      </div>
+      <div class="social-links footer-social-links" aria-label="Social media">
+        <a
+          href="https://www.linkedin.com/company/retinar"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Retinar on LinkedIn"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6.36 8.09a2.09 2.09 0 1 1 0-4.18 2.09 2.09 0 0 1 0 4.18Zm1.77 12.09H4.58V9.9h3.55v10.28Zm12.05 0h-3.54v-5.23c0-1.25-.03-2.85-1.74-2.85-1.74 0-2 1.36-2 2.76v5.32H9.35V9.9h3.4v1.4h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.43v5.3Z"></path>
+          </svg>
+          <span class="sr-only">LinkedIn</span>
+        </a>
+        <a
+          href="https://www.instagram.com/retinararg/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Retinar on Instagram"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.9a3.85 3.85 0 0 0-3.85 3.85v8.5a3.85 3.85 0 0 0 3.85 3.85h8.5a3.85 3.85 0 0 0 3.85-3.85v-8.5a3.85 3.85 0 0 0-3.85-3.85h-8.5Zm8.9 1.5a1.35 1.35 0 1 1 0 2.7 1.35 1.35 0 0 1 0-2.7ZM12 7.15a4.85 4.85 0 1 1 0 9.7 4.85 4.85 0 0 1 0-9.7Zm0 1.9a2.95 2.95 0 1 0 0 5.9 2.95 2.95 0 0 0 0-5.9Z"></path>
+          </svg>
+          <span class="sr-only">Instagram</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col footer-col-nav">
+      <h2 class="footer-nav-title">Navigation</h2>
+      <div class="footer-nav-columns">
+        <ul class="footer-nav-list">
+          
+            <li><a href="/en/#como-funciona">Product</a></li>
+          
+            <li><a href="/en/#producto">Impact</a></li>
+          
+            <li><a href="/en/#para-quien">Who it's for</a></li>
+          
+            <li><a href="/en/blog/">Blog</a></li>
+          
+        </ul>
+        <ul class="footer-nav-list">
+          
+            <li><a href="/en/about/">About Retinar</a></li>
+          
+            <li><a href="/en/faq/">Frequently asked questions</a></li>
+          
+            <li><a href="/en/privacy/">Privacy</a></li>
+          
+            <li><a href="/en/terms/">Terms</a></li>
+          
+            <li><a href="/en/contact/">Contact</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>Copyright 2026 Retinar.</small>
+  </div>
+</footer>
+
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
