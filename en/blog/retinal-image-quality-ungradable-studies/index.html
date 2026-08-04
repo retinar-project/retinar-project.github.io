@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+<head>
+  
+  
+  
+  
+  
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Retinal image quality: how to reduce ungradable studies in screening programs</title>
+  <meta name="description" content="A practical guide to reduce ungradable fundus images: capture protocol, training, quality control, recapture workflow, and operational metrics.">
+
+  <link rel="canonical" href="https://retinar.com.ar/en/blog/retinal-image-quality-ungradable-studies/">
+  
+    <link rel="alternate" hreflang="en" href="https://retinar.com.ar/en/blog/retinal-image-quality-ungradable-studies/">
+    
+      <link rel="alternate" hreflang="es" href="https://retinar.com.ar/blog/calidad-imagen-retinografia-estudios-no-evaluables/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://retinar.com.ar/">
+  
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Retinar">
+  <meta property="og:title" content="Retinal image quality: how to reduce ungradable studies in screening programs">
+  <meta property="og:description" content="A practical guide to reduce ungradable fundus images: capture protocol, training, quality control, recapture workflow, and operational metrics.">
+  <meta property="og:url" content="https://retinar.com.ar/en/blog/retinal-image-quality-ungradable-studies/">
+  <meta property="og:image" content="https://retinar.com.ar/assets/img/placeholders/blog-hero.png">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Retinal image quality: how to reduce ungradable studies in screening programs">
+  <meta name="twitter:description" content="A practical guide to reduce ungradable fundus images: capture protocol, training, quality control, recapture workflow, and operational metrics.">
+  <meta name="twitter:image" content="https://retinar.com.ar/assets/img/placeholders/blog-hero.png">
+
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@600;700&family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/assets/img/placeholders/brand-logo.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body class="page-resource">
+  
+    <a class="skip-link" href="#main">Skip to content</a>
+  
+
+  
+
+
+
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="/en/">
+      <img
+        class="brand-logo"
+        src="/assets/img/logos/retinar_logo%20blanco-verde.png"
+        alt=""
+        width="2000"
+        height="2000"
+        loading="eager"
+        decoding="async"
+        aria-hidden="true"
+      >
+      <span class="sr-only">Retinar</span>
+    </a>
+
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+      <span class="sr-only">Menu</span>
+    </button>
+
+    <nav id="primary-nav" class="primary-nav" data-primary-nav>
+      <a class="language-switch" href="/blog/calidad-imagen-retinografia-estudios-no-evaluables/" aria-label="View site in Spanish">ES</a>
+      <div class="social-links header-social-links" aria-label="Social media">
+        <a
+          href="https://www.linkedin.com/company/retinar"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Retinar on LinkedIn"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6.36 8.09a2.09 2.09 0 1 1 0-4.18 2.09 2.09 0 0 1 0 4.18Zm1.77 12.09H4.58V9.9h3.55v10.28Zm12.05 0h-3.54v-5.23c0-1.25-.03-2.85-1.74-2.85-1.74 0-2 1.36-2 2.76v5.32H9.35V9.9h3.4v1.4h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.43v5.3Z"></path>
+          </svg>
+          <span class="sr-only">LinkedIn</span>
+        </a>
+        <a
+          href="https://www.instagram.com/retinararg/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Retinar on Instagram"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.9a3.85 3.85 0 0 0-3.85 3.85v8.5a3.85 3.85 0 0 0 3.85 3.85h8.5a3.85 3.85 0 0 0 3.85-3.85v-8.5a3.85 3.85 0 0 0-3.85-3.85h-8.5Zm8.9 1.5a1.35 1.35 0 1 1 0 2.7 1.35 1.35 0 0 1 0-2.7ZM12 7.15a4.85 4.85 0 1 1 0 9.7 4.85 4.85 0 0 1 0-9.7Zm0 1.9a2.95 2.95 0 1 0 0 5.9 2.95 2.95 0 0 0 0-5.9Z"></path>
+          </svg>
+          <span class="sr-only">Instagram</span>
+        </a>
+      </div>
+      <ul>
+        
+          <li>
+            <a href="/en/#como-funciona" class="">Product</a>
+          </li>
+        
+          <li>
+            <a href="/en/#producto" class="">Impact</a>
+          </li>
+        
+          <li>
+            <a href="/en/#para-quien" class="">Who it's for</a>
+          </li>
+        
+          <li>
+            <a href="/en/about/" class="">About Retinar</a>
+          </li>
+        
+          <li>
+            <a href="/en/blog/" class="">Blog</a>
+          </li>
+        
+          <li>
+            <a href="/en/contact/" class="nav-cta">Contact</a>
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <main id="main">
+
+<article class="resource-article">
+  <header class="page-hero section-dark">
+    <div class="container">
+      <p class="resource-meta">Implementation and operations</p>
+      <h1>Retinal image quality: how to reduce ungradable studies in screening programs</h1>
+      <p class="lead">A practical guide to reduce ungradable fundus images: capture protocol, training, quality control, recapture workflow, and operational metrics.</p>
+      
+        <figure class="resource-hero-image">
+          <img src="/assets/img/placeholders/blog-hero.png" alt="Retinal image quality: how to reduce ungradable studies in screening programs">
+        </figure>
+      
+    </div>
+  </header>
+
+  <section class="page-content section">
+    <div class="container prose"><p>In a retinal screening program, image quality is not just a technician issue or a minor equipment detail. An ungradable fundus image can mean:</p>
+
+<ul>
+  <li>a patient needs to return another day</li>
+  <li>the result cannot support clinical decisions</li>
+  <li>the coordination team has to reopen the case</li>
+  <li>loss to follow-up becomes more likely</li>
+  <li>teleophthalmology performs worse than expected</li>
+</ul>
+
+<p>That is why mature programs treat image quality as a core operational variable: it is defined, measured, corrected, and audited.</p>
+
+<p>This article offers a practical framework for hospitals, clinics, primary care networks, and outreach campaigns capturing fundus images for diabetic retinopathy screening or other retinal findings.</p>
+
+<p>Useful institutional sources for this approach:</p>
+
+<ul>
+  <li>NHS Diabetic Eye Screening Programme - guidance on fundus image quality and inadequate images: https://www.gov.uk/government/publications/diabetic-eye-screening-pathway-for-images-and-where-images-cannot-be-taken/diabetic-eye-screening-guidance-when-adequate-images-cannot-be-taken</li>
+  <li>American Telemedicine Association - Practice Guidelines for Ocular Telehealth-Diabetic Retinopathy: https://pmc.ncbi.nlm.nih.gov/articles/PMC7187969/</li>
+  <li>FDA - Human Factors and Medical Devices: https://www.fda.gov/medical-devices/device-advice-comprehensive-regulatory-assistance/human-factors-and-medical-devices</li>
+  <li>WHO - Package of Eye Care Interventions: https://www.who.int/publications/i/item/9789240048959</li>
+</ul>
+
+<hr />
+
+<h2 id="what-ungradable-means-in-practice">What “ungradable” means in practice</h2>
+
+<p>An ungradable image is one that does not allow confident retinal interpretation for the purpose of the program. It may be caused by capture issues, media opacity, poor fixation, insufficient field, defocus, poor illumination, artifacts, or a combination of factors.</p>
+
+<p>The NHS diabetic eye screening guidance distinguishes between cases where images cannot be captured and cases where images are captured but are inadequate for assessment. It also notes that quality decisions can happen at more than one point in the pathway: at image capture and during grading.</p>
+
+<p>That point matters. Image quality is not solved only at the end. It should be checked at the point of capture, because that is when correction is still possible.</p>
+
+<hr />
+
+<h2 id="why-it-directly-affects-program-outcomes">Why it directly affects program outcomes</h2>
+
+<p>A high ungradable rate creates a chain of problems:</p>
+
+<ol>
+  <li>
+    <p><strong>Unnecessary recaptures</strong><br />
+The patient needs another visit, the team reopens the case, and another appointment slot is consumed.</p>
+  </li>
+  <li>
+    <p><strong>Clinical delays</strong><br />
+If the study was high risk, the lack of a usable image delays decision-making.</p>
+  </li>
+  <li>
+    <p><strong>Loss to follow-up</strong><br />
+Every extra visit increases the chance that the patient will not complete the pathway.</p>
+  </li>
+  <li>
+    <p><strong>Specialist overload</strong><br />
+Ophthalmologists or graders lose time separating technical issues from clinical findings.</p>
+  </li>
+  <li>
+    <p><strong>Misleading metrics</strong><br />
+“We captured 1,000 patients” means less if a relevant share could not be assessed.</p>
+  </li>
+</ol>
+
+<p>In retina programs, it is worth measuring not only coverage, but also the percentage of gradable images, rejection reasons, and time to recapture.</p>
+
+<p>If you are working on referral completion, this article complements our guide on adherence and closed-loop follow-up:<br />
+https://retinar.com.ar/en/blog/diabetes-eye-screening-adherence-reminders-closure/</p>
+
+<hr />
+
+<h2 id="common-causes-of-poor-image-quality">Common causes of poor image quality</h2>
+
+<p>Every camera and patient population has its own details, but causes usually fall into five groups.</p>
+
+<h3 id="patient-positioning">1) Patient positioning</h3>
+
+<p>This includes poor chin or forehead support, eye misalignment, incorrect distance, poor fixation, or fatigue during capture.</p>
+
+<p>The answer is not one-time training. Teams need simple instructions, a posture checklist, and immediate feedback for the operator.</p>
+
+<h3 id="focus-illumination-and-artifacts">2) Focus, illumination, and artifacts</h3>
+
+<p>Defocus, underexposure, overexposure, reflections, and eyelashes in the field can make an image hard to read.</p>
+
+<p>A capture protocol should define what happens before accepting the image: repeat, adjust the camera, change fixation, or take additional images.</p>
+
+<h3 id="insufficient-field">3) Insufficient field</h3>
+
+<p>A fundus image may be sharp and still fail to cover the required region. For diabetic retinopathy screening, protocols often specify fields centered on the macula and optic disc, or equivalent variants depending on the camera and program.</p>
+
+<p>The NHS guidance, for example, describes adequacy criteria related to field position and visualization of relevant retinal structures.</p>
+
+<h3 id="opacities-or-clinical-limitations">4) Opacities or clinical limitations</h3>
+
+<p>Cataract, small pupil, vitreous hemorrhage, corneal opacity, or other conditions can prevent a usable capture. In those cases, the issue is not an operator failure: the pathway should specify how to refer or assess the patient by another method.</p>
+
+<h3 id="use-environment">5) Use environment</h3>
+
+<p>Ambient light, physical space, interruptions, connectivity, volume pressure, and workstation ergonomics affect quality. When discussing human factors in medical devices, the FDA emphasizes that user, environment, and interface all influence safe and effective use.</p>
+
+<p>In outreach campaigns or primary care settings, this dimension is often decisive.</p>
+
+<hr />
+
+<h2 id="a-minimum-protocol-to-capture-usable-images-the-first-time">A minimum protocol to capture usable images the first time</h2>
+
+<p>A good protocol does not need to be long. It needs to be actionable.</p>
+
+<h3 id="before-capture">Before capture</h3>
+
+<ul>
+  <li>Confirm patient identity and eye.</li>
+  <li>Explain the procedure in one clear sentence.</li>
+  <li>Check basic lens cleanliness and camera settings.</li>
+  <li>Adjust chair, chin rest, and forehead position.</li>
+  <li>Control ambient light when possible.</li>
+  <li>Record relevant context for local interpretation, if the workflow requires it.</li>
+</ul>
+
+<h3 id="during-capture">During capture</h3>
+
+<ul>
+  <li>Check focus before shooting.</li>
+  <li>Confirm that the macula and/or optic disc are inside the expected field.</li>
+  <li>Repeat immediately if there are eyelashes, reflections, shadow, defocus, or poor fixation.</li>
+  <li>Capture additional images if the protocol allows it and the first field is insufficient.</li>
+  <li>Record the reason when an adequate image cannot be obtained.</li>
+</ul>
+
+<h3 id="after-capture">After capture</h3>
+
+<ul>
+  <li>Mark quality: gradable / ungradable / uncertain.</li>
+  <li>Record the ungradable reason with simple categories.</li>
+  <li>Send only images meeting minimum criteria for review, unless the protocol requires all cases to be assessed.</li>
+  <li>Define the immediate action: accept, recapture, refer, or schedule a new attempt.</li>
+</ul>
+
+<p>The ATA guidelines recommend that unobtainable or ungradable images be considered a positive finding in diabetic retinopathy telehealth programs, with referral for eye care evaluation when appropriate. Operationally, an “ungradable” result should never remain in an unowned queue.</p>
+
+<hr />
+
+<h2 id="metrics-worth-reviewing-every-month">Metrics worth reviewing every month</h2>
+
+<p>You do not need a huge dashboard to operate. These metrics are usually enough:</p>
+
+<ol>
+  <li>
+    <p><strong>Percentage of gradable studies</strong><br />
+Total gradable / total captured.</p>
+  </li>
+  <li>
+    <p><strong>Ungradable rate by site and operator</strong><br />
+Helps detect training needs, camera issues, or environmental constraints.</p>
+  </li>
+  <li>
+    <p><strong>Reasons for ungradability</strong><br />
+Defocus, insufficient field, opacity, small pupil, artifact, identification error, other.</p>
+  </li>
+  <li>
+    <p><strong>Same-day recapture rate</strong><br />
+Measures whether quality control happens in time.</p>
+  </li>
+  <li>
+    <p><strong>Time to resolve ungradable studies</strong><br />
+Days until recapture, referral, or clinical closure.</p>
+  </li>
+  <li>
+    <p><strong>Repeated ungradable rate</strong><br />
+If a patient fails more than once, an alternative pathway is probably needed.</p>
+  </li>
+  <li>
+    <p><strong>Capture vs review disagreement</strong><br />
+Cases the capturer marked adequate but the grader considered inadequate, or the reverse.</p>
+  </li>
+  <li>
+    <p><strong>Impact on referrals</strong><br />
+How many ungradable studies led to in-person assessment, recapture, or loss to follow-up.</p>
+  </li>
+</ol>
+
+<p>These metrics connect technical quality with operational outcomes. They also help justify investment in training, better cameras, workstation redesign, or software assistance.</p>
+
+<hr />
+
+<h2 id="how-to-use-ai-without-hiding-the-operational-problem">How to use AI without hiding the operational problem</h2>
+
+<p>AI can help significantly with image quality, but it should not become a black box that simply rejects studies.</p>
+
+<p>The most useful applications usually include:</p>
+
+<ul>
+  <li>warning the operator that the image is out of focus</li>
+  <li>detecting insufficient field</li>
+  <li>flagging low illumination or reflections</li>
+  <li>suggesting recapture before the patient leaves</li>
+  <li>prioritizing review when uncertainty is present</li>
+  <li>recording metrics automatically</li>
+</ul>
+
+<p>The key is that AI must provide actionable feedback at the right moment. If the system reports “ungradable” three hours later, the patient has already left and the operational cost returns.</p>
+
+<p>This approach connects with human-in-the-loop design in clinical AI:<br />
+https://retinar.com.ar/en/blog/human-in-the-loop-ai-in-healthcare/</p>
+
+<hr />
+
+<h2 id="implementation-checklist-for-institutions">Implementation checklist for institutions</h2>
+
+<h3 id="for-the-clinical-team">For the clinical team</h3>
+
+<ul>
+  <li>Define what counts as a gradable image.</li>
+  <li>Agree when to recapture and when to refer.</li>
+  <li>Set criteria for repeated ungradable cases.</li>
+  <li>Review real examples periodically with capturers and graders.</li>
+</ul>
+
+<h3 id="for-operations">For operations</h3>
+
+<ul>
+  <li>Measure ungradable rates by site, operator, camera, and shift.</li>
+  <li>Reserve time for immediate recapture.</li>
+  <li>Avoid schedules so tight that they reward capturing fast but poorly.</li>
+  <li>Document who resolves each ungradable study.</li>
+</ul>
+
+<h3 id="for-it-teams">For IT teams</h3>
+
+<ul>
+  <li>Record image quality reason as structured data.</li>
+  <li>Avoid free text as the only explanation.</li>
+  <li>Link quality status with image, eye, operator, camera, and date.</li>
+  <li>Integrate study status into the referral workflow.</li>
+</ul>
+
+<h3 id="for-procurement">For procurement</h3>
+
+<ul>
+  <li>Ask whether the system provides real-time quality feedback.</li>
+  <li>Verify metric exportability.</li>
+  <li>Evaluate compatibility with existing cameras.</li>
+  <li>Request examples of quality and audit reports.</li>
+</ul>
+
+<hr />
+
+<h2 id="how-retinar-helps-with-this-point">How Retinar helps with this point</h2>
+
+<p>In retina programs, Retinar helps make image quality an operational part of the workflow:</p>
+
+<ul>
+  <li>capture assistance to reduce ungradable studies</li>
+  <li>quality recording and study traceability</li>
+  <li>case prioritization for review</li>
+  <li>recapture or referral workflows when image quality is insufficient</li>
+  <li>metrics to detect sites, cameras, or times with higher rejection rates</li>
+</ul>
+
+<p>The goal is not only to “get a better photo.” The goal is to prevent a patient from being left without a clinical decision because of a problem that could have been corrected at the point of capture.</p>
+
+<p>If your institution is already thinking about teleophthalmology, this guide pairs well with the implementation model article:<br />
+https://retinar.com.ar/en/blog/teleophthalmology-implementation-models-hospitals-clinics-campaigns/</p>
+
+<hr />
+
+<h2 id="closing-image-quality-is-program-quality">Closing: image quality is program quality</h2>
+
+<p>An ungradable retinal image may look like a technical issue, but it actually reflects the health of the whole pathway: training, protocol, ergonomics, technology, scheduling, and follow-up.</p>
+
+<p>Programs that reduce their ungradable rate usually achieve more than better images. They reduce recaptures, limit loss to follow-up, protect specialist time, and make faster decisions.</p>
+
+<p>If you want to review how Retinar can fit into your capture, quality control, AI, and referral workflow, you can schedule a demo at https://retinar.com.ar.</p>
+</div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container resource-cta-grid">
+      <div>
+        <h2>Implement Retinar and reduce blindness cases due to diabetes</h2>
+        <p>Share your institutional context and we will propose an implementation plan.</p>
+      </div>
+      <div>
+        <a href="/en/#demo" class="button button-primary">Contact us</a>
+      </div>
+    </div>
+  </section>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Retinal image quality: how to reduce ungradable studies in screening programs",
+  "description": "A practical guide to reduce ungradable fundus images: capture protocol, training, quality control, recapture workflow, and operational metrics.",
+  "datePublished": "2026-05-08T00:00:00-03:00",
+  "dateModified": "2026-05-08T00:00:00-03:00",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Organization",
+    "name": "Retinar"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Retinar",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://retinar.com.ar/assets/img/placeholders/brand-logo.png"
+    }
+  },
+  "mainEntityOfPage": "https://retinar.com.ar/en/blog/retinal-image-quality-ungradable-studies/"
+}
+</script>
+</main>
+  
+
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col footer-col-brand">
+      <a class="brand footer-brand-link" href="/en/">
+        <img
+          class="footer-brand-logo"
+          src="/assets/img/logos/retinar_logo%20blanco-verde.png"
+          alt=""
+          width="2000"
+          height="2000"
+          loading="lazy"
+          decoding="async"
+          aria-hidden="true"
+        >
+        <span class="sr-only">Retinar</span>
+      </a>
+      <p class="footer-tagline">AI for teleophthalmology and early detection of preventable blindness.</p>
+      <p class="footer-contact-email">
+        <span class="footer-contact-email-label">Email:</span>
+        <a href="mailto:info@retinar.com.ar">info@retinar.com.ar</a>
+      </p>
+      <div class="footer-company-details" aria-label="Company legal information">
+        <p class="footer-company-line footer-company-line-identity">
+          <strong>Retinar SAS</strong> (CUIT 30-71892218-2)
+        </p>
+        <p class="footer-company-line">
+          <span class="footer-company-label">Registered address:</span>
+          <span class="footer-company-value">San Francisco 1678 (7000), Tandil, BA, Argentina</span>
+        </p>
+        <p class="footer-company-line">
+          <span class="footer-company-label">Commercial address:</span>
+          <span class="footer-company-value">Instituto PLADEMA, Campus Universitario Tandil, Paraje Arroyo Seco S/N (7000), Tandil, BA, Argentina</span>
+        </p>
+        <p class="footer-company-line">
+          <span class="footer-company-label">Authorization:</span>
+          <span class="footer-company-value">Nº 54151 (Dirección de Farmacias, Ministerio de Salud de PBA). In process before ANMAT.</span>
+        </p>
+      </div>
+      <div class="social-links footer-social-links" aria-label="Social media">
+        <a
+          href="https://www.linkedin.com/company/retinar"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Retinar on LinkedIn"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6.36 8.09a2.09 2.09 0 1 1 0-4.18 2.09 2.09 0 0 1 0 4.18Zm1.77 12.09H4.58V9.9h3.55v10.28Zm12.05 0h-3.54v-5.23c0-1.25-.03-2.85-1.74-2.85-1.74 0-2 1.36-2 2.76v5.32H9.35V9.9h3.4v1.4h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.43v5.3Z"></path>
+          </svg>
+          <span class="sr-only">LinkedIn</span>
+        </a>
+        <a
+          href="https://www.instagram.com/retinararg/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Retinar on Instagram"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.9a3.85 3.85 0 0 0-3.85 3.85v8.5a3.85 3.85 0 0 0 3.85 3.85h8.5a3.85 3.85 0 0 0 3.85-3.85v-8.5a3.85 3.85 0 0 0-3.85-3.85h-8.5Zm8.9 1.5a1.35 1.35 0 1 1 0 2.7 1.35 1.35 0 0 1 0-2.7ZM12 7.15a4.85 4.85 0 1 1 0 9.7 4.85 4.85 0 0 1 0-9.7Zm0 1.9a2.95 2.95 0 1 0 0 5.9 2.95 2.95 0 0 0 0-5.9Z"></path>
+          </svg>
+          <span class="sr-only">Instagram</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col footer-col-nav">
+      <h2 class="footer-nav-title">Navigation</h2>
+      <div class="footer-nav-columns">
+        <ul class="footer-nav-list">
+          
+            <li><a href="/en/#como-funciona">Product</a></li>
+          
+            <li><a href="/en/#producto">Impact</a></li>
+          
+            <li><a href="/en/#para-quien">Who it's for</a></li>
+          
+            <li><a href="/en/blog/">Blog</a></li>
+          
+        </ul>
+        <ul class="footer-nav-list">
+          
+            <li><a href="/en/about/">About Retinar</a></li>
+          
+            <li><a href="/en/faq/">Frequently asked questions</a></li>
+          
+            <li><a href="/en/privacy/">Privacy</a></li>
+          
+            <li><a href="/en/terms/">Terms</a></li>
+          
+            <li><a href="/en/contact/">Contact</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>Copyright 2026 Retinar.</small>
+  </div>
+</footer>
+
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

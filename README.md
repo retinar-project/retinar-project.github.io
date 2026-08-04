@@ -337,7 +337,6 @@ Opciones útiles:
 Este repo también incluye una base para automatizar la generación y publicación semanal del blog dentro de Codex:
 
 - Skill local de generación editorial: `codex-skills/retinar-generar-articulo-blog/SKILL.md`
-- Skill local de publicación y deploy: `codex-skills/retinar-publicar-articulo-blog/SKILL.md`
 - Inventario editorial y comparación temática: `scripts/blog_topic_inventory.py`
 - Commit + push + deploy del artículo: `scripts/commit_and_deploy_blog.sh`
 

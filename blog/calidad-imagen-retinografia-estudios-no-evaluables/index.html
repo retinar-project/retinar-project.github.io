@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="es">
+<head>
+  
+  
+  
+  
+  
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Calidad de imagen en retinografía: cómo reducir estudios no evaluables en programas de retina</title>
+  <meta name="description" content="Guía práctica para bajar la tasa de retinografías no evaluables: protocolo de captura, capacitación, control de calidad, recaptura y métricas operativas.">
+
+  <link rel="canonical" href="https://retinar.com.ar/blog/calidad-imagen-retinografia-estudios-no-evaluables/">
+  
+    <link rel="alternate" hreflang="es" href="https://retinar.com.ar/blog/calidad-imagen-retinografia-estudios-no-evaluables/">
+    
+      <link rel="alternate" hreflang="en" href="https://retinar.com.ar/en/blog/retinal-image-quality-ungradable-studies/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://retinar.com.ar/">
+  
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Retinar">
+  <meta property="og:title" content="Calidad de imagen en retinografía: cómo reducir estudios no evaluables en programas de retina">
+  <meta property="og:description" content="Guía práctica para bajar la tasa de retinografías no evaluables: protocolo de captura, capacitación, control de calidad, recaptura y métricas operativas.">
+  <meta property="og:url" content="https://retinar.com.ar/blog/calidad-imagen-retinografia-estudios-no-evaluables/">
+  <meta property="og:image" content="https://retinar.com.ar/assets/img/placeholders/blog-hero.png">
+  <meta property="og:locale" content="es_AR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calidad de imagen en retinografía: cómo reducir estudios no evaluables en programas de retina">
+  <meta name="twitter:description" content="Guía práctica para bajar la tasa de retinografías no evaluables: protocolo de captura, capacitación, control de calidad, recaptura y métricas operativas.">
+  <meta name="twitter:image" content="https://retinar.com.ar/assets/img/placeholders/blog-hero.png">
+
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@600;700&family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/assets/img/placeholders/brand-logo.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body class="page-resource">
+  
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+  
+
+  
+
+
+
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="/">
+      <img
+        class="brand-logo"
+        src="/assets/img/logos/retinar_logo%20blanco-verde.png"
+        alt=""
+        width="2000"
+        height="2000"
+        loading="eager"
+        decoding="async"
+        aria-hidden="true"
+      >
+      <span class="sr-only">Retinar</span>
+    </a>
+
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+      <span class="sr-only">Menú</span>
+    </button>
+
+    <nav id="primary-nav" class="primary-nav" data-primary-nav>
+      <a class="language-switch" href="/en/blog/retinal-image-quality-ungradable-studies/" aria-label="Ver sitio en inglés">EN</a>
+      <div class="social-links header-social-links" aria-label="Redes sociales">
+        <a
+          href="https://www.linkedin.com/company/retinar"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn de Retinar"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6.36 8.09a2.09 2.09 0 1 1 0-4.18 2.09 2.09 0 0 1 0 4.18Zm1.77 12.09H4.58V9.9h3.55v10.28Zm12.05 0h-3.54v-5.23c0-1.25-.03-2.85-1.74-2.85-1.74 0-2 1.36-2 2.76v5.32H9.35V9.9h3.4v1.4h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.43v5.3Z"></path>
+          </svg>
+          <span class="sr-only">LinkedIn</span>
+        </a>
+        <a
+          href="https://www.instagram.com/retinararg/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram de Retinar"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.9a3.85 3.85 0 0 0-3.85 3.85v8.5a3.85 3.85 0 0 0 3.85 3.85h8.5a3.85 3.85 0 0 0 3.85-3.85v-8.5a3.85 3.85 0 0 0-3.85-3.85h-8.5Zm8.9 1.5a1.35 1.35 0 1 1 0 2.7 1.35 1.35 0 0 1 0-2.7ZM12 7.15a4.85 4.85 0 1 1 0 9.7 4.85 4.85 0 0 1 0-9.7Zm0 1.9a2.95 2.95 0 1 0 0 5.9 2.95 2.95 0 0 0 0-5.9Z"></path>
+          </svg>
+          <span class="sr-only">Instagram</span>
+        </a>
+      </div>
+      <ul>
+        
+          <li>
+            <a href="/#como-funciona" class="">Producto</a>
+          </li>
+        
+          <li>
+            <a href="/#producto" class="">Impacto</a>
+          </li>
+        
+          <li>
+            <a href="/#para-quien" class="">Para quiénes</a>
+          </li>
+        
+          <li>
+            <a href="/sobre/" class="">Sobre Retinar</a>
+          </li>
+        
+          <li>
+            <a href="/blog/" class="">Blog</a>
+          </li>
+        
+          <li>
+            <a href="/contacto/" class="nav-cta">Contacto</a>
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <main id="main">
+
+<article class="resource-article">
+  <header class="page-hero section-dark">
+    <div class="container">
+      <p class="resource-meta">Implementación y operaciones</p>
+      <h1>Calidad de imagen en retinografía: cómo reducir estudios no evaluables en programas de retina</h1>
+      <p class="lead">Guía práctica para bajar la tasa de retinografías no evaluables: protocolo de captura, capacitación, control de calidad, recaptura y métricas operativas.</p>
+      
+        <figure class="resource-hero-image">
+          <img src="/assets/img/placeholders/blog-hero.png" alt="Calidad de imagen en retinografía: cómo reducir estudios no evaluables en programas de retina">
+        </figure>
+      
+    </div>
+  </header>
+
+  <section class="page-content section">
+    <div class="container prose"><p>En un programa de tamizaje de retina, la calidad de imagen no es un tema “del técnico” ni un detalle menor de equipamiento. Una retinografía no evaluable puede significar:</p>
+
+<ul>
+  <li>un paciente que debe volver otro día</li>
+  <li>un resultado que no permite tomar decisiones</li>
+  <li>más carga para el equipo de coordinación</li>
+  <li>más pérdida de seguimiento</li>
+  <li>peor rendimiento de la teleoftalmología</li>
+</ul>
+
+<p>Por eso, los programas maduros tratan la calidad de imagen como una variable operativa central: se define, se mide, se corrige y se audita.</p>
+
+<p>Este artículo propone un marco práctico para hospitales, clínicas, redes de atención primaria y campañas que capturan retinografías para detección de retinopatía diabética u otros hallazgos de retina.</p>
+
+<p>Fuentes institucionales útiles para este enfoque:</p>
+
+<ul>
+  <li>NHS Diabetic Eye Screening Programme - guidance on fundus image quality and inadequate images: https://www.gov.uk/government/publications/diabetic-eye-screening-pathway-for-images-and-where-images-cannot-be-taken/diabetic-eye-screening-guidance-when-adequate-images-cannot-be-taken</li>
+  <li>American Telemedicine Association - Practice Guidelines for Ocular Telehealth-Diabetic Retinopathy: https://pmc.ncbi.nlm.nih.gov/articles/PMC7187969/</li>
+  <li>FDA - Human Factors and Medical Devices: https://www.fda.gov/medical-devices/device-advice-comprehensive-regulatory-assistance/human-factors-and-medical-devices</li>
+  <li>WHO - Package of Eye Care Interventions: https://www.who.int/publications/i/item/9789240048959</li>
+</ul>
+
+<hr />
+
+<h2 id="qu-significa-no-evaluable-en-la-prctica">Qué significa “no evaluable” en la práctica</h2>
+
+<p>Una imagen no evaluable es aquella que no permite interpretar con confianza la retina para el objetivo del programa. Puede deberse a problemas de captura, medios opacos, mala fijación, campo insuficiente, desenfoque, iluminación deficiente, artefactos o una combinación de factores.</p>
+
+<p>La guía del programa de tamizaje ocular diabético del NHS distingue entre situaciones en las que las imágenes no pueden obtenerse y situaciones en las que sí se capturan, pero resultan inadecuadas para evaluación. También remarca que la decisión sobre calidad puede ocurrir en más de un punto del circuito: durante la captura y durante la gradación.</p>
+
+<p>Ese punto es clave: la calidad no se resuelve solo “al final”. Debe controlarse en el momento de captura, porque ahí todavía es posible corregir.</p>
+
+<hr />
+
+<h2 id="por-qu-afecta-directamente-los-resultados-del-programa">Por qué afecta directamente los resultados del programa</h2>
+
+<p>Una tasa alta de estudios no evaluables genera una cadena de problemas:</p>
+
+<ol>
+  <li>
+    <p><strong>Recapturas innecesarias</strong><br />
+El paciente debe volver, el equipo reabre el caso y se consume otro turno.</p>
+  </li>
+  <li>
+    <p><strong>Demoras clínicas</strong><br />
+Si el estudio era de riesgo, la falta de imagen útil retrasa la decisión.</p>
+  </li>
+  <li>
+    <p><strong>Pérdida de seguimiento</strong><br />
+Cada visita adicional aumenta la posibilidad de que el paciente no complete el circuito.</p>
+  </li>
+  <li>
+    <p><strong>Sobrecarga de especialistas</strong><br />
+El oftalmólogo o grader pierde tiempo separando problemas técnicos de hallazgos clínicos.</p>
+  </li>
+  <li>
+    <p><strong>Métricas engañosas</strong><br />
+“Capturamos 1.000 pacientes” no significa mucho si una proporción relevante no pudo ser evaluada.</p>
+  </li>
+</ol>
+
+<p>Por eso, en programas de retina conviene medir no solo cobertura, sino también porcentaje de imágenes evaluables, motivos de rechazo y tiempo hasta recaptura.</p>
+
+<p>Si estás trabajando el cierre de derivaciones, este artículo complementa la guía sobre adherencia y cierre del circuito:<br />
+https://retinar.com.ar/blog/adherencia-control-retina-diabetes-recordatorios-cierre-loop/</p>
+
+<hr />
+
+<h2 id="las-causas-ms-frecuentes-de-mala-calidad">Las causas más frecuentes de mala calidad</h2>
+
+<p>Aunque cada cámara y población tiene sus particularidades, las causas suelen agruparse en cinco bloques.</p>
+
+<h3 id="posicionamiento-del-paciente">1) Posicionamiento del paciente</h3>
+
+<p>Incluye mentón o frente mal apoyados, ojo desalineado, distancia incorrecta, mala fijación o cansancio durante la captura.</p>
+
+<p>La solución no es solo “capacitar una vez”: se necesitan instrucciones simples, checklist de postura y feedback inmediato al operador.</p>
+
+<h3 id="enfoque-iluminacin-y-artefactos">2) Enfoque, iluminación y artefactos</h3>
+
+<p>El desenfoque, la subexposición, la sobreexposición, los reflejos y las pestañas sobre el campo pueden volver la imagen difícil de leer.</p>
+
+<p>Un protocolo de captura debe definir qué hacer antes de aceptar la imagen: repetir, ajustar cámara, cambiar fijación o tomar imágenes adicionales.</p>
+
+<h3 id="campo-insuficiente">3) Campo insuficiente</h3>
+
+<p>Una retinografía puede estar nítida y aun así no cubrir la región necesaria. Para tamizaje de retinopatía diabética, los protocolos suelen especificar campos centrados en mácula y disco óptico, o variantes equivalentes según cámara y programa.</p>
+
+<p>La guía del NHS, por ejemplo, describe criterios de adecuación vinculados al campo y a la visualización de estructuras relevantes.</p>
+
+<h3 id="opacidades-o-limitaciones-clnicas">4) Opacidades o limitaciones clínicas</h3>
+
+<p>Catarata, pupila pequeña, hemorragias vítreas, córnea opaca u otras condiciones pueden impedir una captura útil. En esos casos, el problema no es “fallo del operador”: el circuito debe indicar cómo derivar o evaluar por otro método.</p>
+
+<h3 id="entorno-de-uso">5) Entorno de uso</h3>
+
+<p>Luz ambiente, espacio físico, interrupciones, conectividad, presión por volumen y ergonomía del puesto afectan la calidad. La FDA, al hablar de factores humanos en dispositivos médicos, subraya que usuario, entorno y interfaz influyen en el uso seguro y efectivo.</p>
+
+<p>En campañas o APS, esta dimensión suele ser decisiva.</p>
+
+<hr />
+
+<h2 id="un-protocolo-mnimo-para-capturar-bien-a-la-primera">Un protocolo mínimo para capturar bien a la primera</h2>
+
+<p>Un buen protocolo no tiene que ser largo. Tiene que ser accionable.</p>
+
+<h3 id="antes-de-la-captura">Antes de la captura</h3>
+
+<ul>
+  <li>Confirmar identidad del paciente y ojo.</li>
+  <li>Explicar el procedimiento en una frase clara.</li>
+  <li>Revisar limpieza básica del lente y configuración de cámara.</li>
+  <li>Ajustar silla, mentonera y frente.</li>
+  <li>Controlar luz ambiente cuando sea posible.</li>
+  <li>Registrar antecedentes relevantes para interpretación local, si el flujo lo requiere.</li>
+</ul>
+
+<h3 id="durante-la-captura">Durante la captura</h3>
+
+<ul>
+  <li>Verificar enfoque antes de disparar.</li>
+  <li>Confirmar que mácula y/o disco estén dentro del campo esperado.</li>
+  <li>Repetir en el momento si hay pestañas, reflejos, sombra, desenfoque o mala fijación.</li>
+  <li>Capturar imágenes adicionales si el protocolo lo permite y el primer campo no alcanza.</li>
+  <li>Registrar la causa cuando no se logra una imagen adecuada.</li>
+</ul>
+
+<h3 id="despus-de-la-captura">Después de la captura</h3>
+
+<ul>
+  <li>Marcar calidad: evaluable / no evaluable / dudosa.</li>
+  <li>Registrar motivo de no evaluable con categorías simples.</li>
+  <li>Enviar a revisión solo imágenes que cumplan criterio mínimo, salvo que el protocolo indique evaluación de todos los casos.</li>
+  <li>Definir acción inmediata: aceptar, recapturar, derivar o programar nuevo intento.</li>
+</ul>
+
+<p>La ATA recomienda que las imágenes no obtenibles o no gradables se traten como hallazgos positivos en programas de telehealth para retinopatía diabética, con derivación para evaluación oftalmológica cuando corresponda. En términos operativos: un “no evaluable” no debe quedar en una bandeja sin dueño.</p>
+
+<hr />
+
+<h2 id="mtricas-que-conviene-mirar-cada-mes">Métricas que conviene mirar cada mes</h2>
+
+<p>Para operar, no hace falta un tablero enorme. Estas métricas suelen alcanzar:</p>
+
+<ol>
+  <li>
+    <p><strong>Porcentaje de estudios evaluables</strong><br />
+Total evaluables / total capturados.</p>
+  </li>
+  <li>
+    <p><strong>Tasa de no evaluables por sede y operador</strong><br />
+Permite detectar necesidades de capacitación, problemas de cámara o condiciones del entorno.</p>
+  </li>
+  <li>
+    <p><strong>Motivos de no evaluabilidad</strong><br />
+Desenfoque, campo insuficiente, opacidad, pupila pequeña, artefacto, error de identificación, otros.</p>
+  </li>
+  <li>
+    <p><strong>Recaptura en el mismo día</strong><br />
+Mide si el control de calidad ocurre a tiempo.</p>
+  </li>
+  <li>
+    <p><strong>Tiempo hasta resolución del no evaluable</strong><br />
+Días hasta recaptura, derivación o cierre clínico.</p>
+  </li>
+  <li>
+    <p><strong>Tasa de no evaluables repetidos</strong><br />
+Si un paciente falla más de una vez, probablemente necesita un circuito alternativo.</p>
+  </li>
+  <li>
+    <p><strong>Discordancia captura vs revisión</strong><br />
+Casos que el capturador marcó como adecuados pero el grader consideró inadecuados, o al revés.</p>
+  </li>
+  <li>
+    <p><strong>Impacto en derivaciones</strong><br />
+Cuántos no evaluables terminaron en evaluación presencial, recaptura o pérdida de seguimiento.</p>
+  </li>
+</ol>
+
+<p>Estas métricas conectan calidad técnica con resultados operativos. También ayudan a justificar inversión en capacitación, mejores cámaras, rediseño de puestos o asistencia por software.</p>
+
+<hr />
+
+<h2 id="cmo-usar-ia-sin-tapar-el-problema-operativo">Cómo usar IA sin tapar el problema operativo</h2>
+
+<p>La IA puede ayudar mucho en calidad de imagen, pero no debe convertirse en una caja negra que simplemente rechaza estudios.</p>
+
+<p>El uso más útil suele ser:</p>
+
+<ul>
+  <li>avisar al operador que la imagen está desenfocada</li>
+  <li>detectar campo insuficiente</li>
+  <li>señalar baja iluminación o reflejos</li>
+  <li>sugerir recaptura antes de que el paciente se retire</li>
+  <li>priorizar revisión cuando hay incertidumbre</li>
+  <li>registrar métricas automáticamente</li>
+</ul>
+
+<p>La clave es que la IA dé feedback accionable en el momento correcto. Si el sistema informa “no evaluable” tres horas después, el paciente ya se fue y el costo operativo vuelve a aparecer.</p>
+
+<p>Este enfoque se relaciona con el diseño human-in-the-loop aplicado a IA clínica:<br />
+https://retinar.com.ar/blog/ia-human-in-the-loop-salud/</p>
+
+<hr />
+
+<h2 id="checklist-para-implementar-en-una-institucin">Checklist para implementar en una institución</h2>
+
+<h3 id="para-el-equipo-clnico">Para el equipo clínico</h3>
+
+<ul>
+  <li>Definir qué cuenta como imagen evaluable.</li>
+  <li>Acordar cuándo se recaptura y cuándo se deriva.</li>
+  <li>Establecer criterios para casos no evaluables repetidos.</li>
+  <li>Revisar periódicamente ejemplos reales con capturadores y graders.</li>
+</ul>
+
+<h3 id="para-operaciones">Para operaciones</h3>
+
+<ul>
+  <li>Medir no evaluables por sede, operador, cámara y jornada.</li>
+  <li>Reservar tiempo para recaptura inmediata.</li>
+  <li>Evitar agendas tan ajustadas que premien capturar rápido pero mal.</li>
+  <li>Documentar quién resuelve cada no evaluable.</li>
+</ul>
+
+<h3 id="para-sistemas">Para sistemas</h3>
+
+<ul>
+  <li>Registrar motivo de calidad como dato estructurado.</li>
+  <li>Evitar campos libres como única explicación.</li>
+  <li>Vincular calidad con imagen, ojo, operador, cámara y fecha.</li>
+  <li>Integrar el estado del estudio al flujo de derivación.</li>
+</ul>
+
+<h3 id="para-compras">Para compras</h3>
+
+<ul>
+  <li>Preguntar si el sistema muestra feedback de calidad en tiempo real.</li>
+  <li>Verificar exportabilidad de métricas.</li>
+  <li>Evaluar compatibilidad con cámaras existentes.</li>
+  <li>Pedir ejemplos de reportes de calidad y auditoría.</li>
+</ul>
+
+<hr />
+
+<h2 id="cmo-ayuda-retinar-en-este-punto">Cómo ayuda Retinar en este punto</h2>
+
+<p>En programas de retina, Retinar ayuda a convertir la calidad de imagen en una parte operable del circuito:</p>
+
+<ul>
+  <li>asistencia en captura para reducir estudios no evaluables</li>
+  <li>registro de calidad y trazabilidad del estudio</li>
+  <li>priorización de casos para revisión</li>
+  <li>flujo de recaptura o derivación cuando la imagen no alcanza</li>
+  <li>métricas para detectar sedes, cámaras o momentos con mayor tasa de rechazo</li>
+</ul>
+
+<p>El objetivo no es solo “obtener una foto mejor”. Es evitar que un paciente quede sin decisión clínica por un problema que podía corregirse en el momento de captura.</p>
+
+<p>Si tu institución ya está pensando en teleoftalmología, esta guía se puede leer junto con el modelo operativo de implementación:<br />
+https://retinar.com.ar/blog/teleoftalmologia-modelos-implementacion-hospitales-clinicas-campanas/</p>
+
+<hr />
+
+<h2 id="cierre-calidad-de-imagen-es-calidad-del-programa">Cierre: calidad de imagen es calidad del programa</h2>
+
+<p>Una retinografía no evaluable parece un problema técnico, pero en realidad mide la salud del circuito completo: capacitación, protocolo, ergonomía, tecnología, agenda y seguimiento.</p>
+
+<p>Los programas que bajan su tasa de no evaluables suelen lograr más que mejores fotos. Logran menos recapturas, menos pérdidas de seguimiento, mejor uso del especialista y decisiones más rápidas.</p>
+
+<p>Si querés revisar cómo Retinar puede integrarse a tu flujo de captura, control de calidad, IA y derivación, podés coordinar una demo desde https://retinar.com.ar.</p>
+</div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container resource-cta-grid">
+      <div>
+        <h2>Implementá Retinar y reducí los casos de ceguera por diabetes</h2>
+        <p>Compartinos tu contexto institucional y te proponemos un plan de implementación.</p>
+      </div>
+      <div>
+        <a href="/#demo" class="button button-primary">Contactanos</a>
+      </div>
+    </div>
+  </section>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Calidad de imagen en retinografía: cómo reducir estudios no evaluables en programas de retina",
+  "description": "Guía práctica para bajar la tasa de retinografías no evaluables: protocolo de captura, capacitación, control de calidad, recaptura y métricas operativas.",
+  "datePublished": "2026-05-08T00:00:00-03:00",
+  "dateModified": "2026-05-08T00:00:00-03:00",
+  "inLanguage": "es",
+  "author": {
+    "@type": "Organization",
+    "name": "Retinar"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Retinar",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://retinar.com.ar/assets/img/placeholders/brand-logo.png"
+    }
+  },
+  "mainEntityOfPage": "https://retinar.com.ar/blog/calidad-imagen-retinografia-estudios-no-evaluables/"
+}
+</script>
+</main>
+  
+
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col footer-col-brand">
+      <a class="brand footer-brand-link" href="/">
+        <img
+          class="footer-brand-logo"
+          src="/assets/img/logos/retinar_logo%20blanco-verde.png"
+          alt=""
+          width="2000"
+          height="2000"
+          loading="lazy"
+          decoding="async"
+          aria-hidden="true"
+        >
+        <span class="sr-only">Retinar</span>
+      </a>
+      <p class="footer-tagline">IA para teleoftalmología y detección temprana de ceguera prevenible.</p>
+      <p class="footer-contact-email">
+        <span class="footer-contact-email-label">Correo:</span>
+        <a href="mailto:info@retinar.com.ar">info@retinar.com.ar</a>
+      </p>
+      <div class="footer-company-details" aria-label="Información societaria">
+        <p class="footer-company-line footer-company-line-identity">
+          <strong>Retinar SAS</strong> (CUIT 30-71892218-2)
+        </p>
+        <p class="footer-company-line">
+          <span class="footer-company-label">Domicilio legal:</span>
+          <span class="footer-company-value">San Francisco 1678 (7000), Tandil, BA, Argentina</span>
+        </p>
+        <p class="footer-company-line">
+          <span class="footer-company-label">Domicilio comercial:</span>
+          <span class="footer-company-value">Instituto PLADEMA, Campus Universitario Tandil, Paraje Arroyo Seco S/N (7000), Tandil, BA, Argentina</span>
+        </p>
+        <p class="footer-company-line">
+          <span class="footer-company-label">Habilitación:</span>
+          <span class="footer-company-value">Nº 54151 (Dirección de Farmacias, Ministerio de Salud de PBA). En trámite ante ANMAT.</span>
+        </p>
+      </div>
+      <div class="social-links footer-social-links" aria-label="Redes sociales">
+        <a
+          href="https://www.linkedin.com/company/retinar"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn de Retinar"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6.36 8.09a2.09 2.09 0 1 1 0-4.18 2.09 2.09 0 0 1 0 4.18Zm1.77 12.09H4.58V9.9h3.55v10.28Zm12.05 0h-3.54v-5.23c0-1.25-.03-2.85-1.74-2.85-1.74 0-2 1.36-2 2.76v5.32H9.35V9.9h3.4v1.4h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.43v5.3Z"></path>
+          </svg>
+          <span class="sr-only">LinkedIn</span>
+        </a>
+        <a
+          href="https://www.instagram.com/retinararg/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram de Retinar"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.9a3.85 3.85 0 0 0-3.85 3.85v8.5a3.85 3.85 0 0 0 3.85 3.85h8.5a3.85 3.85 0 0 0 3.85-3.85v-8.5a3.85 3.85 0 0 0-3.85-3.85h-8.5Zm8.9 1.5a1.35 1.35 0 1 1 0 2.7 1.35 1.35 0 0 1 0-2.7ZM12 7.15a4.85 4.85 0 1 1 0 9.7 4.85 4.85 0 0 1 0-9.7Zm0 1.9a2.95 2.95 0 1 0 0 5.9 2.95 2.95 0 0 0 0-5.9Z"></path>
+          </svg>
+          <span class="sr-only">Instagram</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col footer-col-nav">
+      <h2 class="footer-nav-title">Navegación</h2>
+      <div class="footer-nav-columns">
+        <ul class="footer-nav-list">
+          
+            <li><a href="/#como-funciona">Producto</a></li>
+          
+            <li><a href="/#producto">Impacto</a></li>
+          
+            <li><a href="/#para-quien">Para quiénes</a></li>
+          
+            <li><a href="/blog/">Blog</a></li>
+          
+        </ul>
+        <ul class="footer-nav-list">
+          
+            <li><a href="/sobre/">Sobre Retinar</a></li>
+          
+            <li><a href="/faq/">Preguntas frecuentes</a></li>
+          
+            <li><a href="/privacidad/">Privacidad</a></li>
+          
+            <li><a href="/terminos/">Términos</a></li>
+          
+            <li><a href="/contacto/">Contacto</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>Copyright 2026 Retinar.</small>
+  </div>
+</footer>
+
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
