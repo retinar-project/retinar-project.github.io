@@ -243,7 +243,7 @@ Archivos involucrados:
 
 - `_includes/analytics.html`: configuración temprana del consentimiento e inclusión condicional;
 - `_includes/cookie-consent.html`: interfaz bilingüe;
-- `assets/js/analytics.js`: persistencia, carga de `gtag.js` y revocación;
+- `assets/js/analytics-ga4.js`: persistencia, carga de `gtag.js` y revocación;
 - `_data/i18n.yml`: textos ES/EN;
 - `privacidad/index.md` y `en/privacy/index.md`: información al visitante.
 
