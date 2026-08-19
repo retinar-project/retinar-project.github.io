@@ -41,6 +41,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@600;700&family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="icon" href="/assets/img/placeholders/brand-logo.png" type="image/png">
   <link rel="stylesheet" href="/assets/css/main.css">
+  
+
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+
+    window.gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied'
+    });
+
+    window.retinarAnalytics = {
+      measurementId: "G-837F132VX0",
+      storageKey: 'retinar_analytics_consent'
+    };
+  </script>
+  <script src="/assets/js/analytics.js" defer></script>
+
+
 </head>
 <body class="page-page">
   
@@ -137,8 +159,9 @@
 </section>
 
 <section class="page-content section-soft">
-  <div class="container prose"><p><strong>Vigencia:</strong> 02/03/2026<br />
-Esta política explica cómo <strong>Retinar</strong> trata datos personales cuando navegás este sitio o nos contactás por canales online.</p>
+  <div class="container prose"><p><strong>Vigencia:</strong> 19/08/2026</p>
+
+<p>Esta política explica cómo <strong>Retinar</strong> trata datos personales cuando navegás este sitio o nos contactás por canales online.</p>
 
 <h2 id="en-pocas-palabras">En pocas palabras</h2>
 
@@ -216,14 +239,14 @@ Esta política explica cómo <strong>Retinar</strong> trata datos personales cua
 
 <h2 id="cookies-y-analtica">6) Cookies y analítica</h2>
 
-<p>Podemos usar:</p>
+<p>Usamos:</p>
 
 <ul>
   <li><strong>Cookies necesarias:</strong> funcionamiento básico (seguridad, navegación, preferencias esenciales).</li>
-  <li><strong>Cookies de medición/analítica (opcionales):</strong> métricas de uso para mejorar el sitio.</li>
+  <li><strong>Cookies de medición/analítica (opcionales):</strong> Google Analytics 4 para conocer páginas visitadas, duración aproximada de las visitas, dispositivo/navegador y eventos de uso agregados. Google Analytics solo se carga después de que aceptás estas cookies.</li>
 </ul>
 
-<p>Podés bloquear o eliminar cookies desde tu navegador. Si implementamos un gestor de consentimiento, también podrás ajustar preferencias desde allí.</p>
+<p>No usamos esos datos para publicidad personalizada. Podés aceptar, rechazar o cambiar tu elección en cualquier momento desde <strong>Preferencias de cookies</strong>, en el pie del sitio. También podés bloquear o eliminar cookies desde tu navegador.</p>
 
 <h2 id="con-quin-compartimos-datos">7) Con quién compartimos datos</h2>
 
@@ -403,6 +426,11 @@ Esta política explica cómo <strong>Retinar</strong> trata datos personales cua
           
             <li><a href="/contacto/">Contacto</a></li>
           
+          
+          
+          
+            <li><a href="#cookie-preferences" data-analytics-consent-settings>Preferencias de cookies</a></li>
+          
         </ul>
       </div>
     </div>
@@ -411,6 +439,36 @@ Esta política explica cómo <strong>Retinar</strong> trata datos personales cua
     <small>Copyright 2026 Retinar.</small>
   </div>
 </footer>
+
+  
+
+
+  
+  <aside
+    class="cookie-consent"
+    data-cookie-consent
+    role="dialog"
+    aria-labelledby="cookie-consent-title"
+    aria-describedby="cookie-consent-description"
+    hidden
+  >
+    <div class="cookie-consent-copy">
+      <h2 id="cookie-consent-title">Cookies de medición</h2>
+      <p id="cookie-consent-description">
+        Usamos Google Analytics para entender qué páginas se visitan y mejorar el sitio. Solo se activa si aceptás.
+        <a href="/privacidad/">Ver política de privacidad</a>
+      </p>
+    </div>
+    <div class="cookie-consent-actions">
+      <button class="cookie-consent-button cookie-consent-button-secondary" type="button" data-analytics-reject>
+        Rechazar
+      </button>
+      <button class="cookie-consent-button cookie-consent-button-primary" type="button" data-analytics-accept>
+        Aceptar analítica
+      </button>
+    </div>
+  </aside>
+
 
 
   <script src="/assets/js/main.js" defer></script>

@@ -41,6 +41,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@600;700&family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="icon" href="/assets/img/placeholders/brand-logo.png" type="image/png">
   <link rel="stylesheet" href="/assets/css/main.css">
+  
+
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+
+    window.gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied'
+    });
+
+    window.retinarAnalytics = {
+      measurementId: "G-837F132VX0",
+      storageKey: 'retinar_analytics_consent'
+    };
+  </script>
+  <script src="/assets/js/analytics.js" defer></script>
+
+
 </head>
 <body class="page-resource">
   
@@ -456,6 +478,11 @@
           
             <li><a href="/en/contact/">Contact</a></li>
           
+          
+          
+          
+            <li><a href="#cookie-preferences" data-analytics-consent-settings>Cookie preferences</a></li>
+          
         </ul>
       </div>
     </div>
@@ -464,6 +491,36 @@
     <small>Copyright 2026 Retinar.</small>
   </div>
 </footer>
+
+  
+
+
+  
+  <aside
+    class="cookie-consent"
+    data-cookie-consent
+    role="dialog"
+    aria-labelledby="cookie-consent-title"
+    aria-describedby="cookie-consent-description"
+    hidden
+  >
+    <div class="cookie-consent-copy">
+      <h2 id="cookie-consent-title">Analytics cookies</h2>
+      <p id="cookie-consent-description">
+        We use Google Analytics to understand which pages are visited and improve the site. It is only enabled if you accept.
+        <a href="/en/privacy/">View privacy policy</a>
+      </p>
+    </div>
+    <div class="cookie-consent-actions">
+      <button class="cookie-consent-button cookie-consent-button-secondary" type="button" data-analytics-reject>
+        Reject
+      </button>
+      <button class="cookie-consent-button cookie-consent-button-primary" type="button" data-analytics-accept>
+        Accept analytics
+      </button>
+    </div>
+  </aside>
+
 
 
   <script src="/assets/js/main.js" defer></script>

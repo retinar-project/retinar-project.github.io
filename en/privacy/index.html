@@ -41,6 +41,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@600;700&family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="icon" href="/assets/img/placeholders/brand-logo.png" type="image/png">
   <link rel="stylesheet" href="/assets/css/main.css">
+  
+
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+
+    window.gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied'
+    });
+
+    window.retinarAnalytics = {
+      measurementId: "G-837F132VX0",
+      storageKey: 'retinar_analytics_consent'
+    };
+  </script>
+  <script src="/assets/js/analytics.js" defer></script>
+
+
 </head>
 <body class="page-page">
   
@@ -137,8 +159,9 @@
 </section>
 
 <section class="page-content section-soft">
-  <div class="container prose"><p><strong>Effective date:</strong> 2026-03-02<br />
-This policy explains how <strong>Retinar</strong> handles personal data when you browse this site or contact us through online channels.</p>
+  <div class="container prose"><p><strong>Effective date:</strong> 2026-08-19</p>
+
+<p>This policy explains how <strong>Retinar</strong> handles personal data when you browse this site or contact us through online channels.</p>
 
 <h2 id="quick-summary">Quick summary</h2>
 
@@ -216,14 +239,14 @@ This policy explains how <strong>Retinar</strong> handles personal data when you
 
 <h2 id="cookies-and-analytics">6) Cookies and analytics</h2>
 
-<p>We may use:</p>
+<p>We use:</p>
 
 <ul>
   <li><strong>Necessary cookies:</strong> basic functionality (security, navigation, essential preferences).</li>
-  <li><strong>Optional analytics cookies:</strong> usage metrics to improve the site.</li>
+  <li><strong>Optional analytics cookies:</strong> Google Analytics 4 to understand visited pages, approximate visit duration, device/browser, and aggregated usage events. Google Analytics only loads after you accept these cookies.</li>
 </ul>
 
-<p>You can block or delete cookies in your browser. If we use a consent manager, you will also be able to adjust preferences there.</p>
+<p>We do not use this data for personalized advertising. You can accept, reject, or change your choice at any time through <strong>Cookie preferences</strong> in the site footer. You can also block or delete cookies in your browser.</p>
 
 <h2 id="who-we-share-data-with">7) Who we share data with</h2>
 
@@ -403,6 +426,11 @@ This policy explains how <strong>Retinar</strong> handles personal data when you
           
             <li><a href="/en/contact/">Contact</a></li>
           
+          
+          
+          
+            <li><a href="#cookie-preferences" data-analytics-consent-settings>Cookie preferences</a></li>
+          
         </ul>
       </div>
     </div>
@@ -411,6 +439,36 @@ This policy explains how <strong>Retinar</strong> handles personal data when you
     <small>Copyright 2026 Retinar.</small>
   </div>
 </footer>
+
+  
+
+
+  
+  <aside
+    class="cookie-consent"
+    data-cookie-consent
+    role="dialog"
+    aria-labelledby="cookie-consent-title"
+    aria-describedby="cookie-consent-description"
+    hidden
+  >
+    <div class="cookie-consent-copy">
+      <h2 id="cookie-consent-title">Analytics cookies</h2>
+      <p id="cookie-consent-description">
+        We use Google Analytics to understand which pages are visited and improve the site. It is only enabled if you accept.
+        <a href="/en/privacy/">View privacy policy</a>
+      </p>
+    </div>
+    <div class="cookie-consent-actions">
+      <button class="cookie-consent-button cookie-consent-button-secondary" type="button" data-analytics-reject>
+        Reject
+      </button>
+      <button class="cookie-consent-button cookie-consent-button-primary" type="button" data-analytics-accept>
+        Accept analytics
+      </button>
+    </div>
+  </aside>
+
 
 
   <script src="/assets/js/main.js" defer></script>

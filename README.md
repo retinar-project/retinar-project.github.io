@@ -217,7 +217,39 @@ No hay lógica JS de validación custom; aplica validación HTML nativa + backen
 
 **Destino de los envíos (Formspree):** el correo al que Formspree notifica no se elige en este repositorio: lo define el formulario asociado a `formspree_endpoint` (y opcionalmente `formspree_contact_endpoint`) en el [panel de Formspree](https://formspree.io/). Asegurá que el formulario vinculado a esa URL notifique a `info@retinar.com.ar` (o creado con esa dirección). Si generás un formulario nuevo, actualizá la URL en `_config.yml`. El correo visible en el sitio y en JSON-LD proviene de `_data/site.yml` → `contact_email` y de `email` en `_config.yml` (hoy ambos: `info@retinar.com.ar`).
 
-## 9) SEO, metadata y datos estructurados
+## 9) Google Analytics 4 y consentimiento
+
+La medición usa la etiqueta de Google Analytics 4 (`gtag.js`) y se configura en `_config.yml`:
+
+```yaml
+google_analytics_id: "G-XXXXXXXXXX"
+```
+
+El ID de medición es público y debe corresponder al flujo web de `https://retinar.com.ar`. Si el valor queda vacío:
+
+- no se descarga ningún recurso de Google Analytics,
+- no se muestra el banner de cookies,
+- el sitio continúa funcionando sin medición.
+
+La implementación aplica Consent Mode v2 en modo básico:
+
+- Google Analytics no se carga antes de la aceptación;
+- `analytics_storage` se habilita solo al aceptar;
+- el almacenamiento y la personalización publicitaria permanecen deshabilitados;
+- la elección se guarda en `localStorage` con la clave `retinar_analytics_consent`;
+- el enlace “Preferencias de cookies” del footer permite revisar la elección.
+
+Archivos involucrados:
+
+- `_includes/analytics.html`: configuración temprana del consentimiento e inclusión condicional;
+- `_includes/cookie-consent.html`: interfaz bilingüe;
+- `assets/js/analytics.js`: persistencia, carga de `gtag.js` y revocación;
+- `_data/i18n.yml`: textos ES/EN;
+- `privacidad/index.md` y `en/privacy/index.md`: información al visitante.
+
+Después del deploy, aceptar las cookies y verificar la visita en **Google Analytics → Informes → En tiempo real**. También se puede usar Google Tag Assistant para comprobar el estado de consentimiento.
+
+## 10) SEO, metadata y datos estructurados
 
 `_layouts/default.html` define:
 
@@ -237,7 +269,7 @@ Datos institucionales usados por schema:
 
 - `_data/site.yml`.
 
-## 10) Frontend: comportamiento JS y contrato de markup
+## 11) Frontend: comportamiento JS y contrato de markup
 
 `assets/js/main.js` implementa:
 
@@ -249,7 +281,7 @@ Datos institucionales usados por schema:
 
 Si cambiás markup de layouts, respetá estos `data-*` y clases para no romper interacciones.
 
-## 11) Frontend: estilos y responsive
+## 12) Frontend: estilos y responsive
 
 `assets/css/main.css` centraliza todo el styling.
 
@@ -260,7 +292,7 @@ Puntos relevantes:
 - breakpoints principales: `1120px`, `900px`, `720px`, `640px`,
 - secciones críticas con layout grid: hero, features, value props, cards de blog, footer.
 
-## 12) Guía de cambios frecuentes
+## 13) Guía de cambios frecuentes
 
 ### A) Cambiar copy de home, nav o footer
 
@@ -288,7 +320,7 @@ Puntos relevantes:
 2. Actualizar arreglo `clients.items` o `awards.items` en `_data/i18n.yml`.
 3. Revisar rendering en desktop/mobile (carrusel).
 
-## 13) Deploy y operación
+## 14) Deploy y operación
 
 - Dominio productivo: definido en `CNAME` (`retinar.com.ar`).
 - Sitemap: `https://retinar.com.ar/sitemap.xml`.
@@ -342,7 +374,7 @@ Este repo también incluye una base para automatizar la generación y publicaci�
 
 La guía operativa está en `docs/blog-automation.md`.
 
-## 14) Checklist antes de merge/deploy
+## 15) Checklist antes de merge/deploy
 
 1. `./scripts/verify_contact_config.sh` (tras `chmod +x` si aplica).
 2. `bundle exec jekyll build` sin errores.
@@ -353,7 +385,7 @@ La guía operativa está en `docs/blog-automation.md`.
 7. Verificar responsive en mobile.
 8. Confirmar que no se editaron archivos generados (`_site/`) ni dependencias locales.
 
-## 15) Pruebas y verificación de configuración
+## 16) Pruebas y verificación de configuración
 
 ```bash
 chmod +x scripts/verify_contact_config.sh   # una sola vez
@@ -362,7 +394,7 @@ chmod +x scripts/verify_contact_config.sh   # una sola vez
 
 Comprueba que `email` / `contact_email` y un `formspree.io/f/...` sigan presentes en la configuración. Recomendado correrlo antes de deploy.
 
-## 16) Consideraciones de seguridad
+## 17) Consideraciones de seguridad
 
 - **Contenido estático y formularios:** el sitio no procesa credenciales de usuarios finales; los formularios delegan a Formspree. No almacenar claves de Formspree en el repo: la acción del form es una URL pública.
 - **Secreto y cadena de suministro:** mantener `Gemfile.lock` bajo control de versiones; actualizar dependencias tras advisories.
