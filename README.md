@@ -14,7 +14,7 @@ Este documento está pensado para desarrolladores que necesiten mantener, extend
 - Plugin activo: `jekyll-sitemap` (genera `sitemap.xml`).
 - Motor Markdown: `kramdown`.
 - Frontend: HTML/Liquid + CSS + JavaScript vanilla (sin bundlers ni framework JS).
-- Formularios: `Formspree`.
+- Formularios: `HubSpot Forms API` con `Formspree` como notificación y respaldo.
 - Hosting objetivo: compatible con GitHub Pages.
 
 Existe un script de comprobación mínima de configuración de contacto (ver sección 8 y “Pruebas” abajo). No hay pipeline con Node.
@@ -206,6 +206,8 @@ Endpoints en `_config.yml`:
 
 - `formspree_endpoint`: endpoint principal.
 - `formspree_contact_endpoint`: endpoint opcional para contacto; si está vacío, usa el principal.
+- `hubspot_portal_id`: ID público de la cuenta de HubSpot.
+- `hubspot_form_id`: ID público del formulario de captación publicado en HubSpot.
 
 El formulario incluye:
 
@@ -213,11 +215,15 @@ El formulario incluye:
 - campo honeypot (`company`) anti-spam,
 - metadata oculta (`lang`, `_subject`, `form_variant`, `consent=accepted`).
 
-No hay lógica JS de validación custom; aplica validación HTML nativa + backend de Formspree.
+La validación de campos sigue siendo HTML nativa. La lógica JavaScript agrega el registro en HubSpot y conserva el backend de Formspree como respaldo.
+
+`assets/js/hubspot-form.js` intercepta los envíos válidos para registrar primero el lead en HubSpot y luego continúa con el POST nativo a Formspree. HubSpot recibe `firstname`, `lastname`, `email`, `phone`, `company`, `message`, la URL y el título de la página. El mensaje también incorpora variante, idioma y tipo de consulta. Si el visitante aceptó las cookies de medición, se adjunta `hubspotutk` para atribución. Si HubSpot falla o demora más de cinco segundos, Formspree continúa como respaldo. Sin JavaScript, el formulario conserva el envío nativo a Formspree.
+
+Los IDs de HubSpot son públicos y no requieren secretos en el repositorio. El formulario publicado se llama **Retinar - Website Lead Form** y no marca automáticamente los nuevos registros como contactos de marketing.
 
 **Destino de los envíos (Formspree):** el correo al que Formspree notifica no se elige en este repositorio: lo define el formulario asociado a `formspree_endpoint` (y opcionalmente `formspree_contact_endpoint`) en el [panel de Formspree](https://formspree.io/). Asegurá que el formulario vinculado a esa URL notifique a `info@retinar.com.ar` (o creado con esa dirección). Si generás un formulario nuevo, actualizá la URL en `_config.yml`. El correo visible en el sitio y en JSON-LD proviene de `_data/site.yml` → `contact_email` y de `email` en `_config.yml` (hoy ambos: `info@retinar.com.ar`).
 
-## 9) Google Analytics 4 y consentimiento
+## 9) Google Analytics 4, HubSpot y consentimiento
 
 La medición usa la etiqueta de Google Analytics 4 (`gtag.js`) y se configura en `_config.yml`:
 
@@ -225,29 +231,31 @@ La medición usa la etiqueta de Google Analytics 4 (`gtag.js`) y se configura en
 google_analytics_id: "G-XXXXXXXXXX"
 ```
 
-El ID de medición es público y debe corresponder al flujo web de `https://retinar.com.ar`. Si el valor queda vacío:
+El ID de medición es público y debe corresponder al flujo web de `https://retinar.com.ar`. HubSpot usa el `hubspot_portal_id` definido en la sección anterior. Si ambos valores quedan vacíos:
 
-- no se descarga ningún recurso de Google Analytics,
+- no se descarga ningún recurso de Google Analytics ni de tracking de HubSpot,
 - no se muestra el banner de cookies,
 - el sitio continúa funcionando sin medición.
 
 La implementación aplica Consent Mode v2 en modo básico:
 
-- Google Analytics no se carga antes de la aceptación;
+- Google Analytics y el código de seguimiento de HubSpot no se cargan antes de la aceptación;
 - `analytics_storage` se habilita solo al aceptar;
 - el almacenamiento y la personalización publicitaria permanecen deshabilitados;
 - la elección se guarda en `localStorage` con la clave `retinar_analytics_consent`;
 - el enlace “Preferencias de cookies” del footer permite revisar la elección.
 
+Rechazar las cookies no impide enviar una consulta: el lead se registra en HubSpot sin `hubspotutk`, por lo que no queda asociado al historial previo de navegación. El banner propio de HubSpot está deshabilitado para evitar duplicación y la preferencia del banner del sitio se distribuye mediante `setHubSpotConsent`. Al revocar el consentimiento se eliminan las cookies conocidas de Google Analytics y HubSpot y se activa la señal `doNotTrack` de HubSpot.
+
 Archivos involucrados:
 
 - `_includes/analytics.html`: configuración temprana del consentimiento e inclusión condicional;
 - `_includes/cookie-consent.html`: interfaz bilingüe;
-- `_includes/analytics-runtime.html` y `_includes/analytics-script.js`: persistencia, carga de `gtag.js` y revocación;
+- `_includes/analytics-runtime.html` y `_includes/analytics-script.js`: persistencia, carga condicional de `gtag.js` y `js.hs-scripts.com`, y revocación;
 - `_data/i18n.yml`: textos ES/EN;
 - `privacidad/index.md` y `en/privacy/index.md`: información al visitante.
 
-Después del deploy, aceptar las cookies y verificar la visita en **Google Analytics → Informes → En tiempo real**. También se puede usar Google Tag Assistant para comprobar el estado de consentimiento.
+Después del deploy, aceptar las cookies y verificar la visita en **Google Analytics → Informes → En tiempo real** y en HubSpot. También se puede usar Google Tag Assistant para comprobar el estado de consentimiento. Probar un envío real con un correo controlado y confirmar tanto la aparición del contacto/form submission en HubSpot como la notificación de Formspree.
 
 ## 10) SEO, metadata y datos estructurados
 
@@ -392,11 +400,11 @@ chmod +x scripts/verify_contact_config.sh   # una sola vez
 ./scripts/verify_contact_config.sh
 ```
 
-Comprueba que `email` / `contact_email` y un `formspree.io/f/...` sigan presentes en la configuración. Recomendado correrlo antes de deploy.
+Comprueba que `email` / `contact_email`, el endpoint de Formspree y los IDs públicos de HubSpot sigan presentes en la configuración. Recomendado correrlo antes de deploy.
 
 ## 17) Consideraciones de seguridad
 
-- **Contenido estático y formularios:** el sitio no procesa credenciales de usuarios finales; los formularios delegan a Formspree. No almacenar claves de Formspree en el repo: la acción del form es una URL pública.
+- **Contenido estático y formularios:** el sitio no procesa credenciales de usuarios finales; los formularios delegan a Formspree y a la Forms API pública de HubSpot. No almacenar tokens privados: los endpoints, el portal ID y el form ID usados por el navegador son públicos.
 - **Secreto y cadena de suministro:** mantener `Gemfile.lock` bajo control de versiones; actualizar dependencias tras advisories.
 - **Entradas del usuario:** validación en cliente es limitada; el proveedor del formulario aplica su propia capa. Evitar almacenar PII en el repositorio.
 - **Alineación OWASP:** controlar enlaces externos (`rel="noopener noreferrer"`), no incluir tokens en URLs, y revisar periódicamente el destinatario y la política de reenvío en el panel de Formspree.

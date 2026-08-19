@@ -44,19 +44,28 @@
   
 
 
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
 
-    window.gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: 'denied'
-    });
+  <script>
+    
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+
+      window.gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied'
+      });
+    
+
+    
+      window.disableHubSpotCookieBanner = true;
+      window._hsp = window._hsp || [];
+    
 
     window.retinarAnalytics = {
       measurementId: "G-837F132VX0",
+      hubspotPortalId: "51221728",
       storageKey: 'retinar_analytics_consent'
     };
   </script>
@@ -467,6 +476,7 @@ https://retinar.com.ar/blog/ia-human-in-the-loop-salud/</p>
           
           
           
+          
             <li><a href="#cookie-preferences" data-analytics-consent-settings>Preferencias de cookies</a></li>
           
         </ul>
@@ -481,6 +491,7 @@ https://retinar.com.ar/blog/ia-human-in-the-loop-salud/</p>
   
 
 
+
   
   <aside
     class="cookie-consent"
@@ -493,7 +504,7 @@ https://retinar.com.ar/blog/ia-human-in-the-loop-salud/</p>
     <div class="cookie-consent-copy">
       <h2 id="cookie-consent-title">Cookies de medición</h2>
       <p id="cookie-consent-description">
-        Usamos Google Analytics para entender qué páginas se visitan y mejorar el sitio. Solo se activa si aceptás.
+        Usamos Google Analytics y HubSpot para entender qué páginas se visitan, atribuir consultas y mejorar el sitio. Solo se activan si aceptás.
         <a href="/privacidad/">Ver política de privacidad</a>
       </p>
     </div>
@@ -502,7 +513,7 @@ https://retinar.com.ar/blog/ia-human-in-the-loop-salud/</p>
         Rechazar
       </button>
       <button class="cookie-consent-button cookie-consent-button-primary" type="button" data-analytics-accept>
-        Aceptar analítica
+        Aceptar medición
       </button>
     </div>
   </aside>
@@ -511,16 +522,18 @@ https://retinar.com.ar/blog/ia-human-in-the-loop-salud/</p>
   
 
 
+
   <script>
     (function () {
   var config = window.retinarAnalytics;
-  if (!config || !config.measurementId || typeof window.gtag !== 'function') return;
+  if (!config || (!config.measurementId && !config.hubspotPortalId)) return;
 
   var banner = document.querySelector('[data-cookie-consent]');
   var acceptButton = document.querySelector('[data-analytics-accept]');
   var rejectButton = document.querySelector('[data-analytics-reject]');
   var settingsButtons = document.querySelectorAll('[data-analytics-consent-settings]');
-  var analyticsLoaded = false;
+  var googleAnalyticsLoaded = false;
+  var hubspotLoaded = false;
 
   function getStoredChoice() {
     try {
@@ -539,6 +552,7 @@ https://retinar.com.ar/blog/ia-human-in-the-loop-salud/</p>
   }
 
   function setAnalyticsConsent(granted) {
+    if (typeof window.gtag !== 'function') return;
     window.gtag('consent', 'update', {
       ad_storage: 'denied',
       ad_user_data: 'denied',
@@ -547,9 +561,9 @@ https://retinar.com.ar/blog/ia-human-in-the-loop-salud/</p>
     });
   }
 
-  function loadAnalytics() {
-    if (analyticsLoaded) return;
-    analyticsLoaded = true;
+  function loadGoogleAnalytics() {
+    if (!config.measurementId || googleAnalyticsLoaded || typeof window.gtag !== 'function') return;
+    googleAnalyticsLoaded = true;
 
     var script = document.createElement('script');
     script.async = true;
@@ -561,6 +575,36 @@ https://retinar.com.ar/blog/ia-human-in-the-loop-salud/</p>
       allow_google_signals: false,
       allow_ad_personalization_signals: false
     });
+  }
+
+  function loadHubSpot() {
+    if (!config.hubspotPortalId || hubspotLoaded) return;
+    hubspotLoaded = true;
+
+    window._hsq = window._hsq || [];
+    window._hsq.push(['doNotTrack', { track: true }]);
+
+    if (document.getElementById('hs-script-loader')) return;
+
+    var script = document.createElement('script');
+    script.id = 'hs-script-loader';
+    script.async = true;
+    script.defer = true;
+    script.src = 'https://js.hs-scripts.com/' + encodeURIComponent(config.hubspotPortalId) + '.js';
+    document.head.appendChild(script);
+  }
+
+  function setHubSpotConsent(granted) {
+    if (!config.hubspotPortalId) return;
+    window._hsp = window._hsp || [];
+    window._hsp.push([
+      'setHubSpotConsent',
+      {
+        analytics: granted,
+        advertisement: false,
+        functionality: false
+      }
+    ]);
   }
 
   function removeAnalyticsCookies() {
@@ -577,6 +621,34 @@ https://retinar.com.ar/blog/ia-human-in-the-loop-salud/</p>
     });
   }
 
+  function removeHubSpotCookies() {
+    var hubspotCookieNames = [
+      '__hstc',
+      'hubspotutk',
+      '__hssc',
+      '__hssrc',
+      '__hs_initial_opt_in',
+      'messagesUtk'
+    ];
+    var hostname = window.location.hostname;
+
+    document.cookie.split(';').forEach(function (cookie) {
+      var name = cookie.split('=')[0].trim();
+      if (hubspotCookieNames.indexOf(name) === -1) return;
+
+      document.cookie = name + '=; Max-Age=0; path=/; SameSite=Lax';
+      if (hostname) {
+        document.cookie = name + '=; Max-Age=0; path=/; domain=' + hostname + '; SameSite=Lax';
+        document.cookie = name + '=; Max-Age=0; path=/; domain=.' + hostname + '; SameSite=Lax';
+      }
+    });
+
+    window._hsp = window._hsp || [];
+    window._hsp.push(['revokeCookieConsent']);
+    window._hsq = window._hsq || [];
+    window._hsq.push(['doNotTrack']);
+  }
+
   function showBanner(shouldFocus) {
     if (!banner) return;
     banner.hidden = false;
@@ -590,7 +662,9 @@ https://retinar.com.ar/blog/ia-human-in-the-loop-salud/</p>
   function acceptAnalytics() {
     storeChoice('granted');
     setAnalyticsConsent(true);
-    loadAnalytics();
+    setHubSpotConsent(true);
+    loadGoogleAnalytics();
+    loadHubSpot();
     hideBanner();
   }
 
@@ -598,6 +672,8 @@ https://retinar.com.ar/blog/ia-human-in-the-loop-salud/</p>
     storeChoice('denied');
     setAnalyticsConsent(false);
     removeAnalyticsCookies();
+    removeHubSpotCookies();
+    setHubSpotConsent(false);
     hideBanner();
   }
 
@@ -614,7 +690,14 @@ https://retinar.com.ar/blog/ia-human-in-the-loop-salud/</p>
   var storedChoice = getStoredChoice();
   if (storedChoice === 'granted') {
     setAnalyticsConsent(true);
-    loadAnalytics();
+    setHubSpotConsent(true);
+    loadGoogleAnalytics();
+    loadHubSpot();
+  } else if (storedChoice === 'denied') {
+    setAnalyticsConsent(false);
+    removeAnalyticsCookies();
+    removeHubSpotCookies();
+    setHubSpotConsent(false);
   } else if (storedChoice !== 'denied') {
     showBanner(false);
   }
@@ -625,5 +708,10 @@ https://retinar.com.ar/blog/ia-human-in-the-loop-salud/</p>
 
 
   <script src="/assets/js/main.js" defer></script>
+  
+  
+  
+    <script src="/assets/js/hubspot-form.js" defer></script>
+  
 </body>
 </html>
