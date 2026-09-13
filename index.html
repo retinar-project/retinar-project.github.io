@@ -2741,18 +2741,11 @@ class Component extends DCLogic {
     window.addEventListener("hashchange", this._onHash);
     this._onHash();
     this.applyLang();
+    this.applyLeadFormConfig();
     this._onFormSubmit = (event) => {
       const form = event.target;
       if (!form || !form.matches || !form.matches("form")) return;
-      const langInput = form.querySelector('input[name="lang"]');
-      if (langInput) langInput.value = this.state.lang;
-      const subjectInput = form.querySelector('input[name="_subject"]');
-      if (subjectInput && this.state.lang === "en") {
-        const variant = form.querySelector('input[name="form_variant"]')?.value;
-        subjectInput.value = variant === "download_mailwall"
-          ? "Retinar - Download request EN"
-          : "Retinar - Demo request EN";
-      }
+      this.applyLeadFormConfig();
     };
     this.rootRef.current.addEventListener("submit", this._onFormSubmit, true);
     if (window.retinarMotion) this.motion = window.retinarMotion(this.rootRef.current);
@@ -2767,7 +2760,43 @@ class Component extends DCLogic {
   }
   componentDidUpdate() {
     this.applyLang();
+    this.applyLeadFormConfig();
     if (this.motion) this.motion.refresh();
+  }
+
+  applyLeadFormConfig() {
+    const root = this.rootRef.current;
+    if (!root) return;
+
+    root.querySelectorAll("form[data-lead-form]").forEach((form) => {
+      const isDownload = !!form.querySelector('input[name="contact_requested"]');
+      const requiredFields = isDownload
+        ? ["email", "organization"]
+        : ["name", "email", "organization", "inquiry_type", "message"];
+
+      requiredFields.forEach((name) => {
+        const field = form.querySelector('[name="' + name + '"]');
+        if (field) field.required = true;
+      });
+
+      const langInput = form.querySelector('input[name="lang"]');
+      if (langInput) langInput.value = this.state.lang;
+
+      const variantInput = form.querySelector('input[name="form_variant"]');
+      if (variantInput) variantInput.value = isDownload ? "download_mailwall" : "demo";
+
+      const subjectInput = form.querySelector('input[name="_subject"]');
+      if (subjectInput) {
+        subjectInput.value = isDownload
+          ? (this.state.lang === "en" ? "Retinar - Download request EN" : "Retinar - Solicitud de descarga")
+          : (this.state.lang === "en" ? "Retinar - Demo request EN" : "Retinar - Solicitud de demo ES");
+      }
+
+      if (isDownload) {
+        const messageInput = form.querySelector('input[name="message"]');
+        if (messageInput) messageInput.value = "Solicitud de descarga: " + (this.state.gate || "Recurso web");
+      }
+    });
   }
 
   setLanguage(lang) {
