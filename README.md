@@ -261,6 +261,12 @@ Archivos involucrados:
 
 Después del deploy, aceptar las cookies y verificar la visita en **Google Analytics → Informes → En tiempo real** y en HubSpot. También se puede usar Google Tag Assistant para comprobar el estado de consentimiento. Probar un envío real con un correo controlado y confirmar tanto la aparición del contacto/form submission en HubSpot como la notificación de Formspree.
 
+### Reporte automático de Analytics
+
+El workflow `.github/workflows/analytics-report.yml` genera cada lunes un reporte privado con las métricas principales, compara los últimos 7 días completos con los 7 anteriores y conserva el resultado como artefacto descargable durante 90 días. También admite ejecuciones manuales para períodos de 7, 14, 28 o 30 días.
+
+La configuración de la cuenta de servicio, el secreto requerido y la verificación inicial están documentadas en [`docs/reporte-google-analytics.md`](docs/reporte-google-analytics.md). El workflow usa la propiedad `550799346`; este ID numérico y la credencial de lectura son distintos del ID público de medición `G-…` usado por el sitio.
+
 ## 10) SEO, metadata y datos estructurados
 
 `_layouts/default.html` define:
