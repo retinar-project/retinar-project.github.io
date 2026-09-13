@@ -1,0 +1,87 @@
+/* ============================================================
+   Retinar Design System — campaign & social asset layer
+   Dual canvas: the brand publishes on BLACK and on OFF-WHITE.
+   Both are equally canonical; alternate them across a feed.
+   Sizes are container-query based (cqw), so a canvas renders
+   identically at 1080px export size or 320px preview size.
+   Depends on colors_and_type.css.
+   ============================================================ */
+
+@font-face { font-family: "Encode Sans Condensed"; src: url("./fonts/EncodeSans_Condensed-Black.ttf") format("truetype"); font-weight: 900; font-display: swap }
+@font-face { font-family: "Encode Sans Condensed"; src: url("./fonts/EncodeSans_Condensed-ExtraBold.ttf") format("truetype"); font-weight: 800; font-display: swap }
+@font-face { font-family: "Encode Sans Condensed"; src: url("./fonts/EncodeSans_Condensed-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap }
+
+:root {
+  /* Canvas surfaces — measured from deployed campaign assets */
+  --social-canvas-dark: #000000;
+  --social-canvas-light: #f7f7f7;   /* NOT pure white: shards need to read against it */
+  --social-shard-light: #ffffff;    /* shards are pure white on the off-white canvas */
+  --social-shard-dark: rgba(250, 250, 250, 0.055);
+  --social-ink-light: #060606;
+  --social-ink-dark: #fafafa;
+  --font-social-display: "Encode Sans Condensed", "Encode Sans", "Arial Narrow", sans-serif;
+}
+
+/* ---------- Canvas ---------- */
+.social-canvas { position: relative; overflow: hidden; container-type: size; background: var(--social-canvas-light); color: var(--social-ink-light); font-family: var(--font-body); -webkit-font-smoothing: antialiased }
+.social-canvas.is-dark { background: var(--social-canvas-dark); color: var(--social-ink-dark) }
+.social-canvas > * { position: relative; z-index: 1 }
+.format-post { aspect-ratio: 1 / 1 }
+.format-story { aspect-ratio: 9 / 16 }
+.social-pad { padding: 7cqw }
+
+/* ---------- Shard field (decorative background) ----------
+   Large flat angular planes, one tone off the canvas. Never gradients,
+   never texture. Vary the polygons per piece; 3–5 shards max. */
+.social-shards { position: absolute; inset: 0; z-index: 0 }
+.social-shards .shard { position: absolute; background: var(--social-shard-light) }
+.is-dark .social-shards .shard { background: var(--social-shard-dark) }
+.shard-a { inset: 0; clip-path: polygon(0 0, 26% 0, 8% 34%, 0 22%) }
+.shard-b { inset: 0; clip-path: polygon(100% 4%, 100% 30%, 62% 12%, 78% 2%) }
+.shard-c { inset: 0; clip-path: polygon(0 58%, 30% 44%, 44% 74%, 0 88%) }
+.shard-d { inset: 0; clip-path: polygon(100% 62%, 100% 100%, 46% 100%, 84% 58%) }
+
+/* ---------- Type roles ---------- */
+.social-display { font-family: var(--font-social-display); font-weight: 900; text-transform: uppercase; font-size: 9.4cqw; line-height: 0.98; letter-spacing: -0.005em; margin: 0 }
+.social-display.tight { font-size: 7.4cqw }
+.social-display.loud { font-size: 12cqw }
+.social-body { font-size: 3.5cqw; line-height: 1.36; margin: 0 }
+.social-meta { font-family: var(--font-social-display); font-weight: 800; text-transform: uppercase; font-size: 3.2cqw; letter-spacing: 0.02em }
+
+/* ---------- Tag capsule (eyebrow) ----------
+   Solid rectangle, inverse of the canvas. On light: black block, white text.
+   On dark: white block, black text. Acid is NOT used for tags. */
+.social-tag { display: inline-block; background: var(--social-ink-light); color: var(--social-canvas-light); font-family: var(--font-social-display); font-weight: 900; text-transform: uppercase; font-size: 3.6cqw; line-height: 1.18; letter-spacing: 0.01em; padding: 0.5cqw 1.4cqw }
+.is-dark .social-tag { background: var(--social-ink-dark); color: var(--social-canvas-dark) }
+
+/* ---------- Acid marker run ----------
+   Identical in both modes: acid block, black text. This is what keeps
+   a white asset and a black asset recognisably the same brand. */
+.social-hl { display: inline; background: var(--acid); color: var(--black); padding: 0 0.06em 0.02em; border-radius: 0.05em; box-decoration-break: clone; -webkit-box-decoration-break: clone }
+
+/* ---------- Photography block ----------
+   Photo is content, not wallpaper: an inset square-cornered block on the
+   canvas, optionally shouldered by a flat acid rectangle. */
+.social-photo { position: relative; display: block; width: 100%; overflow: hidden }
+.social-photo img { display: block; width: 100%; height: 100%; object-fit: cover }
+.social-photo.bleed-right { border-top-left-radius: 42cqw; border-bottom-left-radius: 42cqw }
+.acid-block { background: var(--acid) }
+
+/* ---------- Info rows (event cards) ---------- */
+.social-info { display: grid; gap: 2.6cqw }
+.social-row { display: grid; grid-template-columns: auto auto 1fr; align-items: center; gap: 2.4cqw }
+.social-row .icon { width: 8cqw; height: 8cqw; border-radius: 999px; background: var(--acid); color: var(--black); display: grid; place-items: center; font-size: 4cqw; font-weight: 700 }
+.social-row .rule { width: 0.4cqw; height: 7cqw; background: var(--acid) }
+.social-row .label { font-size: 2.9cqw; line-height: 1.2; opacity: 0.9 }
+.social-row .value { font-size: 4.2cqw; line-height: 1.15; font-weight: 500 }
+
+/* ---------- Arrow ("next" in a carousel) ----------
+   Dark canvas: filled acid circle, black glyph.
+   Light canvas: hairline black outline circle, black glyph. */
+.social-arrow { width: 12cqw; height: 12cqw; border-radius: 999px; display: grid; place-items: center; font-size: 5cqw; font-weight: 700; border: 0.35cqw solid var(--social-ink-light); color: var(--social-ink-light) }
+.is-dark .social-arrow { background: var(--acid); border-color: var(--acid); color: var(--black) }
+
+/* ---------- Wordmark ----------
+   Light canvas → dark logo file. Dark canvas → light logo file.
+   The "ar" underline may be acid or ink on light; always acid on dark. */
+.social-wordmark { height: 7cqw; width: auto; align-self: flex-start; object-fit: contain; object-position: left center; display: block }

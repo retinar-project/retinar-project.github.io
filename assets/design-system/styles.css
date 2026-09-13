@@ -1,0 +1,8 @@
+/* ============================================================
+   Retinar Design System — global stylesheet (single entry point)
+   Consumers link THIS file. It pulls in the canonical color +
+   typography tokens and @font-face declarations.
+   ============================================================ */
+
+@import url("./colors_and_type.css");
+@import url("./social_assets.css");

@@ -17,6 +17,10 @@ Este documento está pensado para desarrolladores que necesiten mantener, extend
 - Formularios: `HubSpot Forms API` con `Formspree` como notificación y respaldo.
 - Hosting objetivo: compatible con GitHub Pages.
 
+La portada B2B se publica desde `index.html` como experiencia estática con navegación interna. El `index.md` anterior se conserva como referencia y está excluido del build para evitar dos salidas sobre `/`. El blog, las páginas legales, las URLs de manuales y el resto del contenido siguen generándose con Jekyll.
+
+Los descargables comerciales de la sección Recursos no exponen archivos directos: abren un mailwall que registra la solicitud en HubSpot y conserva Formspree como respaldo. Los manuales de usuario versionados (`/manual-0.8.0.pdf`, `/manual-0.9.1.pdf` y `/manual-0.9.2.pdf`) quedan fuera de ese flujo porque son endpoints operativos consumidos por la aplicación.
+
 Existe un script de comprobación mínima de configuración de contacto (ver sección 8 y “Pruebas” abajo). No hay pipeline con Node.
 
 ## 2) Requisitos de entorno

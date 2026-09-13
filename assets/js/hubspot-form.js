@@ -1,6 +1,5 @@
 (function () {
-  var forms = document.querySelectorAll('[data-lead-form][data-hubspot-portal-id][data-hubspot-form-id]');
-  if (!forms.length || typeof window.fetch !== 'function') return;
+  if (typeof window.fetch !== 'function') return;
 
   var nativeSubmit = window.HTMLFormElement.prototype.submit;
   var hubspotTimeoutMs = 5000;
@@ -107,29 +106,32 @@
     });
   }
 
-  forms.forEach(function (form) {
-    form.addEventListener('submit', function (event) {
-      var honeypot = form.querySelector('input[name="company"]');
-      if (honeypot && honeypot.value) return;
-      if (!form.checkValidity() || form.getAttribute('data-hubspot-submitting') === 'true') return;
+  // El rediseño navega como SPA: el formulario puede aparecer después de cargar
+  // la página. La delegación mantiene HubSpot activo también en esos formularios.
+  document.addEventListener('submit', function (event) {
+    var form = event.target;
+    if (!form || !form.matches || !form.matches('[data-lead-form][data-hubspot-portal-id][data-hubspot-form-id]')) return;
 
-      event.preventDefault();
-      form.setAttribute('data-hubspot-submitting', 'true');
+    var honeypot = form.querySelector('input[name="company"]');
+    if (honeypot && honeypot.value) return;
+    if (!form.checkValidity() || form.getAttribute('data-hubspot-submitting') === 'true') return;
 
-      var submitButton = form.querySelector('[type="submit"]');
-      if (submitButton) {
-        submitButton.disabled = true;
-        submitButton.setAttribute('aria-busy', 'true');
+    event.preventDefault();
+    form.setAttribute('data-hubspot-submitting', 'true');
+
+    var submitButton = form.querySelector('[type="submit"]');
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.setAttribute('aria-busy', 'true');
+    }
+
+    sendToHubSpot(form).catch(function (error) {
+      // Formspree sigue siendo el canal de respaldo si HubSpot no responde.
+      if (window.console && typeof window.console.warn === 'function') {
+        window.console.warn('No se pudo registrar el lead en HubSpot.', error);
       }
-
-      sendToHubSpot(form).catch(function (error) {
-        // Formspree sigue siendo el canal de respaldo si HubSpot no responde.
-        if (window.console && typeof window.console.warn === 'function') {
-          window.console.warn('No se pudo registrar el lead en HubSpot.', error);
-        }
-      }).then(function () {
-        nativeSubmit.call(form);
-      });
+    }).then(function () {
+      nativeSubmit.call(form);
     });
   });
 })();

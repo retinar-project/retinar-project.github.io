@@ -1,0 +1,212 @@
+/* ============================================================
+   Retinar Design System — base tokens (color + type)
+   Source of truth: retinar-website/assets/css/main.css :root
+   ============================================================ */
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("./fonts/IBMPlexSans-Variable.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Encode Sans";
+  src: url("./fonts/EncodeSans-Variable.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ---------- Color: base surfaces ---------- */
+  --white: #ffffff;
+  --offwhite: #fafafa;
+  --black: #000000;
+  --charcoal: #0a0a0a;
+
+  /* ---------- Color: acid accent ---------- */
+  --acid: #cef71f;          /* primary accent — CTA, focus, marker highlight */
+  --acid-soft: #ddff5f;     /* hover */
+  --acid-deep-1: #8fb500;   /* auxiliary green used in about-page gradients */
+  --acid-deep-2: #84aa00;
+
+  /* ---------- Color: ink (text) ---------- */
+  --ink: #060606;
+  --ink-muted: rgba(0, 0, 0, 0.72);
+  --ink-subtle: rgba(0, 0, 0, 0.56);
+  --ink-on-dark: #fafafa;
+  --ink-muted-on-dark: rgba(250, 250, 250, 0.75);
+
+  /* ---------- Color: lines & dividers ---------- */
+  --line-dark: rgba(250, 250, 250, 0.2);
+  --line-light: rgba(0, 0, 0, 0.13);
+  --line-light-strong: rgba(0, 0, 0, 0.24);
+
+  /* ---------- Color: implementation literals (NOT tokenized in source) ---------- */
+  --shot-bg: #050505;             /* hero shot inner */
+  --media-surface: #f3f5f2;       /* feature-media background */
+  --chip-bg: #e7edcf;             /* library-card category chip */
+  --chip-border: #d4dcb9;
+  --chip-ink: #28320f;
+  --footer-bg: #030303;
+  --button-secondary-hover: #1a1a1a;
+
+  /* ---------- Semantic aliases ---------- */
+  --bg-page: var(--white);
+  --bg-soft: var(--offwhite);
+  --bg-dark: var(--black);
+  --fg: var(--ink);
+  --fg-muted: var(--ink-muted);
+  --fg-subtle: var(--ink-subtle);
+  --fg-on-dark: var(--ink-on-dark);
+  --accent: var(--acid);
+  --accent-hover: var(--acid-soft);
+  --border: var(--line-light);
+  --border-strong: var(--line-light-strong);
+  --border-on-dark: var(--line-dark);
+
+  /* ---------- Radii ---------- */
+  --radius-xs: 10px;        /* inputs, small overlays */
+  --radius-sm: 14px;        /* cards, FAQ, media wrappers */
+  --radius-md: 20px;        /* primary cards, forms, panels */
+  --radius-lg: 30px;        /* hero shot */
+  --radius-pill: 999px;     /* buttons, chips, eyebrow */
+
+  /* ---------- Shadows ---------- */
+  --shadow-sm: 0 10px 24px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 16px 42px rgba(0, 0, 0, 0.16);
+  --shadow-lg: 0 28px 84px rgba(0, 0, 0, 0.30);
+  --shadow-hero-overlay: 0 18px 52px rgba(0, 0, 0, 0.50);
+
+  /* ---------- Container & spacing ---------- */
+  --container: min(1140px, calc(100% - 2rem)); /* @kind spacing */
+  --section-py: clamp(3.8rem, 9vw, 8rem); /* @kind spacing */
+
+  /* Spacing scale — emergent from the source (no formal tokens upstream).
+     Use sparingly: most layouts use clamps and ad-hoc rem values. */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* ---------- Type families & roles ---------- */
+  --font-body: "IBM Plex Sans", "Avenir Next", "Segoe UI", Arial, sans-serif;
+  --font-brand: "Encode Sans", "Avenir Next", "Segoe UI", sans-serif;
+
+  /* ---------- Type scale (matches main.css clamps) ---------- */
+  --fs-h1: clamp(2rem, 5.5vw, 4.6rem); /* @kind font */
+  --fs-h2: clamp(1.45rem, 3.9vw, 2.7rem); /* @kind font */
+  --fs-h3: clamp(1.02rem, 2.1vw, 1.35rem); /* @kind font */
+  --fs-kpi: clamp(2rem, 5vw, 3.2rem); /* @kind font */
+  --fs-body: 0.96rem; /* @kind font */
+  --fs-microcopy: 0.82rem; /* @kind font */
+  --fs-eyebrow: 0.73rem; /* @kind font */
+  --fs-meta: 0.74rem; /* @kind font */
+
+  /* ---------- Type weights ---------- */
+  --fw-regular: 400; /* @kind font */
+  --fw-medium: 500; /* @kind font */
+  --fw-bold: 700; /* @kind font */
+  --fw-black: 800; /* @kind font */
+
+  /* ---------- Tracking ---------- */
+  --tracking-title: -0.02em; /* @kind font */
+  --tracking-kpi: -0.03em; /* @kind font */
+  --tracking-meta: 0.10em; /* @kind font */
+  --tracking-eyebrow: 0.14em; /* @kind font */
+
+  /* ---------- Motion ---------- */
+  --easing-out: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --t-fast: 0.2s; /* @kind other */
+  --t-base: 0.24s; /* @kind other */
+  --t-slow: 0.65s; /* @kind other */
+}
+
+/* ============================================================
+   Element-level base styles
+   ============================================================ */
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.56;
+  color: var(--fg);
+  background:
+    radial-gradient(900px 450px at 100% -20%, rgba(206, 247, 31, 0.2), transparent 70%),
+    radial-gradient(600px 320px at -20% 8%, rgba(0, 0, 0, 0.08), transparent 65%),
+    var(--bg-page);
+}
+
+h1, h2, h3, h4 { margin: 0; line-height: 1.14; letter-spacing: var(--tracking-title); font-weight: var(--fw-bold); }
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+p, li { font-size: var(--fs-body); margin: 0; }
+
+.eyebrow {
+  display: inline-block;
+  padding: 0.35rem 0.82rem;
+  border: 1px solid rgba(206, 247, 31, 0.48);
+  border-radius: var(--radius-pill);
+  color: var(--acid);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  background: rgba(206, 247, 31, 0.1);
+}
+
+.resource-meta {
+  font-size: var(--fs-meta);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+}
+
+.marker-highlight {
+  display: inline;
+  color: var(--black);
+  background-color: var(--acid);
+  padding: 0 0.05em 0.005em;
+  margin-inline: 0.02em;
+  border-radius: 0.06em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.brand-wordmark {
+  font-family: var(--font-brand);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.02em;
+}
+
+/* Sections */
+.section { padding: var(--section-py) 0; }
+
+.section-soft {
+  background:
+    radial-gradient(900px 420px at 100% 0%, rgba(206, 247, 31, 0.25), transparent 70%),
+    var(--bg-soft);
+}
+
+.section-dark {
+  color: var(--fg-on-dark);
+  background:
+    radial-gradient(600px 320px at 100% -10%, rgba(206, 247, 31, 0.22), transparent 66%),
+    radial-gradient(760px 340px at -10% 10%, rgba(255, 255, 255, 0.06), transparent 68%),
+    var(--bg-dark);
+}
+
+.container { width: var(--container); margin-inline: auto; }
