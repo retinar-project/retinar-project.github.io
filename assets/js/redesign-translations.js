@@ -692,6 +692,7 @@
     "Compañía": "Company",
     "Privacidad": "Privacy",
     "Términos": "Terms",
+    "Preferencias de cookies": "Cookie preferences",
     "Retinar SAS · CUIT 30-71892218-2 · San Francisco 1678, Tandil, Buenos Aires · Producto médico autorizado por ANMAT · Datos alojados en Argentina, Ley 25.326": "Retinar SAS · Tax ID 30-71892218-2 · San Francisco 1678, Tandil, Buenos Aires · Medical device authorized by ANMAT · Data hosted in Argentina under Law 25,326",
     "Todos los derechos reservados — 2026": "All rights reserved — 2026",
     "Cookies de medición": "Analytics cookies",
