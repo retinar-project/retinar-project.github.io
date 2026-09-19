@@ -1624,10 +1624,16 @@
               <button onClick="{{ openGateModelo }}" style="margin-top:1.2rem;display:inline-flex;align-items:center;padding:0.82rem 1.45rem;border-radius:999px;background:var(--acid);color:#000;font-weight:700;font-size:0.9rem;border:1px solid var(--acid);cursor:pointer;transition:all 0.24s" style-hover="background:var(--acid-soft);box-shadow:0 0 18px rgba(206,247,31,0.32)">Descargar</button>
             </article>
             <article style="background:var(--white);border:1px solid var(--line-light);border-radius:20px;padding:1.7rem 1.8rem;box-shadow:0 10px 24px rgba(0,0,0,0.08)">
+              <p style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:rgba(0,0,0,0.45)">PDF · pliego tipo</p>
+              <h2 style="margin-top:0.6rem;font-size:1.25rem">Especificaciones técnicas para pliego</h2>
+              <p style="margin-top:0.7rem;color:var(--ink-muted);line-height:1.6;max-width:62ch">Requisitos redactados en formato de compra pública, listos para adaptar.</p>
+              <button onClick="{{ openGatePliego }}" style="margin-top:1.2rem;display:inline-flex;align-items:center;padding:0.82rem 1.45rem;border-radius:999px;background:var(--acid);color:#000;font-weight:700;font-size:0.9rem;border:1px solid var(--acid);cursor:pointer;transition:all 0.24s" style-hover="background:var(--acid-soft);box-shadow:0 0 18px rgba(206,247,31,0.32)">Descargar</button>
+            </article>
+            <article style="background:var(--white);border:1px solid var(--line-light);border-radius:20px;padding:1.7rem 1.8rem;box-shadow:0 10px 24px rgba(0,0,0,0.08)">
               <p style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:rgba(0,0,0,0.45)">PDF · 4 PÁGINAS</p>
               <h2 style="margin-top:0.6rem;font-size:1.25rem">Retinar para la Campaña de Tamizaje del CAO</h2>
               <p style="margin-top:0.7rem;color:var(--ink-muted);line-height:1.6;max-width:62ch">Si vas a formar parte de la Campaña de Prevención de la Ceguera por Diabetes del Consejo Argentino de Oftalmología (CAO), podés usar Retinar para abaratar costos y maximizar el tamaño de la población alcanzada. Te contamos cómo.</p>
-              <button onClick="{{ openGatePliego }}" style="margin-top:1.2rem;display:inline-flex;align-items:center;padding:0.82rem 1.45rem;border-radius:999px;background:var(--acid);color:#000;font-weight:700;font-size:0.9rem;border:1px solid var(--acid);cursor:pointer;transition:all 0.24s" style-hover="background:var(--acid-soft);box-shadow:0 0 18px rgba(206,247,31,0.32)">Descargar</button>
+              <button onClick="{{ openGateCao }}" style="margin-top:1.2rem;display:inline-flex;align-items:center;padding:0.82rem 1.45rem;border-radius:999px;background:var(--acid);color:#000;font-weight:700;font-size:0.9rem;border:1px solid var(--acid);cursor:pointer;transition:all 0.24s" style-hover="background:var(--acid-soft);box-shadow:0 0 18px rgba(206,247,31,0.32)">Descargar</button>
             </article>
             <article style="background:var(--white);border:1px solid var(--line-light);border-radius:20px;padding:1.7rem 1.8rem;box-shadow:0 10px 24px rgba(0,0,0,0.08)">
               <p style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:rgba(0,0,0,0.45)">PDF · 2 páginas</p>
@@ -2794,7 +2800,15 @@ class Component extends DCLogic {
 
       if (isDownload) {
         const messageInput = form.querySelector('input[name="message"]');
-        if (messageInput) messageInput.value = "Solicitud de descarga: " + (this.state.gate || "Recurso web");
+        const resourceName = this.state.gate || "Recurso web";
+        const localizedResourceName = this.state.lang === "en" && DICT[resourceName]
+          ? DICT[resourceName]
+          : resourceName;
+        if (messageInput) {
+          messageInput.value = this.state.lang === "en"
+            ? "Download request: " + localizedResourceName
+            : "Solicitud de descarga: " + localizedResourceName;
+        }
       }
     });
   }
@@ -2939,6 +2953,7 @@ class Component extends DCLogic {
       openGateTecnico: () => this.setState({ gate: "Dossier técnico y de validación clínica", gsent: false }),
       openGateModelo: () => this.setState({ gate: "Modelo de costo por tamizaje", gsent: false }),
       openGatePliego: () => this.setState({ gate: "Especificaciones técnicas para pliego", gsent: false }),
+      openGateCao: () => this.setState({ gate: "Retinar para la Campaña de Tamizaje del CAO", gsent: false }),
       openGateGuia: () => this.setState({ gate: "Guía de piloto: 12 semanas paso a paso", gsent: false }),
       closeGate: () => this.setState({ gate: null, gsent: false }),
       gateSubmit: (e) => { e.preventDefault(); this.setState({ gsent: true }); }
