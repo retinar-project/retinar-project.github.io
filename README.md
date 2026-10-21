@@ -265,6 +265,8 @@ Después del deploy, aceptar las cookies y verificar la visita en **Google Analy
 
 El workflow `.github/workflows/analytics-report.yml` genera cada lunes un reporte privado con las métricas principales, compara los últimos 7 días completos con los 7 anteriores y conserva el resultado como artefacto descargable durante 90 días. También admite ejecuciones manuales para períodos de 7, 14, 28 o 30 días.
 
+El workflow complementario `.github/workflows/analytics-monthly-report.yml` corre el día 3 de cada mes, compara el mes calendario anterior completo con el mes previo y permite ejecutar manualmente cualquier mes cerrado en formato `YYYY-MM`. Ambos usan la misma propiedad y el mismo secreto de solo lectura.
+
 La configuración de la cuenta de servicio, el secreto requerido y la verificación inicial están documentadas en [`docs/reporte-google-analytics.md`](docs/reporte-google-analytics.md). El workflow usa la propiedad `550799346`; este ID numérico y la credencial de lectura son distintos del ID público de medición `G-…` usado por el sitio.
 
 ## 10) SEO, metadata y datos estructurados

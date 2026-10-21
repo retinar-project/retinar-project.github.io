@@ -140,7 +140,16 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
         default=os.environ.get("GOOGLE_ANALYTICS_CREDENTIALS_JSON"),
         help="JSON de una cuenta de servicio (o variable GOOGLE_ANALYTICS_CREDENTIALS_JSON).",
     )
-    parser.add_argument("--days", type=int, default=7, help="Cantidad de días del período (1-90).")
+    period_group = parser.add_mutually_exclusive_group()
+    period_group.add_argument(
+        "--days",
+        type=int,
+        help="Cantidad de días del período (1-90). Si no se indica un período, usa 7.",
+    )
+    period_group.add_argument(
+        "--month",
+        help="Mes calendario en YYYY-MM o 'previous' para el último mes completo.",
+    )
     parser.add_argument(
         "--end-date",
         default="yesterday",
@@ -168,6 +177,32 @@ def resolve_periods(days: int, end_date: str, today: date | None = None) -> tupl
     current = Period(start=end - timedelta(days=days - 1), end=end)
     previous_end = current.start - timedelta(days=1)
     previous = Period(start=previous_end - timedelta(days=days - 1), end=previous_end)
+    return current, previous
+
+
+def previous_month_start(month_start: date) -> date:
+    return (month_start - timedelta(days=1)).replace(day=1)
+
+
+def resolve_month_periods(month: str, today: date | None = None) -> tuple[Period, Period]:
+    today = today or date.today()
+    current_month_start = today.replace(day=1)
+
+    if month == "previous":
+        report_month_start = previous_month_start(current_month_start)
+    else:
+        try:
+            report_month_start = datetime.strptime(month, "%Y-%m").date().replace(day=1)
+        except ValueError as exc:
+            raise ValueError("--month debe usar el formato YYYY-MM o el valor 'previous'") from exc
+
+    next_month_start = (report_month_start.replace(day=28) + timedelta(days=4)).replace(day=1)
+    if next_month_start > current_month_start:
+        raise ValueError("--month debe corresponder a un mes calendario ya finalizado")
+
+    current = Period(report_month_start, next_month_start - timedelta(days=1))
+    previous_start = previous_month_start(report_month_start)
+    previous = Period(previous_start, report_month_start - timedelta(days=1))
     return current, previous
 
 
@@ -268,7 +303,13 @@ def percent_change(current: int | float, previous: int | float) -> float | None:
     return ((current - previous) / previous) * 100
 
 
-def collect_report(client: Any, property_id: str, current: Period, previous: Period) -> dict[str, Any]:
+def collect_report(
+    client: Any,
+    property_id: str,
+    current: Period,
+    previous: Period,
+    report_type: str = "periodic",
+) -> dict[str, Any]:
     current_summary = summary_from_rows(
         run_query(client, property_id, current, (), SUMMARY_METRICS, limit=1)
     )
@@ -295,6 +336,7 @@ def collect_report(client: Any, property_id: str, current: Period, previous: Per
     return {
         "metadata": {
             "property_id": property_id,
+            "report_type": report_type,
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "current_period": {"start": current.start.isoformat(), "end": current.end.isoformat()},
             "previous_period": {"start": previous.start.isoformat(), "end": previous.end.isoformat()},
@@ -357,8 +399,13 @@ def render_markdown(report: dict[str, Any]) -> str:
     summary = report["summary"]
     current_period = metadata["current_period"]
     previous_period = metadata["previous_period"]
+    report_title = (
+        "Reporte mensual de Google Analytics 4"
+        if metadata.get("report_type") == "monthly"
+        else "Reporte de Google Analytics 4"
+    )
     lines = [
-        "# Reporte de Google Analytics 4",
+        f"# {report_title}",
         "",
         f"**Período:** {current_period['start']} a {current_period['end']}  ",
         f"**Comparación:** {previous_period['start']} a {previous_period['end']}  ",
@@ -377,6 +424,14 @@ def render_markdown(report: dict[str, Any]) -> str:
                 previous=format_number(summary["previous"][metric], metric),
                 change=format_delta(summary["change_percent"][metric]),
             )
+        )
+
+    if metadata.get("report_type") == "monthly":
+        lines.extend(
+            [
+                "",
+                "_La variación compara totales de meses calendario; la cantidad de días puede diferir entre ambos meses._",
+            ]
         )
 
     lines.extend(["", "## Lectura rápida", ""])
@@ -482,9 +537,23 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = parse_args(argv)
     try:
         validate_configuration(args)
-        current, previous = resolve_periods(args.days, args.end_date)
+        if args.month:
+            if args.end_date != "yesterday":
+                raise ValueError("--end-date solo puede combinarse con --days")
+            current, previous = resolve_month_periods(args.month)
+            report_type = "monthly"
+        else:
+            days = args.days if args.days is not None else 7
+            current, previous = resolve_periods(days, args.end_date)
+            report_type = "periodic"
         client = build_client(args.credentials_json)
-        report = collect_report(client, str(args.property_id), current, previous)
+        report = collect_report(
+            client,
+            str(args.property_id),
+            current,
+            previous,
+            report_type=report_type,
+        )
         created = write_report(report, args.output_dir)
     except (ValueError, RuntimeError) as exc:
         print(f"Error: {exc}", file=sys.stderr)

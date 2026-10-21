@@ -9,6 +9,7 @@ from scripts.analytics_report import (
     format_number,
     percent_change,
     render_markdown,
+    resolve_month_periods,
     resolve_periods,
     write_report,
 )
@@ -24,6 +25,24 @@ class AnalyticsReportTest(unittest.TestCase):
     def test_rejects_current_or_future_end_date(self):
         with self.assertRaisesRegex(ValueError, "anterior a hoy"):
             resolve_periods(7, "2026-09-13", today=date(2026, 9, 13))
+
+    def test_resolve_previous_calendar_month_and_comparison(self):
+        current, previous = resolve_month_periods("previous", today=date(2026, 10, 5))
+
+        self.assertEqual(current, Period(date(2026, 9, 1), date(2026, 9, 30)))
+        self.assertEqual(previous, Period(date(2026, 8, 1), date(2026, 8, 31)))
+
+    def test_resolve_explicit_month_across_year_boundary(self):
+        current, previous = resolve_month_periods("2026-01", today=date(2026, 10, 5))
+
+        self.assertEqual(current, Period(date(2026, 1, 1), date(2026, 1, 31)))
+        self.assertEqual(previous, Period(date(2025, 12, 1), date(2025, 12, 31)))
+
+    def test_rejects_current_or_invalid_month(self):
+        with self.assertRaisesRegex(ValueError, "ya finalizado"):
+            resolve_month_periods("2026-10", today=date(2026, 10, 5))
+        with self.assertRaisesRegex(ValueError, "formato YYYY-MM"):
+            resolve_month_periods("octubre", today=date(2026, 10, 5))
 
     def test_formats_metrics_and_changes(self):
         self.assertEqual(format_number(0.534, "engagementRate"), "53.4%")
@@ -49,6 +68,7 @@ class AnalyticsReportTest(unittest.TestCase):
         report = {
             "metadata": {
                 "property_id": "123",
+                "report_type": "monthly",
                 "generated_at": "2026-09-13T12:00:00+00:00",
                 "current_period": {"start": "2026-09-06", "end": "2026-09-12"},
                 "previous_period": {"start": "2026-08-30", "end": "2026-09-05"},
@@ -78,6 +98,7 @@ class AnalyticsReportTest(unittest.TestCase):
         markdown = render_markdown(report)
         self.assertIn("Teleoftalmología", markdown)
         self.assertIn("Usuarios activos", markdown)
+        self.assertIn("Reporte mensual", markdown)
 
         with tempfile.TemporaryDirectory() as directory:
             paths = write_report(report, Path(directory))
